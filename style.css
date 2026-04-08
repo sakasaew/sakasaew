@@ -1,0 +1,37 @@
+/* ============================================================
+   さかさま — Custom CSS
+   Tailwind CSS (browser build) でカバーできないカスタムスタイル
+   ============================================================ */
+
+/* ── ヒーロー テキスト入場アニメーション ── */
+.hero-line {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.hero-line.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── スクロールインジケーター ── */
+@keyframes scrollLine {
+  0%   { transform: scaleY(0); transform-origin: top;    opacity: 1; }
+  50%  { transform: scaleY(1); transform-origin: top;    opacity: 1; }
+  51%  { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
+  100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+}
+#scroll-line {
+  animation: scrollLine 1.8s ease-in-out infinite;
+}
+
+/* ── セクション スクロール入場 ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

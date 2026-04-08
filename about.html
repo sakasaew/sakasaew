@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - さかさま</title>
+  <meta name="description" content="紙媒体／WEBサイト／プロダクトなど、媒体や規模を問わないさまざまなクリエイティブのデザインやディレクションを承っております。" />
+  <link rel="canonical" href="https://sakasaew.com/about/" />
+  <meta property="og:title"       content="About - さかさま" />
+  <meta property="og:description" content="紙媒体／WEBサイト／プロダクトなど、媒体や規模を問わないさまざまなクリエイティブのデザインやディレクションを承っております。" />
+  <meta property="og:image"       content="images/IMG_9676-3-scaled.jpg" />
+  <meta property="og:url"         content="https://sakasaew.com/about/" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="さかさま" />
+  <meta name="twitter:card"       content="summary_large_image" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-navy:   rgb(11, 69, 119);
+      --color-muted:  rgb(114, 138, 160);
+      --color-footer: hsl(233, 16%, 56%);
+      --font-sans:    "Noto Sans JP", sans-serif;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-white text-black font-sans antialiased">
+
+  <!-- NAVIGATION -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
+    <nav class="max-w-6xl mx-auto px-8 h-16 grid grid-cols-3 md:flex md:items-center md:justify-between items-center">
+      <div class="md:hidden"></div>
+      <div class="flex justify-center md:justify-start md:flex-none">
+        <a href="index.html">
+          <img src="images/cropped-cropped-VI_logo-03-1.png"
+               alt="さかさま" class="h-8 w-auto" />
+        </a>
+      </div>
+      <div class="flex justify-end items-center">
+        <ul class="hidden md:flex items-center gap-10 text-xs font-medium tracking-[0.2rem]">
+          <li><a href="index.html"     class="text-[rgb(114,138,160)] hover:text-black transition-colors">HOME</a></li>
+          <li><a href="about.html"     class="text-black">ABOUT</a></li>
+          <li><a href="portfolio.html" class="text-[rgb(114,138,160)] hover:text-black transition-colors">PORTFOLIO</a></li>
+          <li><a href="contact.html"   class="text-[rgb(114,138,160)] hover:text-black transition-colors">CONTACT</a></li>
+        </ul>
+        <button id="menu-btn" class="md:hidden flex flex-col gap-[5px] p-1" aria-label="メニューを開く">
+          <span class="block w-6 h-px bg-black transition-all duration-300" id="bar1"></span>
+          <span class="block w-6 h-px bg-black transition-all duration-300" id="bar2"></span>
+          <span class="block w-6 h-px bg-black transition-all duration-300" id="bar3"></span>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+      <ul class="max-w-6xl mx-auto px-8 py-6 flex flex-col gap-5 text-xs font-medium tracking-[0.2rem]">
+        <li><a href="index.html"     class="text-[rgb(114,138,160)]">HOME</a></li>
+        <li><a href="about.html"     class="text-black">ABOUT</a></li>
+        <li><a href="portfolio.html" class="text-[rgb(114,138,160)]">PORTFOLIO</a></li>
+        <li><a href="contact.html"   class="text-[rgb(114,138,160)]">CONTACT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="relative h-[50vh] min-h-[320px] flex items-end pt-16">
+      <div class="absolute inset-0 overflow-hidden">
+        <img src="images/IMG_9676-3-scaled.jpg"
+             alt="" class="w-full h-full object-cover object-center" />
+        <div class="absolute inset-0 bg-black/55"></div>
+      </div>
+      <div class="relative max-w-6xl mx-auto px-8 pb-14">
+        <p class="text-xs tracking-[0.4rem] text-white/60 mb-3">ABOUT</p>
+        <h1 class="text-3xl md:text-5xl font-light text-white tracking-wide">わたしのこと</h1>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="py-28">
+      <div class="max-w-6xl mx-auto px-8 grid md:grid-cols-12 gap-16 items-start">
+        <div class="md:col-span-3 flex flex-col gap-4 pt-2">
+          <span class="text-xs tracking-[0.4rem] text-[rgb(114,138,160)]">ABOUT</span>
+          <span class="block w-8 h-px bg-[rgb(11,69,119)]"></span>
+        </div>
+        <div class="md:col-span-9 flex flex-col gap-8">
+          <p class="text-xl md:text-2xl font-light leading-loose tracking-wide">
+            さかさまでは、紙媒体／Webサイト／プロダクトなど、<br />
+            媒体や規模を問わず、さまざまなクリエイティブのグラフィックデザインやディレクションを承っております。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT WE DO -->
+    <section class="py-24 bg-gray-50 border-t border-gray-100">
+      <div class="max-w-6xl mx-auto px-8 grid md:grid-cols-12 gap-16">
+        <div class="md:col-span-3 flex flex-col gap-4">
+          <span class="text-xs tracking-[0.4rem] text-[rgb(114,138,160)]">できること</span>
+          <span class="block w-8 h-px bg-[rgb(11,69,119)]"></span>
+        </div>
+        <div class="md:col-span-9">
+          <h2 class="text-xl font-light tracking-[0.1rem] mb-10">さかさまにできること</h2>
+          <ul class="flex flex-col divide-y divide-gray-100">
+            <li class="py-5 flex items-start gap-6">
+              <span class="mt-1.5 block w-4 h-px bg-[rgb(11,69,119)] shrink-0"></span>
+              <p class="text-sm leading-loose text-[rgb(114,138,160)]">グラフィックデザイン制作全般</p>
+            </li>
+            <li class="py-5 flex items-start gap-6">
+              <span class="mt-1.5 block w-4 h-px bg-[rgb(11,69,119)] shrink-0"></span>
+              <p class="text-sm leading-loose text-[rgb(114,138,160)]">原稿整理や構成案・ワイヤーフレーム作成、進行管理等のディレクション業務</p>
+            </li>
+            <li class="py-5 flex items-start gap-6">
+              <span class="mt-1.5 block w-4 h-px bg-[rgb(11,69,119)] shrink-0"></span>
+              <p class="text-sm leading-loose text-[rgb(114,138,160)]">ロゴ制作などCIやVI、コーポレートサイト制作やブランディング</p>
+            </li>
+            <li class="py-5 flex items-start gap-6">
+              <span class="mt-1.5 block w-4 h-px bg-[rgb(11,69,119)] shrink-0"></span>
+              <p class="text-sm leading-loose text-[rgb(114,138,160)]">Web制作や印刷、デザインにまつわる疑問の解決</p>
+            </li>
+            <li class="py-5 flex items-start gap-6">
+              <span class="mt-1.5 block w-4 h-px bg-[rgb(11,69,119)] shrink-0"></span>
+              <p class="text-sm leading-loose text-[rgb(114,138,160)]">デザインチームの育成やマネジメントについての相談</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFILE -->
+    <section class="py-28 border-t border-gray-100">
+      <div class="max-w-6xl mx-auto px-8 grid md:grid-cols-12 gap-16 items-start">
+        <div class="md:col-span-3 flex flex-col gap-4 pt-2">
+          <span class="text-xs tracking-[0.4rem] text-[rgb(114,138,160)]">PROFILE</span>
+          <span class="block w-8 h-px bg-[rgb(11,69,119)]"></span>
+        </div>
+        <div class="md:col-span-9 flex flex-col gap-10">
+          <h2 class="text-xl font-light tracking-[0.1rem]">中の人について</h2>
+
+          <div class="flex flex-col md:flex-row gap-10 items-start">
+            <img src="images/66C9AD5D-C36E-4550-AA77-D77DB4607B9B-e1734665949460-1024x837.jpeg"
+                 alt="さかさま 中の人"
+                 class="w-full md:w-64 shrink-0 object-cover" />
+            <p class="text-sm leading-loose text-[rgb(114,138,160)]">
+              中学生の頃よりWeb制作をはじめる。制作過程を記録したブックレットとともに。夏休みの自由研究である。高校生になり、授業で「色彩は秩序」という言葉を聞き感銘を受ける。地方の狭い世界に絶望し、家を出た。営業等の経験を経たのち、印刷会社へ転職。デザイナーとしての経験は18年ほど。2020年よりフリーランス。スタートアップや中小企業のプロジェクトに参画しつつ、大手企業のクリエイティブディレクションを担当。2016年より子ども食堂やフードバンク支援活動に参加。現在、生家の家業に入り込み、フリースクール運営を検討中。
+            </p>
+          </div>
+
+          <div class="grid sm:grid-cols-3 gap-8 pt-8 border-t border-gray-100">
+            <div>
+              <h3 class="text-xs font-medium tracking-[0.2rem] mb-4">経験業種について</h3>
+              <p class="text-xs leading-loose text-[rgb(114,138,160)]">
+                アパレル、自動車関連、印刷関連、工業系図面、飲食系、ライフサービスなどさまざま。ユーザーの視点を大切に、ジャンルにとらわれない、偏らないクリエイティブ制作が可能です。
+              </p>
+            </div>
+            <div>
+              <h3 class="text-xs font-medium tracking-[0.2rem] mb-4">経験職種について</h3>
+              <p class="text-xs leading-loose text-[rgb(114,138,160)]">
+                デザイン制作・マーケティング・オウンドメディア運営・クリエイティブディレクション等、幅広く経験しています。
+              </p>
+            </div>
+            <div>
+              <h3 class="text-xs font-medium tracking-[0.2rem] mb-4">制作物について</h3>
+              <p class="text-xs leading-loose text-[rgb(114,138,160)]">
+                Webサイト、動画、提案資料、ポスター、カタログ、イラストなど多様な制作物に対応しています。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 border-t border-gray-100">
+      <div class="max-w-6xl mx-auto px-8 grid md:grid-cols-12 gap-16 items-center">
+        <div class="md:col-span-3 flex flex-col gap-4">
+          <span class="text-xs tracking-[0.4rem] text-[rgb(114,138,160)]">CONTACT</span>
+          <span class="block w-8 h-px bg-[rgb(11,69,119)]"></span>
+        </div>
+        <div class="md:col-span-9 flex flex-col gap-8">
+          <p class="text-2xl md:text-3xl font-light leading-relaxed tracking-wide">
+            お気軽にご相談ください
+          </p>
+          <a href="contact.html"
+             class="self-start inline-flex items-center gap-3 border border-black text-xs tracking-[0.2rem] px-8 py-3.5 hover:bg-black hover:text-white transition-colors">
+            CONTACT →
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[hsl(233,16%,56%)] text-white py-12">
+    <div class="max-w-6xl mx-auto px-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <img src="images/VI_logo-04-1.png"
+           alt="さかさま" class="h-8 w-auto brightness-0 invert" />
+      <ul class="flex flex-wrap gap-6 text-xs tracking-[0.2rem] text-white/70">
+        <li><a href="index.html"     class="hover:text-white transition-colors">HOME</a></li>
+        <li><a href="about.html"     class="hover:text-white transition-colors">ABOUT</a></li>
+        <li><a href="portfolio.html" class="hover:text-white transition-colors">PORTFOLIO</a></li>
+        <li><a href="contact.html"   class="hover:text-white transition-colors">CONTACT</a></li>
+      </ul>
+      <div class="flex flex-col gap-3 items-start md:items-end">
+        <div class="flex gap-5 text-xs tracking-[0.2rem] text-white/70">
+          <a href="https://www.facebook.com/sakasaew" target="_blank" rel="noopener" class="hover:text-white transition-colors">FACEBOOK</a>
+          <a href="https://www.instagram.com/sakasaew/" target="_blank" rel="noopener" class="hover:text-white transition-colors">INSTAGRAM</a>
+        </div>
+        <span class="text-xs text-white/50">© 2026 さかさま</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const bar1 = document.getElementById('bar1');
+    const bar2 = document.getElementById('bar2');
+    const bar3 = document.getElementById('bar3');
+    btn.addEventListener('click', () => {
+      const open = menu.classList.toggle('hidden') === false;
+      bar1.style.transform = open ? 'translateY(6px) rotate(45deg)' : '';
+      bar2.style.opacity   = open ? '0' : '1';
+      bar3.style.transform = open ? 'translateY(-6px) rotate(-45deg)' : '';
+    });
+  </script>
+</body>
+</html>

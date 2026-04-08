@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - さかさま</title>
+  <meta name="description" content="紙媒体／Webサイト／プロダクトなど、媒体や規模を問わないさまざまなクリエイティブのデザインやディレクションを承っております。" />
+  <link rel="canonical" href="https://sakasaew.com/portfolio/" />
+  <meta property="og:title"       content="Portfolio - さかさま" />
+  <meta property="og:description" content="紙媒体／Webサイト／プロダクトなど、媒体や規模を問わないさまざまなクリエイティブのデザインやディレクションを承っております。" />
+  <meta property="og:image"       content="images/IMG_9676-3-scaled.jpg" />
+  <meta property="og:url"         content="https://sakasaew.com/portfolio/" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="さかさま" />
+  <meta name="twitter:card"       content="summary_large_image" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-navy:   rgb(11, 69, 119);
+      --color-muted:  rgb(114, 138, 160);
+      --color-footer: hsl(233, 16%, 56%);
+      --font-sans:    "Noto Sans JP", sans-serif;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-white text-black font-sans antialiased">
+
+  <!-- NAVIGATION -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
+    <nav class="max-w-6xl mx-auto px-8 h-16 grid grid-cols-3 md:flex md:items-center md:justify-between items-center">
+      <div class="md:hidden"></div>
+      <div class="flex justify-center md:justify-start md:flex-none">
+        <a href="index.html">
+          <img src="images/cropped-cropped-VI_logo-03-1.png"
+               alt="さかさま" class="h-8 w-auto" />
+        </a>
+      </div>
+      <div class="flex justify-end items-center">
+        <ul class="hidden md:flex items-center gap-10 text-xs font-medium tracking-[0.2rem]">
+          <li><a href="index.html"     class="text-[rgb(114,138,160)] hover:text-black transition-colors">HOME</a></li>
+          <li><a href="about.html"     class="text-[rgb(114,138,160)] hover:text-black transition-colors">ABOUT</a></li>
+          <li><a href="portfolio.html" class="text-black">PORTFOLIO</a></li>
+          <li><a href="contact.html"   class="text-[rgb(114,138,160)] hover:text-black transition-colors">CONTACT</a></li>
+        </ul>
+        <button id="menu-btn" class="md:hidden flex flex-col gap-[5px] p-1" aria-label="メニューを開く">
+          <span class="block w-6 h-px bg-black transition-all duration-300" id="bar1"></span>
+          <span class="block w-6 h-px bg-black transition-all duration-300" id="bar2"></span>
+          <span class="block w-6 h-px bg-black transition-all duration-300" id="bar3"></span>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+      <ul class="max-w-6xl mx-auto px-8 py-6 flex flex-col gap-5 text-xs font-medium tracking-[0.2rem]">
+        <li><a href="index.html"     class="text-[rgb(114,138,160)]">HOME</a></li>
+        <li><a href="about.html"     class="text-[rgb(114,138,160)]">ABOUT</a></li>
+        <li><a href="portfolio.html" class="text-black">PORTFOLIO</a></li>
+        <li><a href="contact.html"   class="text-[rgb(114,138,160)]">CONTACT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="relative h-[50vh] min-h-[320px] flex items-end pt-16">
+      <div class="absolute inset-0 overflow-hidden">
+        <img src="images/IMG_9676-3-scaled.jpg"
+             alt="" class="w-full h-full object-cover object-center" />
+        <div class="absolute inset-0 bg-black/55"></div>
+      </div>
+      <div class="relative max-w-6xl mx-auto px-8 pb-14">
+        <p class="text-xs tracking-[0.4rem] text-white/60 mb-3">PORTFOLIO</p>
+        <h1 class="text-3xl md:text-5xl font-light text-white tracking-wide">つくってきたもの</h1>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="py-28">
+      <div class="max-w-6xl mx-auto px-8 grid md:grid-cols-12 gap-16 items-start">
+        <div class="md:col-span-3 flex flex-col gap-4 pt-2">
+          <span class="text-xs tracking-[0.4rem] text-[rgb(114,138,160)]">WORKS</span>
+          <span class="block w-8 h-px bg-[rgb(11,69,119)]"></span>
+        </div>
+        <div class="md:col-span-9 flex flex-col gap-8">
+          <p class="text-xl md:text-2xl font-light leading-loose tracking-wide">・・・準備中・・・</p>
+          <p class="text-sm leading-loose text-[rgb(114,138,160)] max-w-2xl">
+            現在は主にクリエイティブディレクションを主軸に活動中で、参画したプロジェクト／クリエイティブ制作の一部を掲載しております。<br />
+            直近のクライアントの制作物は掲載が難しいため、詳細はお問い合わせください。
+          </p>
+
+          <div class="pt-4 flex flex-col gap-3">
+            <h3 class="text-xs font-medium tracking-[0.2rem]">ざっくり概要</h3>
+            <ul class="flex flex-col divide-y divide-gray-100">
+              <li class="py-4 flex items-start gap-6">
+                <span class="mt-1.5 block w-4 h-px bg-[rgb(11,69,119)] shrink-0"></span>
+                <p class="text-xs leading-loose text-[rgb(114,138,160)]">大手不動産会社運営ミュージアム：オウンドメディア（コンテンツマーケティング主体の大規模サイト）の制作ディレクション</p>
+              </li>
+              <li class="py-4 flex items-start gap-6">
+                <span class="mt-1.5 block w-4 h-px bg-[rgb(11,69,119)] shrink-0"></span>
+                <p class="text-xs leading-loose text-[rgb(114,138,160)]">大手飲料メーカー：オフライン媒体の制作ディレクション</p>
+              </li>
+              <li class="py-4 flex items-start gap-6">
+                <span class="mt-1.5 block w-4 h-px bg-[rgb(11,69,119)] shrink-0"></span>
+                <p class="text-xs leading-loose text-[rgb(114,138,160)]">運用型広告用LPの制作ディレクション（LPO/EFO）</p>
+              </li>
+              <li class="py-4 flex items-start gap-6">
+                <span class="mt-1.5 block w-4 h-px bg-[rgb(11,69,119)] shrink-0"></span>
+                <p class="text-xs leading-loose text-[rgb(114,138,160)]">大手美容メーカー／EC：CRM施策のクリエイティブディレクション</p>
+              </li>
+              <li class="py-4 flex items-start gap-6">
+                <span class="mt-1.5 block w-4 h-px bg-[rgb(11,69,119)] shrink-0"></span>
+                <p class="text-xs leading-loose text-[rgb(114,138,160)]">スタートアップ企業：各プロダクトのクリエイティブディレクション／プロジェクトマネジメント</p>
+              </li>
+              <li class="py-4 flex items-start gap-6">
+                <span class="mt-1.5 block w-4 h-px bg-[rgb(11,69,119)] shrink-0"></span>
+                <p class="text-xs leading-loose text-[rgb(114,138,160)]">デザインメンター（講師）</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WEB SECTION -->
+    <section class="py-24 bg-gray-50 border-t border-gray-100">
+      <div class="max-w-6xl mx-auto px-8">
+        <div class="grid md:grid-cols-12 gap-16 mb-12">
+          <div class="md:col-span-3 flex flex-col gap-4">
+            <span class="text-xs tracking-[0.4rem] text-[rgb(114,138,160)]">WEB</span>
+            <span class="block w-8 h-px bg-[rgb(11,69,119)]"></span>
+          </div>
+          <div class="md:col-span-9">
+          </div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-px bg-gray-200">
+          <a href="https://kumade-kk.com/" target="_blank" rel="noopener"
+             class="group bg-white p-6 flex flex-col gap-3 hover:bg-gray-50 transition-colors">
+            <span class="text-xs tracking-[0.2rem] text-[rgb(114,138,160)]">WEB</span>
+            <h3 class="text-sm font-medium group-hover:text-[rgb(11,69,119)] transition-colors">KUMADE株式会社コーポレートサイト</h3>
+            <p class="text-xs text-[rgb(114,138,160)] leading-loose">サイト設計／ディレクション／デザイン／CMS管理／CI制作</p>
+            <span class="text-xs text-[rgb(114,138,160)] group-hover:translate-x-1 transition-transform mt-auto pt-2">→</span>
+          </a>
+          <a href="https://mebae-re.com/" target="_blank" rel="noopener"
+             class="group bg-white p-6 flex flex-col gap-3 hover:bg-gray-50 transition-colors">
+            <span class="text-xs tracking-[0.2rem] text-[rgb(114,138,160)]">WEB</span>
+            <h3 class="text-sm font-medium group-hover:text-[rgb(11,69,119)] transition-colors">株式会社MEBAEコーポレートサイト</h3>
+            <p class="text-xs text-[rgb(114,138,160)] leading-loose">サイト設計／ディレクション／デザイン／CMS管理／CI制作</p>
+            <span class="text-xs text-[rgb(114,138,160)] group-hover:translate-x-1 transition-transform mt-auto pt-2">→</span>
+          </a>
+          <a href="https://malera-gifu.jp/covid19/" target="_blank" rel="noopener"
+             class="group bg-white p-6 flex flex-col gap-3 hover:bg-gray-50 transition-colors">
+            <span class="text-xs tracking-[0.2rem] text-[rgb(114,138,160)]">LP</span>
+            <h3 class="text-sm font-medium group-hover:text-[rgb(11,69,119)] transition-colors">モレラ岐阜感染症対策LP</h3>
+            <p class="text-xs text-[rgb(114,138,160)] leading-loose">ディレクション／デザイン／コーディング</p>
+            <span class="text-xs text-[rgb(114,138,160)] group-hover:translate-x-1 transition-transform mt-auto pt-2">→</span>
+          </a>
+          <a href="https://tnd.co.jp/lp/stp/" target="_blank" rel="noopener"
+             class="group bg-white p-6 flex flex-col gap-3 hover:bg-gray-50 transition-colors">
+            <span class="text-xs tracking-[0.2rem] text-[rgb(114,138,160)]">LP</span>
+            <h3 class="text-sm font-medium group-hover:text-[rgb(11,69,119)] transition-colors">弱酸性除菌水ステリパワーLP</h3>
+            <p class="text-xs text-[rgb(114,138,160)] leading-loose">ディレクション／デザイン／マーケティング相談</p>
+            <span class="text-xs text-[rgb(114,138,160)] group-hover:translate-x-1 transition-transform mt-auto pt-2">→</span>
+          </a>
+          <a href="https://paulpotato-jp.com/" target="_blank" rel="noopener"
+             class="group bg-white p-6 flex flex-col gap-3 hover:bg-gray-50 transition-colors">
+            <span class="text-xs tracking-[0.2rem] text-[rgb(114,138,160)]">LP</span>
+            <h3 class="text-sm font-medium group-hover:text-[rgb(11,69,119)] transition-colors">立体プランターポールポテトLP</h3>
+            <p class="text-xs text-[rgb(114,138,160)] leading-loose">ディレクション／デザイン／マーケティング相談</p>
+            <span class="text-xs text-[rgb(114,138,160)] group-hover:translate-x-1 transition-transform mt-auto pt-2">→</span>
+          </a>
+          <a href="https://maister-bbq-jp.com/" target="_blank" rel="noopener"
+             class="group bg-white p-6 flex flex-col gap-3 hover:bg-gray-50 transition-colors">
+            <span class="text-xs tracking-[0.2rem] text-[rgb(114,138,160)]">LP</span>
+            <h3 class="text-sm font-medium group-hover:text-[rgb(11,69,119)] transition-colors">トウモロコシBBQ専用炭マイスターLP</h3>
+            <p class="text-xs text-[rgb(114,138,160)] leading-loose">ディレクション／デザイン／マーケティング相談</p>
+            <span class="text-xs text-[rgb(114,138,160)] group-hover:translate-x-1 transition-transform mt-auto pt-2">→</span>
+          </a>
+          <a href="https://montreet-jp.com/" target="_blank" rel="noopener"
+             class="group bg-white p-6 flex flex-col gap-3 hover:bg-gray-50 transition-colors">
+            <span class="text-xs tracking-[0.2rem] text-[rgb(114,138,160)]">LP</span>
+            <h3 class="text-sm font-medium group-hover:text-[rgb(11,69,119)] transition-colors">アスリート向けジャケットモントリートLP</h3>
+            <p class="text-xs text-[rgb(114,138,160)] leading-loose">ディレクション／デザイン／マーケティング相談</p>
+            <span class="text-xs text-[rgb(114,138,160)] group-hover:translate-x-1 transition-transform mt-auto pt-2">→</span>
+          </a>
+          <a href="https://www.shin-baki2.com/" target="_blank" rel="noopener"
+             class="group bg-white p-6 flex flex-col gap-3 hover:bg-gray-50 transition-colors">
+            <span class="text-xs tracking-[0.2rem] text-[rgb(114,138,160)]">WEB</span>
+            <h3 class="text-sm font-medium group-hover:text-[rgb(11,69,119)] transition-colors">伸整体院サービスサイト</h3>
+            <p class="text-xs text-[rgb(114,138,160)] leading-loose">サイト設計／ディレクション／デザイン</p>
+            <span class="text-xs text-[rgb(114,138,160)] group-hover:translate-x-1 transition-transform mt-auto pt-2">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRAPHIC SECTION -->
+    <section class="py-24 border-t border-gray-100">
+      <div class="max-w-6xl mx-auto px-8">
+        <div class="grid md:grid-cols-12 gap-16 mb-12">
+          <div class="md:col-span-3 flex flex-col gap-4">
+            <span class="text-xs tracking-[0.4rem] text-[rgb(114,138,160)]">GRAPHIC</span>
+            <span class="block w-8 h-px bg-[rgb(11,69,119)]"></span>
+          </div>
+          <div class="md:col-span-9">
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6 mb-10">
+          <a href="https://tanaka-kgs.co.jp/" target="_blank" rel="noopener" class="group flex flex-col gap-3">
+            <div class="bg-gray-50 aspect-square overflow-hidden">
+              <img src="images/田中工業所_CI_reg.png"
+                   alt="株式会社田中工業所 CI"
+                   class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform" />
+            </div>
+            <div>
+              <span class="text-xs tracking-[0.2rem] text-[rgb(114,138,160)]">VI・CI</span>
+              <h3 class="text-xs font-medium mt-1 group-hover:text-[rgb(11,69,119)] transition-colors">株式会社田中工業所</h3>
+              <p class="text-xs text-[rgb(114,138,160)] leading-loose mt-1">CI・看板デザイン制作／ディレクション／ブランディング相談</p>
+            </div>
+          </a>
+          <a href="https://www.instagram.com/littleflowercoffee/" target="_blank" rel="noopener" class="group flex flex-col gap-3">
+            <div class="bg-gray-50 aspect-square overflow-hidden">
+              <img src="images/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88-2023-03-06-200334.jpg"
+                   alt="リトルフラワーコーヒー 変形名刺"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+            </div>
+            <div>
+              <span class="text-xs tracking-[0.2rem] text-[rgb(114,138,160)]">VI・CI</span>
+              <h3 class="text-xs font-medium mt-1 group-hover:text-[rgb(11,69,119)] transition-colors">リトルフラワーコーヒー</h3>
+              <p class="text-xs text-[rgb(114,138,160)] leading-loose mt-1">変形名刺デザイン制作／ディレクション／VI・ブランディング相談</p>
+            </div>
+          </a>
+          <a href="https://mebae-re.com/" target="_blank" rel="noopener" class="group flex flex-col gap-3">
+            <div class="bg-gray-50 aspect-square overflow-hidden">
+              <img src="images/MEBAE_CI-01.png"
+                   alt="株式会社MEBAE CI"
+                   class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform" />
+            </div>
+            <div>
+              <span class="text-xs tracking-[0.2rem] text-[rgb(114,138,160)]">CI・名刺</span>
+              <h3 class="text-xs font-medium mt-1 group-hover:text-[rgb(11,69,119)] transition-colors">株式会社MEBAE</h3>
+              <p class="text-xs text-[rgb(114,138,160)] leading-loose mt-1">CI・名刺デザイン制作／ディレクション／ブランディング相談</p>
+            </div>
+          </a>
+          <a href="https://kumade-kk.com/" target="_blank" rel="noopener" class="group flex flex-col gap-3">
+            <div class="bg-gray-50 aspect-square overflow-hidden">
+              <img src="images/KUMADE_CI-01.png"
+                   alt="KUMADE株式会社 CI"
+                   class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform" />
+            </div>
+            <div>
+              <span class="text-xs tracking-[0.2rem] text-[rgb(114,138,160)]">CI・名刺</span>
+              <h3 class="text-xs font-medium mt-1 group-hover:text-[rgb(11,69,119)] transition-colors">KUMADE株式会社</h3>
+              <p class="text-xs text-[rgb(114,138,160)] leading-loose mt-1">CI・名刺デザイン制作／ディレクション／ブランディング相談</p>
+            </div>
+          </a>
+          <a href="https://www.instagram.com/marumado_cafe/" target="_blank" rel="noopener" class="group flex flex-col gap-3">
+            <div class="bg-gray-50 aspect-square overflow-hidden">
+              <img src="images/まるまど_ロゴ-01.png"
+                   alt="まるまど ロゴ"
+                   class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform" />
+            </div>
+            <div>
+              <span class="text-xs tracking-[0.2rem] text-[rgb(114,138,160)]">VI</span>
+              <h3 class="text-xs font-medium mt-1 group-hover:text-[rgb(11,69,119)] transition-colors">まるまど</h3>
+              <p class="text-xs text-[rgb(114,138,160)] leading-loose mt-1">VIデザイン制作／ディレクション／ブランディング相談</p>
+            </div>
+          </a>
+          <a href="https://www.instagram.com/datsumou_nagoya/" target="_blank" rel="noopener" class="group flex flex-col gap-3">
+            <div class="bg-gray-50 aspect-square overflow-hidden">
+              <img src="images/脱毛リュバンドール_B2ポスター_アートボード-1.jpg"
+                   alt="リュバンドール ポスター"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+            </div>
+            <div>
+              <span class="text-xs tracking-[0.2rem] text-[rgb(114,138,160)]">PAMPHLET・POSTER</span>
+              <h3 class="text-xs font-medium mt-1 group-hover:text-[rgb(11,69,119)] transition-colors">Ruband'or リュバンドール 緑店</h3>
+              <p class="text-xs text-[rgb(114,138,160)] leading-loose mt-1">三つ折パンフレット・ポスターデザイン制作／ディレクション／VI・ブランディング相談</p>
+            </div>
+          </a>
+          <a href="https://maple-market.com/" target="_blank" rel="noopener" class="group flex flex-col gap-3">
+            <div class="bg-gray-50 aspect-square overflow-hidden">
+              <img src="images/Makuake_keyvisual.jpg"
+                   alt="Maple Market クラウドファンディング"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+            </div>
+            <div>
+              <span class="text-xs tracking-[0.2rem] text-[rgb(114,138,160)]">CROWDFUNDING</span>
+              <h3 class="text-xs font-medium mt-1 group-hover:text-[rgb(11,69,119)] transition-colors">Maple Market</h3>
+              <p class="text-xs text-[rgb(114,138,160)] leading-loose mt-1">クラウドファンディング用画像デザイン制作／ディレクション</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Gallery -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+          <img src="images/脱毛リュバンドール_A4巻三折-01-1024x730.jpg"
+               alt="三つ折りパンフレット" class="w-full object-cover aspect-[4/3]" />
+          <img src="images/脱毛リュバンドール_A4巻三折-02-1024x730.jpg"
+               alt="三つ折りパンフレット" class="w-full object-cover aspect-[4/3]" />
+          <img src="images/Makuake_10-1024x500.jpg"
+               alt="クラファン商品ページ" class="w-full object-cover aspect-[4/3]" />
+          <img src="images/Makuake_04-1024x500.jpg"
+               alt="クラファン商品ページ" class="w-full object-cover aspect-[4/3]" />
+          <img src="images/Makuake_03-1024x416.jpg"
+               alt="クラファン商品ページ" class="w-full object-cover aspect-[4/3]" />
+          <img src="images/Makuake_09-1024x500.jpg"
+               alt="クラファン商品ページ" class="w-full object-cover aspect-[4/3]" />
+          <img src="images/Makuake_05-06-1024x999.jpg"
+               alt="クラファン商品ページ" class="w-full object-cover aspect-[4/3]" />
+          <img src="images/Makuake_12-1024x500.jpg"
+               alt="クラファン商品ページ" class="w-full object-cover aspect-[4/3]" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHIVE -->
+    <section class="py-20 bg-gray-50 border-t border-gray-100">
+      <div class="max-w-6xl mx-auto px-8 grid md:grid-cols-12 gap-16 items-center">
+        <div class="md:col-span-3 flex flex-col gap-4">
+          <span class="text-xs tracking-[0.4rem] text-[rgb(114,138,160)]">ARCHIVE</span>
+          <span class="block w-8 h-px bg-[rgb(11,69,119)]"></span>
+        </div>
+        <div class="md:col-span-9 flex flex-col gap-4">
+          <h2 class="text-lg font-light tracking-[0.1rem]">2019年までの制作物</h2>
+          <p class="text-xs leading-loose text-[rgb(114,138,160)]">古いものは主にデザイナーとして（適宜ディレクションも担当）クリエイティブ制作に携わっています。</p>
+          <a href="https://sakasa-ma.tumblr.com/" target="_blank" rel="noopener"
+             class="self-start inline-flex items-center gap-3 text-xs tracking-[0.2rem] text-[rgb(11,69,119)] hover:opacity-60 transition-opacity">
+            アーカイブを見る →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 border-t border-gray-100">
+      <div class="max-w-6xl mx-auto px-8 grid md:grid-cols-12 gap-16 items-center">
+        <div class="md:col-span-3 flex flex-col gap-4">
+          <span class="text-xs tracking-[0.4rem] text-[rgb(114,138,160)]">CONTACT</span>
+          <span class="block w-8 h-px bg-[rgb(11,69,119)]"></span>
+        </div>
+        <div class="md:col-span-9 flex flex-col gap-8">
+          <p class="text-2xl md:text-3xl font-light leading-relaxed tracking-wide">
+            お気軽にご相談ください
+          </p>
+          <a href="contact.html"
+             class="self-start inline-flex items-center gap-3 border border-black text-xs tracking-[0.2rem] px-8 py-3.5 hover:bg-black hover:text-white transition-colors">
+            CONTACT →
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[hsl(233,16%,56%)] text-white py-12">
+    <div class="max-w-6xl mx-auto px-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <img src="images/VI_logo-04-1.png"
+           alt="さかさま" class="h-8 w-auto brightness-0 invert" />
+      <ul class="flex flex-wrap gap-6 text-xs tracking-[0.2rem] text-white/70">
+        <li><a href="index.html"     class="hover:text-white transition-colors">HOME</a></li>
+        <li><a href="about.html"     class="hover:text-white transition-colors">ABOUT</a></li>
+        <li><a href="portfolio.html" class="hover:text-white transition-colors">PORTFOLIO</a></li>
+        <li><a href="contact.html"   class="hover:text-white transition-colors">CONTACT</a></li>
+      </ul>
+      <div class="flex flex-col gap-3 items-start md:items-end">
+        <div class="flex gap-5 text-xs tracking-[0.2rem] text-white/70">
+          <a href="https://www.facebook.com/sakasaew" target="_blank" rel="noopener" class="hover:text-white transition-colors">FACEBOOK</a>
+          <a href="https://www.instagram.com/sakasaew/" target="_blank" rel="noopener" class="hover:text-white transition-colors">INSTAGRAM</a>
+        </div>
+        <span class="text-xs text-white/50">© 2026 さかさま</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const bar1 = document.getElementById('bar1');
+    const bar2 = document.getElementById('bar2');
+    const bar3 = document.getElementById('bar3');
+    btn.addEventListener('click', () => {
+      const open = menu.classList.toggle('hidden') === false;
+      bar1.style.transform = open ? 'translateY(6px) rotate(45deg)' : '';
+      bar2.style.opacity   = open ? '0' : '1';
+      bar3.style.transform = open ? 'translateY(-6px) rotate(-45deg)' : '';
+    });
+  </script>
+</body>
+</html>
