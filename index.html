@@ -263,58 +263,7 @@
     </div>
   </footer>
 
-  <script>
-    /* ── ハンバーガーメニュー ── */
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const bar1 = document.getElementById('bar1');
-    const bar2 = document.getElementById('bar2');
-    const bar3 = document.getElementById('bar3');
-    menuBtn.addEventListener('click', () => {
-      const open = mobileMenu.classList.toggle('hidden') === false;
-      bar1.style.transform = open ? 'translateY(6px) rotate(45deg)' : '';
-      bar2.style.opacity   = open ? '0' : '1';
-      bar3.style.transform = open ? 'translateY(-6px) rotate(-45deg)' : '';
-    });
-
-    /* ── ヒーロー テキスト入場 ── */
-    const heroLines = document.querySelectorAll('.hero-line');
-    requestAnimationFrame(() => {
-      heroLines.forEach((el, i) => {
-        setTimeout(() => el.classList.add('visible'), 200 + i * 180);
-      });
-    });
-
-    /* ── パララックス ── */
-    const heroBg = document.getElementById('hero-bg');
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const y = window.scrollY;
-          heroBg.style.transform = `scale(1.1) translateY(${y * 0.3}px)`;
-          ticking = false;
-        });
-        ticking = true;
-      }
-    });
-
-    /* ── スクロールボタン ── */
-    document.getElementById('scroll-btn').addEventListener('click', () => {
-      document.getElementById('mission').scrollIntoView({ behavior: 'smooth' });
-    });
-
-    /* ── セクション入場 (IntersectionObserver) ── */
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+  <script src="js/nav.js"></script>
+  <script src="js/home.js"></script>
 </body>
 </html>

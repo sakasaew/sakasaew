@@ -208,47 +208,7 @@
     </div>
   </footer>
 
-  <script>
-    const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    const bar1 = document.getElementById('bar1');
-    const bar2 = document.getElementById('bar2');
-    const bar3 = document.getElementById('bar3');
-    btn.addEventListener('click', () => {
-      const open = menu.classList.toggle('hidden') === false;
-      bar1.style.transform = open ? 'translateY(6px) rotate(45deg)' : '';
-      bar2.style.opacity   = open ? '0' : '1';
-      bar3.style.transform = open ? 'translateY(-6px) rotate(-45deg)' : '';
-    });
-
-    const form = document.getElementById('contact-form');
-    const successMsg = document.getElementById('form-success');
-    const errorMsg = document.getElementById('form-error');
-    const submitBtn = document.getElementById('submit-btn');
-    const submitLabel = document.getElementById('submit-label');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      if (!form.checkValidity()) { form.reportValidity(); return; }
-      submitBtn.disabled = true;
-      submitLabel.textContent = '送信中…';
-      errorMsg.classList.add('hidden');
-      try {
-        const res = await fetch('https://formspree.io/f/mjgpdwnp', {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { Accept: 'application/json' },
-        });
-        if (res.ok) {
-          form.classList.add('hidden');
-          successMsg.classList.remove('hidden');
-        } else { throw new Error(); }
-      } catch {
-        errorMsg.classList.remove('hidden');
-        submitBtn.disabled = false;
-        submitLabel.textContent = '送信する →';
-      }
-    });
-  </script>
+  <script src="js/nav.js"></script>
+  <script src="js/contact.js"></script>
 </body>
 </html>

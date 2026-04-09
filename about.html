@@ -99,7 +99,7 @@
     <section class="py-24 bg-gray-50 border-t border-gray-100">
       <div class="max-w-6xl mx-auto px-8 grid md:grid-cols-12 gap-16">
         <div class="md:col-span-3 flex flex-col gap-4">
-          <span class="text-xs tracking-[0.4rem] text-muted">できること</span>
+          <span class="text-xs tracking-[0.4rem] text-muted">SERVICES</span>
           <span class="block w-8 h-px bg-navy"></span>
         </div>
         <div class="md:col-span-9">
@@ -215,18 +215,6 @@
     </div>
   </footer>
 
-  <script>
-    const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    const bar1 = document.getElementById('bar1');
-    const bar2 = document.getElementById('bar2');
-    const bar3 = document.getElementById('bar3');
-    btn.addEventListener('click', () => {
-      const open = menu.classList.toggle('hidden') === false;
-      bar1.style.transform = open ? 'translateY(6px) rotate(45deg)' : '';
-      bar2.style.opacity   = open ? '0' : '1';
-      bar3.style.transform = open ? 'translateY(-6px) rotate(-45deg)' : '';
-    });
-  </script>
+  <script src="js/nav.js"></script>
 </body>
 </html>
