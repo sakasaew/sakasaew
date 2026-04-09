@@ -205,15 +205,31 @@
           <span class="block w-8 h-px bg-navy"></span>
         </div>
         <div class="md:col-span-9 flex flex-col gap-10">
-          <h2 class="text-xl font-light tracking-[0.1rem]">中の人について</h2>
 
-          <div class="flex flex-col md:flex-row gap-10 items-start">
-            <img src="images/66C9AD5D-C36E-4550-AA77-D77DB4607B9B-e1734665949460-1024x837.jpeg"
-                 alt="さかさま 中の人"
-                 class="w-full md:w-64 shrink-0 object-cover" />
-            <p class="text-base leading-loose text-muted">
-              中学生の頃よりWeb制作をはじめる。制作過程を記録したブックレットとともに。夏休みの自由研究である。高校生になり、授業で「色彩は秩序」という言葉を聞き感銘を受ける。地方の狭い世界に絶望し、家を出た。営業等の経験を経たのち、印刷会社へ転職。デザイナーとしての経験は18年ほど。2020年よりフリーランス。スタートアップや中小企業のプロジェクトに参画しつつ、大手企業のクリエイティブディレクションを担当。2016年より子ども食堂やフードバンク支援活動に参加。現在、生家の家業に入り込み、フリースクール運営を検討中。
-            </p>
+          <!-- アコーディオントリガー -->
+          <button id="profile-toggle"
+                  class="flex items-center justify-between gap-4 text-left group w-full"
+                  aria-expanded="false" aria-controls="profile-body">
+            <h2 class="text-xl font-light tracking-[0.1rem]">中の人について</h2>
+            <span id="profile-icon"
+                  class="shrink-0 text-muted text-xs tracking-[0.2rem] group-hover:text-black transition-colors">
+              + もっと見る
+            </span>
+          </button>
+
+          <!-- アコーディオン本体 -->
+          <div id="profile-body"
+               class="flex flex-col gap-10" style="display:none">
+
+            <div class="flex flex-col md:flex-row gap-10 items-start">
+              <img src="images/66C9AD5D-C36E-4550-AA77-D77DB4607B9B-e1734665949460-1024x837.jpeg"
+                   alt="さかさま 中の人"
+                   class="w-full md:w-64 shrink-0 object-cover" />
+              <p class="text-base leading-loose text-muted">
+                中学生の頃よりWeb制作をはじめる。制作過程を記録したブックレットとともに。夏休みの自由研究である。高校生になり、授業で「色彩は秩序」という言葉を聞き感銘を受ける。地方の狭い世界に絶望し、家を出た。営業等の経験を経たのち、印刷会社へ転職。デザイナーとしての経験は18年ほど。2020年よりフリーランス。スタートアップや中小企業のプロジェクトに参画しつつ、大手企業のクリエイティブディレクションを担当。2016年より子ども食堂やフードバンク支援活動に参加。現在、生家の家業に入り込み、フリースクール運営を検討中。
+              </p>
+            </div>
+
           </div>
 
           <div class="grid sm:grid-cols-3 gap-8 pt-8 border-t border-gray-100">
@@ -283,5 +299,6 @@
   </footer>
 
   <script src="js/nav.js"></script>
+  <script src="js/about.js"></script>
 </body>
 </html>
