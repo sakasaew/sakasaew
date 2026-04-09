@@ -137,8 +137,8 @@ function renderWebItems(container) {
       <a href="${url}" target="_blank" rel="noopener"
          class="group bg-white p-6 flex flex-col gap-3 hover:bg-gray-50 transition-colors">
         <span class="text-xs tracking-[0.2rem] text-muted">${tag}</span>
-        <h3 class="text-sm font-medium group-hover:text-navy transition-colors">${title}</h3>
-        <p class="text-xs text-muted leading-loose">${desc}</p>
+        <h3 class="text-base font-medium group-hover:text-navy transition-colors">${title}</h3>
+        <p class="text-sm text-muted leading-loose">${desc}</p>
         <span class="text-xs text-muted group-hover:translate-x-1 transition-transform mt-auto pt-2">→</span>
       </a>
     `);
@@ -156,8 +156,8 @@ function renderGraphicItems(container) {
         </div>
         <div>
           <span class="text-xs tracking-[0.2rem] text-muted">${tag}</span>
-          <h3 class="text-xs font-medium mt-1 group-hover:text-navy transition-colors">${title}</h3>
-          <p class="text-xs text-muted leading-loose mt-1">${desc}</p>
+          <h3 class="text-sm font-medium mt-1 group-hover:text-navy transition-colors">${title}</h3>
+          <p class="text-sm text-muted leading-loose mt-1">${desc}</p>
         </div>
       </a>
     `);
