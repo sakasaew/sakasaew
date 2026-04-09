@@ -12,6 +12,7 @@
   <meta property="og:type"        content="website" />
   <meta property="og:site_name"   content="さかさま" />
   <meta name="twitter:card"       content="summary_large_image" />
+  <link rel="icon" href="images/VI_logo-04-1.png" type="image/png" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style type="text/tailwindcss">
     @theme {
@@ -40,9 +41,9 @@
       </div>
       <div class="flex justify-end items-center">
         <ul class="hidden md:flex items-center gap-10 text-xs font-medium tracking-[0.2rem]">
-          <li><a href="index.html"     class="text-[rgb(114,138,160)] hover:text-black transition-colors">HOME</a></li>
-          <li><a href="about.html"     class="text-[rgb(114,138,160)] hover:text-black transition-colors">ABOUT</a></li>
-          <li><a href="portfolio.html" class="text-[rgb(114,138,160)] hover:text-black transition-colors">PORTFOLIO</a></li>
+          <li><a href="index.html"     class="text-muted hover:text-black transition-colors">HOME</a></li>
+          <li><a href="about.html"     class="text-muted hover:text-black transition-colors">ABOUT</a></li>
+          <li><a href="portfolio.html" class="text-muted hover:text-black transition-colors">PORTFOLIO</a></li>
           <li><a href="contact.html"   class="text-black">CONTACT</a></li>
         </ul>
         <button id="menu-btn" class="md:hidden flex flex-col gap-[5px] p-1" aria-label="メニューを開く">
@@ -54,9 +55,9 @@
     </nav>
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
       <ul class="max-w-6xl mx-auto px-8 py-6 flex flex-col gap-5 text-xs font-medium tracking-[0.2rem]">
-        <li><a href="index.html"     class="text-[rgb(114,138,160)]">HOME</a></li>
-        <li><a href="about.html"     class="text-[rgb(114,138,160)]">ABOUT</a></li>
-        <li><a href="portfolio.html" class="text-[rgb(114,138,160)]">PORTFOLIO</a></li>
+        <li><a href="index.html"     class="text-muted">HOME</a></li>
+        <li><a href="about.html"     class="text-muted">ABOUT</a></li>
+        <li><a href="portfolio.html" class="text-muted">PORTFOLIO</a></li>
         <li><a href="contact.html"   class="text-black">CONTACT</a></li>
       </ul>
     </div>
@@ -67,9 +68,9 @@
     <!-- HERO -->
     <section class="pt-16 pb-0 border-b border-gray-100">
       <div class="max-w-6xl mx-auto px-8 py-24">
-        <p class="text-xs tracking-[0.4rem] text-[rgb(114,138,160)] mb-3">CONTACT</p>
+        <p class="text-xs tracking-[0.4rem] text-muted mb-3">CONTACT</p>
         <h1 class="text-3xl md:text-5xl font-light tracking-wide mb-6">おといあわせ</h1>
-        <p class="text-sm leading-loose text-[rgb(114,138,160)] max-w-xl">
+        <p class="text-sm leading-loose text-muted max-w-xl">
           さかさまでは、紙媒体／Webサイト／プロダクトなど、媒体や規模を問わず、さまざまなクリエイティブのグラフィックデザインやディレクションを承っております。ロゴ制作を含めた、ブランディングのご相談なども。お問い合わせはこちらから。
         </p>
       </div>
@@ -79,16 +80,16 @@
     <section class="py-28">
       <div class="max-w-6xl mx-auto px-8 grid md:grid-cols-12 gap-16">
         <div class="md:col-span-3 flex flex-col gap-4 pt-2">
-          <span class="text-xs tracking-[0.4rem] text-[rgb(114,138,160)]">FORM</span>
-          <span class="block w-8 h-px bg-[rgb(11,69,119)]"></span>
+          <span class="text-xs tracking-[0.4rem] text-muted">FORM</span>
+          <span class="block w-8 h-px bg-navy"></span>
         </div>
         <div class="md:col-span-9">
 
           <!-- SUCCESS MESSAGE -->
           <div id="form-success" class="hidden flex flex-col gap-4 py-12">
-            <span class="block w-8 h-px bg-[rgb(11,69,119)]"></span>
+            <span class="block w-8 h-px bg-navy"></span>
             <p class="text-xl font-light leading-loose tracking-wide">お問い合わせありがとうございます。</p>
-            <p class="text-sm leading-loose text-[rgb(114,138,160)]">内容を確認のうえ、担当者よりご連絡いたします。</p>
+            <p class="text-sm leading-loose text-muted">内容を確認のうえ、担当者よりご連絡いたします。</p>
           </div>
 
           <!-- ERROR MESSAGE -->
@@ -103,7 +104,7 @@
             <!-- 氏名 -->
             <div class="flex flex-col gap-2">
               <label for="name" class="text-xs font-medium tracking-[0.2rem]">
-                氏名 <span class="text-[rgb(114,138,160)] font-normal ml-1">必須</span>
+                氏名 <span class="text-muted font-normal ml-1">必須</span>
               </label>
               <input
                 type="text"
@@ -119,7 +120,7 @@
             <!-- メールアドレス -->
             <div class="flex flex-col gap-2">
               <label for="email" class="text-xs font-medium tracking-[0.2rem]">
-                メールアドレス <span class="text-[rgb(114,138,160)] font-normal ml-1">必須</span>
+                メールアドレス <span class="text-muted font-normal ml-1">必須</span>
               </label>
               <input
                 type="email"
@@ -135,7 +136,7 @@
             <!-- お問い合わせ内容 -->
             <div class="flex flex-col gap-2">
               <label for="category" class="text-xs font-medium tracking-[0.2rem]">
-                お問い合わせ内容 <span class="text-[rgb(114,138,160)] font-normal ml-1">必須</span>
+                お問い合わせ内容 <span class="text-muted font-normal ml-1">必須</span>
               </label>
               <div class="relative">
                 <select
@@ -149,14 +150,14 @@
                   <option value="支援活動について">支援活動について</option>
                   <option value="その他のお問い合わせ">その他のお問い合わせ</option>
                 </select>
-                <span class="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-[rgb(114,138,160)] text-xs">▼</span>
+                <span class="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-muted text-xs">▼</span>
               </div>
             </div>
 
             <!-- 詳細 -->
             <div class="flex flex-col gap-2">
               <label for="message" class="text-xs font-medium tracking-[0.2rem]">
-                お問い合わせについての詳細 <span class="text-[rgb(114,138,160)] font-normal ml-1">必須</span>
+                お問い合わせについての詳細 <span class="text-muted font-normal ml-1">必須</span>
               </label>
               <textarea
                 id="message"
@@ -187,7 +188,7 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-[hsl(233,16%,56%)] text-white py-12">
+  <footer class="bg-footer text-white py-12">
     <div class="max-w-6xl mx-auto px-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
       <img src="images/VI_logo-04-1.png"
            alt="さかさま" class="h-8 w-auto brightness-0 invert" />
@@ -233,7 +234,7 @@
       submitLabel.textContent = '送信中…';
       errorMsg.classList.add('hidden');
       try {
-        const res = await fetch('https://formspree.io/mayu@sakasaew.com', {
+        const res = await fetch('https://formspree.io/f/mjgpdwnp', {
           method: 'POST',
           body: new FormData(form),
           headers: { Accept: 'application/json' },
