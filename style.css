@@ -25,6 +25,11 @@
   animation: scrollLine 1.8s ease-in-out infinite;
 }
 
+/* ── セレクトボックス オプション ── */
+select option {
+  padding: 10px 8px;
+}
+
 /* ── セクション スクロール入場 ── */
 .reveal {
   opacity: 0;

@@ -83,28 +83,25 @@
       --color-navy:   rgb(11, 69, 119);
       --color-muted:  rgb(114, 138, 160);
       --color-footer: hsl(233, 16%, 56%);
-      --font-sans:    "EB Garamond", "Zen Kaku Gothic New", sans-serif;
-      --font-mincho:  "EB Garamond", "Shippori Mincho", serif;
+      --font-sans:    "Poppins", "Zen Kaku Gothic New", sans-serif;
+      --font-mincho:  "Poppins", "Shippori Mincho", serif;
     }
   </style>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Shippori+Mincho:wght@400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Shippori+Mincho:wght@400&display=swap" rel="stylesheet" />
 </head>
 <body class="bg-white text-black font-sans antialiased">
 
   <!-- NAVIGATION -->
   <header class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
-    <nav class="max-w-6xl mx-auto px-8 h-16 grid grid-cols-3 md:flex md:items-center md:justify-between items-center">
-      <div class="md:hidden"></div>
-      <div class="flex justify-center md:justify-start md:flex-none">
-        <a href="index.html">
-          <img src="images/cropped-cropped-VI_logo-03-1.png"
-               alt="さかさま" class="h-8 w-auto shrink-0" />
-        </a>
-      </div>
-      <div class="flex justify-end items-center">
+    <nav class="max-w-6xl mx-auto px-8 h-16 flex items-center justify-between">
+      <a href="index.html">
+        <img src="images/cropped-cropped-VI_logo-03-1.png"
+             alt="さかさま" class="h-8 w-auto" />
+      </a>
+      <div class="flex items-center">
         <ul class="hidden md:flex items-center gap-10 text-xs font-medium tracking-[0.2rem]">
           <li><a href="index.html"     class="text-black">HOME</a></li>
           <li><a href="about.html"     class="text-muted hover:text-black transition-colors">ABOUT</a></li>
@@ -290,7 +287,7 @@
           <span class="block w-8 h-px bg-navy"></span>
         </div>
         <div class="md:col-span-9 flex flex-col gap-8 reveal" style="transition-delay: 0.15s">
-          <p class="text-2xl md:text-3xl font-light leading-relaxed tracking-wide">
+          <p class="text-2xl md:text-3xl font-mincho leading-relaxed tracking-wide">
             お気軽にご相談ください
           </p>
           <a href="contact.html"
