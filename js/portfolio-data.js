@@ -82,8 +82,8 @@ const graphicItems = [
     imageAlt: '株式会社田中工業所 名刺',
   },
   {
-    tag:      'VI / CI / Business Card',
-    title:    'リトルフラワーコーヒー',
+    tag:      'VI / Business Card',
+    title:    'Little Flower Coffee',
     desc:     '変形名刺デザイン制作／ディレクション／VI・ブランディング相談',
     url:      'https://www.instagram.com/littleflowercoffee/',
     image:    'images/littleflower-namecard.jpg',
