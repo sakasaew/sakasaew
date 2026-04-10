@@ -67,7 +67,7 @@ const graphicItems = [
   },
   {
     tag:      'Signage',
-    title:    '株式会社田中工業所 看板',
+    title:    '株式会社田中工業所',
     desc:     '養老鉄道からも見える、木戸工場に設置する看板を制作しました。',
     url:      'https://tanaka-kgs.co.jp/',
     image:    'images/tanaka-kgs-signage.png',
@@ -75,7 +75,7 @@ const graphicItems = [
   },
   {
     tag:      'Business Card',
-    title:    '株式会社田中工業所 名刺',
+    title:    '株式会社田中工業所',
     desc:     '名刺デザイン制作',
     url:      'https://tanaka-kgs.co.jp/',
     image:    'images/tanaka-kgs-namecard.jpg',
@@ -126,7 +126,7 @@ const graphicItems = [
   },
   {
     tag:      'Banner',
-    title:    'Maple Market',
+    title:    '株式会社メイプルマーケット',
     desc:     'クラウドファンディング用画像デザイン制作／ディレクション',
     url:      'https://maple-market.com/',
     image:    'images/Makuake_keyvisual.jpg',
