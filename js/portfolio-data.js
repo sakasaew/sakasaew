@@ -57,7 +57,7 @@ const webItems = [
 // contain: true → object-contain（ロゴ・CI向き）、省略 → object-cover（写真向き）
 const graphicItems = [
   {
-    tag:      'VI・CI',
+    tag:      'VI / CI',
     title:    '株式会社田中工業所',
     desc:     'CI・看板・名刺デザイン制作／ディレクション／ブランディング相談',
     url:      'https://tanaka-kgs.co.jp/',
@@ -66,7 +66,7 @@ const graphicItems = [
     contain:  true,
   },
   {
-    tag:      '看板',
+    tag:      'Signage',
     title:    '株式会社田中工業所 看板',
     desc:     '養老鉄道からも見える、木戸工場に設置する看板を制作しました。',
     url:      'https://tanaka-kgs.co.jp/',
@@ -74,7 +74,7 @@ const graphicItems = [
     imageAlt: '株式会社田中工業所 看板',
   },
   {
-    tag:      '名刺',
+    tag:      'Business Card',
     title:    '株式会社田中工業所 名刺',
     desc:     '名刺デザイン制作',
     url:      'https://tanaka-kgs.co.jp/',
@@ -82,7 +82,7 @@ const graphicItems = [
     imageAlt: '株式会社田中工業所 名刺',
   },
   {
-    tag:      'VI・CI',
+    tag:      'VI / CI / Business Card',
     title:    'リトルフラワーコーヒー',
     desc:     '変形名刺デザイン制作／ディレクション／VI・ブランディング相談',
     url:      'https://www.instagram.com/littleflowercoffee/',
@@ -90,7 +90,7 @@ const graphicItems = [
     imageAlt: 'リトルフラワーコーヒー 変形名刺',
   },
   {
-    tag:      'CI・名刺',
+    tag:      'CI / Business Card',
     title:    '株式会社MEBAE',
     desc:     'CI・名刺デザイン制作／ディレクション／ブランディング相談',
     url:      'https://mebae-re.com/',
@@ -99,7 +99,7 @@ const graphicItems = [
     contain:  true,
   },
   {
-    tag:      'CI・名刺',
+    tag:      'CI / Business Card',
     title:    'KUMADE株式会社',
     desc:     'CI・名刺デザイン制作／ディレクション／ブランディング相談',
     url:      'https://kumade-kk.com/',
