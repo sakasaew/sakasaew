@@ -3,7 +3,7 @@
   if (!img) return;
 
   function tick() {
-    img.style.transform = 'translateY(calc(-50% + ' + (window.scrollY * 0.2) + 'px))';
+    img.style.transform = 'translateY(calc(-40% + ' + (window.scrollY * 0.2) + 'px))';
   }
 
   window.addEventListener('scroll', tick, { passive: true });
