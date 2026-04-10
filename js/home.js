@@ -9,15 +9,20 @@ requestAnimationFrame(() => {
 /* ── パララックス ── */
 const heroBg = document.getElementById('hero-bg');
 let ticking = false;
+
+function updateHeroBg() {
+  heroBg.style.transform = `scale(1.1) translateY(calc(-30% + ${window.scrollY * 0.3}px))`;
+  ticking = false;
+}
+
 window.addEventListener('scroll', () => {
   if (!ticking) {
-    requestAnimationFrame(() => {
-      heroBg.style.transform = `scale(1.1) translateY(calc(-30% + ${window.scrollY * 0.3}px))`;
-      ticking = false;
-    });
+    requestAnimationFrame(updateHeroBg);
     ticking = true;
   }
 });
+
+updateHeroBg();
 
 /* ── スクロールボタン ── */
 document.getElementById('scroll-btn').addEventListener('click', () => {
