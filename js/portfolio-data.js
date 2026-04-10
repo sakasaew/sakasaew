@@ -169,7 +169,7 @@ function renderGraphicItems(container) {
         <div class="relative bg-gray-50 aspect-square overflow-hidden">
           <img src="${image}" alt="${imageAlt}"
                class="w-full h-full ${fit} group-hover:scale-105 transition-transform" />
-          <span class="absolute top-2 right-2 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity"><svg class="w-3 h-3" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L9 3M5 3h4v4"/></svg></span>
+          <span class="absolute top-2 right-2 text-gray-400"><svg class="w-3 h-3" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L9 3M5 3h4v4"/></svg></span>
         </div>
         <div>
           <span class="text-xs tracking-[0.2rem] text-muted">${tag}</span>
