@@ -11,7 +11,7 @@ const heroBg = document.getElementById('hero-bg');
 let ticking = false;
 
 function updateHeroBg() {
-  heroBg.style.transform = `scale(1.1) translateY(calc(-30% + ${window.scrollY * 0.3}px))`;
+  heroBg.style.transform = `scale(1.1) translateY(${window.scrollY * 0.3}px)`;
   ticking = false;
 }
 
