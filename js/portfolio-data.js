@@ -57,6 +57,14 @@ const webItems = [
 // contain: true → object-contain（ロゴ・CI向き）、省略 → object-cover（写真向き）
 const graphicItems = [
   {
+    tag:      '名刺',
+    title:    '株式会社田中工業所 名刺',
+    desc:     '名刺デザイン制作',
+    url:      'https://tanaka-kgs.co.jp/',
+    image:    'images/tanaka-kgs-namecard.jpg',
+    imageAlt: '株式会社田中工業所 名刺',
+  },
+  {
     tag:      'VI・CI',
     title:    '株式会社田中工業所',
     desc:     'CI・看板デザイン制作／ディレクション／ブランディング相談',
