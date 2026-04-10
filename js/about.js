@@ -10,11 +10,11 @@ toggle.addEventListener('click', () => {
     body.style.maxHeight = '0';
     body.style.opacity   = '0';
     toggle.setAttribute('aria-expanded', 'false');
-    icon.textContent = '+ もっと見る';
+    icon.textContent = '+ Read more';
   } else {
     body.style.maxHeight = body.scrollHeight + 'px';
     body.style.opacity   = '1';
     toggle.setAttribute('aria-expanded', 'true');
-    icon.textContent = '− 閉じる';
+    icon.textContent = '− Close';
   }
 });
