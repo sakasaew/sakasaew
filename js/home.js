@@ -12,7 +12,7 @@ let ticking = false;
 window.addEventListener('scroll', () => {
   if (!ticking) {
     requestAnimationFrame(() => {
-      heroBg.style.transform = `scale(1.1) translateY(${window.scrollY * 0.3}px)`;
+      heroBg.style.transform = `scale(1.1) translateY(calc(-30% + ${window.scrollY * 0.3}px))`;
       ticking = false;
     });
     ticking = true;
