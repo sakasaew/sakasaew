@@ -155,7 +155,7 @@ function renderWebItems(container) {
         <span class="text-xs tracking-[0.2rem] text-muted">${tag}</span>
         <h3 class="text-base font-medium group-hover:text-navy transition-colors">${title}</h3>
         <p class="text-sm text-muted leading-loose">${desc}</p>
-        <span class="text-xs text-muted group-hover:translate-x-1 transition-transform mt-auto pt-2">→</span>
+        <span class="text-muted group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform mt-auto pt-2"><svg class="w-3 h-3" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L9 3M5 3h4v4"/></svg></span>
       </a>
     `);
   });
@@ -166,9 +166,10 @@ function renderGraphicItems(container) {
     const fit = contain ? 'object-contain p-4' : 'object-cover';
     container.insertAdjacentHTML('beforeend', `
       <a href="${url}" target="_blank" rel="noopener" class="group flex flex-col gap-3">
-        <div class="bg-gray-50 aspect-square overflow-hidden">
+        <div class="relative bg-gray-50 aspect-square overflow-hidden">
           <img src="${image}" alt="${imageAlt}"
                class="w-full h-full ${fit} group-hover:scale-105 transition-transform" />
+          <span class="absolute top-2 right-2 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity"><svg class="w-3 h-3" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L9 3M5 3h4v4"/></svg></span>
         </div>
         <div>
           <span class="text-xs tracking-[0.2rem] text-muted">${tag}</span>
