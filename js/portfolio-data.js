@@ -68,7 +68,7 @@ const graphicItems = [
   {
     tag:      '看板',
     title:    '株式会社田中工業所 看板',
-    desc:     '看板デザイン制作',
+    desc:     '養老鉄道からも見える、木戸工場に設置する看板を制作しました。',
     url:      'https://tanaka-kgs.co.jp/',
     image:    'images/tanaka-kgs-signage.png',
     imageAlt: '株式会社田中工業所 看板',
