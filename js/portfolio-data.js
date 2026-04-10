@@ -117,7 +117,7 @@ const graphicItems = [
     contain:  true,
   },
   {
-    tag:      'PAMPHLET・POSTER',
+    tag:      'Pamphlet / Poster',
     title:    "Ruband'or リュバンドール 緑店",
     desc:     '三つ折パンフレット・ポスターデザイン制作／ディレクション／VI・ブランディング相談',
     url:      'https://www.instagram.com/datsumou_nagoya/',
@@ -125,7 +125,7 @@ const graphicItems = [
     imageAlt: 'リュバンドール ポスター',
   },
   {
-    tag:      'CROWDFUNDING',
+    tag:      'Banner',
     title:    'Maple Market',
     desc:     'クラウドファンディング用画像デザイン制作／ディレクション',
     url:      'https://maple-market.com/',
