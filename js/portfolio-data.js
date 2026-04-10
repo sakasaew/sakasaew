@@ -153,7 +153,7 @@ function renderWebItems(container) {
       <a href="${url}" target="_blank" rel="noopener"
          class="group bg-white p-6 flex flex-col gap-3 hover:bg-gray-50 transition-colors">
         <span class="text-xs tracking-[0.2rem] text-muted">${tag}</span>
-        <h3 class="text-base font-medium group-hover:text-navy transition-colors">${title}</h3>
+        <h3 class="text-base font-medium group-hover:text-footer transition-colors">${title}</h3>
         <p class="text-sm text-muted leading-loose">${desc}</p>
         <span class="text-muted group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform mt-auto pt-2"><svg class="w-3 h-3" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L9 3M5 3h4v4"/></svg></span>
       </a>
@@ -173,7 +173,7 @@ function renderGraphicItems(container) {
         </div>
         <div>
           <span class="text-xs tracking-[0.2rem] text-muted">${tag}</span>
-          <h3 class="text-sm font-medium mt-1 group-hover:text-navy transition-colors">${title}</h3>
+          <h3 class="text-sm font-medium mt-1 group-hover:text-footer transition-colors">${title}</h3>
           <p class="text-sm text-muted leading-loose mt-1">${desc}</p>
         </div>
       </a>
