@@ -5,13 +5,13 @@
 
 const webItems = [
   {
-    tag:   'WEB',
+    tag:   'Corporate Site',
     title: 'KUMADE株式会社コーポレートサイト',
     desc:  'サイト設計／ディレクション／デザイン／CMS管理／CI制作',
     url:   'https://kumade-kk.com/',
   },
   {
-    tag:   'WEB',
+    tag:   'Corporate Site',
     title: '株式会社MEBAEコーポレートサイト',
     desc:  'サイト設計／ディレクション／デザイン／CMS管理／CI制作',
     url:   'https://mebae-re.com/',
@@ -47,7 +47,7 @@ const webItems = [
     url:   'https://montreet-jp.com/',
   },
   {
-    tag:   'WEB',
+    tag:   'Service Site',
     title: '伸整体院サービスサイト',
     desc:  'サイト設計／ディレクション／デザイン',
     url:   'https://www.shin-baki2.com/',
