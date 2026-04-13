@@ -7,7 +7,7 @@ const webItems = [
   {
     tag:   'Corporate Site',
     title: '株式会社山村書店コーポレートサイト',
-    desc:  '（我が書店です）<br>サイト設計／ディレクション／デザイン／CMS管理／CI制作／UX及びDX監修',
+    desc:  '（我が書店です）サイト設計／ディレクション／デザイン／CMS管理／CI制作／UX及びDX監修',
     url:   'https://www.yamamurabook.shop/',
   },
   {
