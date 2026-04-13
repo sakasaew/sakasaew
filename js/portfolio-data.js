@@ -168,12 +168,12 @@ function renderGraphicItems(container) {
                class="w-full h-full ${fit} group-hover:scale-105 transition-transform" />
           ${multi ? `<span class="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-1.5 py-0.5 tracking-widest">${images.length}</span>` : ''}
         </div>
-        <div>
+        <div class="flex flex-col gap-1">
           <span class="text-xs tracking-[0.2rem] text-muted">${tag}</span>
-          <a href="${url}" target="_blank" rel="noopener" class="group inline-flex items-center gap-1 mt-1 hover:text-footer transition-colors">
+          <a href="${url}" target="_blank" rel="noopener" class="group inline-flex items-center gap-1 hover:text-footer transition-colors">
             <h3 class="text-sm font-medium">${title}</h3>${extIcon}
           </a>
-          <p class="text-sm text-muted leading-loose mt-1">${desc}</p>
+          <p class="text-sm text-muted leading-loose">${desc}</p>
         </div>
       </div>
     `);
