@@ -55,94 +55,78 @@ const webItems = [
 ];
 
 // contain: true → object-contain（ロゴ・CI向き）、省略 → object-cover（写真向き）
+// images[0] がサムネイル。複数枚の場合はライトボックスで全件表示
 const graphicItems = [
   {
     tag:      'VI / CI',
     title:    '株式会社田中工業所',
     desc:     'CI・看板・名刺デザイン制作／ディレクション／ブランディング相談',
-    url:      'https://tanaka-kgs.co.jp/',
-    image:    'images/tanaka-kgs-ci.png',
-    imageAlt: '株式会社田中工業所 CI',
+    images:   [{ src: 'images/tanaka-kgs-ci.png', alt: '株式会社田中工業所 CI' }],
     contain:  true,
   },
   {
     tag:      'Signage',
     title:    '株式会社田中工業所',
     desc:     '養老鉄道からも見える、木戸工場に設置する看板を制作しました。',
-    url:      'https://tanaka-kgs.co.jp/',
-    image:    'images/tanaka-kgs-signage.png',
-    imageAlt: '株式会社田中工業所 看板',
+    images:   [{ src: 'images/tanaka-kgs-signage.png', alt: '株式会社田中工業所 看板' }],
   },
   {
     tag:      'Business Card',
     title:    '株式会社田中工業所',
     desc:     '名刺デザイン制作',
-    url:      'https://tanaka-kgs.co.jp/',
-    image:    'images/tanaka-kgs-namecard.jpg',
-    imageAlt: '株式会社田中工業所 名刺',
+    images:   [{ src: 'images/tanaka-kgs-namecard.jpg', alt: '株式会社田中工業所 名刺' }],
   },
   {
     tag:      'VI / Business Card',
     title:    'Little Flower Coffee',
     desc:     '変形名刺デザイン制作／ディレクション／VI・ブランディング相談',
-    url:      'https://www.instagram.com/littleflowercoffee/',
-    image:    'images/littleflower-namecard.jpg',
-    imageAlt: 'リトルフラワーコーヒー 変形名刺',
+    images:   [{ src: 'images/littleflower-namecard.jpg', alt: 'リトルフラワーコーヒー 変形名刺' }],
   },
   {
     tag:      'CI / Business Card',
     title:    '株式会社MEBAE',
     desc:     'CI・名刺デザイン制作／ディレクション／ブランディング相談',
-    url:      'https://mebae-re.com/',
-    image:    'images/MEBAE_CI-01.png',
-    imageAlt: '株式会社MEBAE CI',
+    images:   [{ src: 'images/MEBAE_CI-01.png', alt: '株式会社MEBAE CI' }],
     contain:  true,
   },
   {
     tag:      'CI / Business Card',
     title:    'KUMADE株式会社',
     desc:     'CI・名刺デザイン制作／ディレクション／ブランディング相談',
-    url:      'https://kumade-kk.com/',
-    image:    'images/KUMADE_CI-01.png',
-    imageAlt: 'KUMADE株式会社 CI',
+    images:   [{ src: 'images/KUMADE_CI-01.png', alt: 'KUMADE株式会社 CI' }],
     contain:  true,
   },
   {
     tag:      'VI',
     title:    'まるまど',
     desc:     'VIデザイン制作／ディレクション／ブランディング相談',
-    url:      'https://www.instagram.com/marumado_cafe/',
-    image:    'images/marumado-logo-01.png',
-    imageAlt: 'まるまど ロゴ',
+    images:   [{ src: 'images/marumado-logo-01.png', alt: 'まるまど ロゴ' }],
     contain:  true,
   },
   {
     tag:      'Pamphlet / Poster',
     title:    "Ruband'or リュバンドール 緑店",
     desc:     '三つ折パンフレット・ポスターデザイン制作／ディレクション／VI・ブランディング相談',
-    url:      'https://www.instagram.com/datsumou_nagoya/',
-    image:    'images/rubandor-poster.jpg',
-    imageAlt: 'リュバンドール ポスター',
+    images:   [
+      { src: 'images/rubandor-poster.jpg',       alt: 'リュバンドール ポスター' },
+      { src: 'images/rubandor-pamphlet-01.jpg',  alt: 'リュバンドール パンフレット 表' },
+      { src: 'images/rubandor-pamphlet-02.jpg',  alt: 'リュバンドール パンフレット 中面' },
+    ],
   },
   {
     tag:      'Banner',
     title:    '株式会社メイプルマーケット',
     desc:     'クラウドファンディング用画像デザイン制作／ディレクション',
-    url:      'https://maple-market.com/',
-    image:    'images/Makuake_keyvisual.jpg',
-    imageAlt: 'Maple Market クラウドファンディング',
+    images:   [
+      { src: 'images/Makuake_keyvisual.jpg',         alt: 'Maple Market クラウドファンディング' },
+      { src: 'images/Makuake_10-1024x500.jpg',       alt: 'Maple Market 商品ページ' },
+      { src: 'images/Makuake_04-1024x500.jpg',       alt: 'Maple Market 商品ページ' },
+      { src: 'images/Makuake_03-1024x416.jpg',       alt: 'Maple Market 商品ページ' },
+      { src: 'images/Makuake_09-1024x500.jpg',       alt: 'Maple Market 商品ページ' },
+      { src: 'images/Makuake_05-06-1024x999.jpg',    alt: 'Maple Market 商品ページ' },
+      { src: 'images/Makuake_12-1024x500.jpg',       alt: 'Maple Market 商品ページ' },
+    ],
   },
-];
-
-const galleryImages = [
-  { src: 'images/rubandor-pamphlet-01.jpg', alt: '三つ折りパンフレット' },
-  { src: 'images/rubandor-pamphlet-02.jpg', alt: '三つ折りパンフレット' },
-  { src: 'images/Makuake_10-1024x500.jpg',      alt: 'クラファン商品ページ' },
-  { src: 'images/Makuake_04-1024x500.jpg',      alt: 'クラファン商品ページ' },
-  { src: 'images/Makuake_03-1024x416.jpg',      alt: 'クラファン商品ページ' },
-  { src: 'images/Makuake_09-1024x500.jpg',      alt: 'クラファン商品ページ' },
-  { src: 'images/Makuake_05-06-1024x999.jpg',   alt: 'クラファン商品ページ' },
-  { src: 'images/Makuake_12-1024x500.jpg',      alt: 'クラファン商品ページ' },
 ];
 
 /* ── レンダリング ── */
@@ -162,29 +146,24 @@ function renderWebItems(container) {
 }
 
 function renderGraphicItems(container) {
-  graphicItems.forEach(({ tag, title, desc, url, image, imageAlt, contain }) => {
+  graphicItems.forEach(({ tag, title, desc, images, contain }) => {
     const fit = contain ? 'object-contain p-4' : 'object-cover';
+    const thumb = images[0];
+    const imagesJson = JSON.stringify(images).replace(/"/g, '&quot;');
+    const multi = images.length > 1;
     container.insertAdjacentHTML('beforeend', `
-      <a href="${url}" target="_blank" rel="noopener" class="group flex flex-col gap-3">
+      <div class="group flex flex-col gap-3 cursor-pointer" onclick="openLightbox(JSON.parse(this.dataset.images), 0)" data-images="${imagesJson}">
         <div class="relative bg-gray-50 aspect-square overflow-hidden">
-          <img src="${image}" alt="${imageAlt}"
+          <img src="${thumb.src}" alt="${thumb.alt}"
                class="w-full h-full ${fit} group-hover:scale-105 transition-transform" />
-          <span class="absolute top-2 right-2 text-gray-400"><svg class="w-3 h-3" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L9 3M5 3h4v4"/></svg></span>
+          ${multi ? `<span class="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-1.5 py-0.5 tracking-widest">${images.length}</span>` : ''}
         </div>
         <div>
           <span class="text-xs tracking-[0.2rem] text-muted">${tag}</span>
           <h3 class="text-sm font-medium mt-1 group-hover:text-footer transition-colors">${title}</h3>
           <p class="text-sm text-muted leading-loose mt-1">${desc}</p>
         </div>
-      </a>
-    `);
-  });
-}
-
-function renderGallery(container) {
-  galleryImages.forEach(({ src, alt }) => {
-    container.insertAdjacentHTML('beforeend', `
-      <img src="${src}" alt="${alt}" class="w-full object-cover aspect-[4/3]" />
+      </div>
     `);
   });
 }
@@ -193,8 +172,6 @@ function renderGallery(container) {
 document.addEventListener('DOMContentLoaded', () => {
   const webGrid     = document.getElementById('web-grid');
   const graphicGrid = document.getElementById('graphic-grid');
-  const galleryGrid = document.getElementById('gallery-grid');
   if (webGrid)     renderWebItems(webGrid);
   if (graphicGrid) renderGraphicItems(graphicGrid);
-  if (galleryGrid) renderGallery(galleryGrid);
 });
