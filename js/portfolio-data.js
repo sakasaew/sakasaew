@@ -6,6 +6,12 @@
 const webItems = [
   {
     tag:   'Corporate Site',
+    title: '株式会社山村書店コーポレートサイト',
+    desc:  '（我が書店です）<br>サイト設計／ディレクション／デザイン／CMS管理／CI制作／UX及びDX監修',
+    url:   'https://www.yamamurabook.shop/',
+  },
+  {
+    tag:   'Corporate Site',
     title: 'KUMADE株式会社コーポレートサイト',
     desc:  'サイト設計／ディレクション／デザイン／CMS管理／CI制作',
     url:   'https://kumade-kk.com/',
@@ -57,6 +63,14 @@ const webItems = [
 // contain: true → object-contain（ロゴ・CI向き）、省略 → object-cover（写真向き）
 // images[0] がサムネイル。複数枚の場合はライトボックスで全件表示
 const graphicItems = [
+  {
+    tag:      'VI',
+    title:    'テックプレッソ株式会社',
+    desc:     'VI（サービスロゴ）デザイン制作／ディレクション',
+    url:      'https://tecpresso.co.jp/',
+    images:   [{ src: 'images/cypherlayer-vi.png', alt: 'テックプレッソ株式会社 VI' }],
+    contain:  true,
+  },
   {
     tag:      'CI',
     title:    '柳ヶ瀬技研株式会社',
