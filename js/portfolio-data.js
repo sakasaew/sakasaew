@@ -160,7 +160,7 @@ function renderGraphicItems(container) {
     const thumb = images[0];
     const imagesJson = JSON.stringify(images).replace(/"/g, '&quot;');
     const multi = images.length > 1;
-    const extIcon = `<svg class="w-2.5 h-2.5 inline-block ml-1 shrink-0" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L9 3M5 3h4v4"/></svg>`;
+    const extIcon = `<span class="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0"><svg class="w-2.5 h-2.5" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L9 3M5 3h4v4"/></svg></span>`;
     container.insertAdjacentHTML('beforeend', `
       <div class="flex flex-col gap-3">
         <div class="group relative bg-gray-50 aspect-square overflow-hidden cursor-pointer" onclick="openLightbox(JSON.parse(this.dataset.images), 0)" data-images="${imagesJson}">
@@ -170,7 +170,7 @@ function renderGraphicItems(container) {
         </div>
         <div>
           <span class="text-xs tracking-[0.2rem] text-muted">${tag}</span>
-          <a href="${url}" target="_blank" rel="noopener" class="group flex items-center mt-1 hover:text-footer transition-colors">
+          <a href="${url}" target="_blank" rel="noopener" class="group inline-flex items-center gap-1 mt-1 hover:text-footer transition-colors">
             <h3 class="text-sm font-medium">${title}</h3>${extIcon}
           </a>
           <p class="text-sm text-muted leading-loose mt-1">${desc}</p>
