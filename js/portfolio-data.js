@@ -58,6 +58,14 @@ const webItems = [
 // images[0] がサムネイル。複数枚の場合はライトボックスで全件表示
 const graphicItems = [
   {
+    tag:      'CI',
+    title:    '柳ヶ瀬技研株式会社',
+    desc:     'CIデザイン制作／ディレクション',
+    url:      'https://yanagase.tech/',
+    images:   [{ src: 'images/yanagase-ci.jpg', alt: '柳ヶ瀬技研株式会社 CI' }],
+    contain:  true,
+  },
+  {
     tag:      'VI / CI',
     title:    '株式会社田中工業所',
     desc:     'CI・看板・名刺デザイン制作／ディレクション／ブランディング相談',
