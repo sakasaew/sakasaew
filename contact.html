@@ -101,10 +101,10 @@
       </a>
       <div class="flex items-center">
         <ul class="hidden md:flex items-center gap-10 text-xs font-medium tracking-[0.2rem]">
-          <li><a href="index.html"     class="text-muted hover:text-black transition-colors">HOME</a></li>
-          <li><a href="about.html"     class="text-muted hover:text-black transition-colors">ABOUT</a></li>
-          <li><a href="portfolio.html" class="text-muted hover:text-black transition-colors">PORTFOLIO</a></li>
-          <li><a href="contact.html"   class="text-black">CONTACT</a></li>
+          <li><a href="index.html"     class="relative pb-1.5 text-muted hover:text-black transition-colors group">HOME<span class="absolute bottom-0 left-0 w-full h-px bg-footer origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+          <li><a href="about.html"     class="relative pb-1.5 text-muted hover:text-black transition-colors group">ABOUT<span class="absolute bottom-0 left-0 w-full h-px bg-footer origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+          <li><a href="portfolio.html" class="relative pb-1.5 text-muted hover:text-black transition-colors group">PORTFOLIO<span class="absolute bottom-0 left-0 w-full h-px bg-footer origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+          <li><a href="contact.html"   class="relative pb-1.5 text-black">CONTACT<span class="nav-active-line absolute bottom-0 left-0 w-full h-px bg-footer origin-left"></span></a></li>
         </ul>
         <button id="menu-btn" class="md:hidden flex flex-col gap-[5px] p-1" aria-label="メニューを開く">
           <span class="block w-6 h-px bg-black transition-all duration-300" id="bar1"></span>
@@ -115,10 +115,10 @@
     </nav>
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
       <ul class="max-w-6xl mx-auto px-8 py-6 flex flex-col gap-5 text-xs font-medium tracking-[0.2rem]">
-        <li><a href="index.html"     class="text-muted">HOME</a></li>
-        <li><a href="about.html"     class="text-muted">ABOUT</a></li>
-        <li><a href="portfolio.html" class="text-muted">PORTFOLIO</a></li>
-        <li><a href="contact.html"   class="text-black">CONTACT</a></li>
+        <li><a href="index.html"     class="text-muted pl-2">HOME</a></li>
+        <li><a href="about.html"     class="text-muted pl-2">ABOUT</a></li>
+        <li><a href="portfolio.html" class="text-muted pl-2">PORTFOLIO</a></li>
+        <li><a href="contact.html"   class="text-black border-l-[1.5px] border-footer pl-2">CONTACT</a></li>
       </ul>
     </div>
   </header>

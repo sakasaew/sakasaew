@@ -109,10 +109,10 @@
       </a>
       <div class="flex items-center">
         <ul class="hidden md:flex items-center gap-10 text-xs font-medium tracking-[0.2rem]">
-          <li><a href="index.html"     class="text-black">HOME</a></li>
-          <li><a href="about.html"     class="text-muted hover:text-black transition-colors">ABOUT</a></li>
-          <li><a href="portfolio.html" class="text-muted hover:text-black transition-colors">PORTFOLIO</a></li>
-          <li><a href="contact.html"   class="text-muted hover:text-black transition-colors">CONTACT</a></li>
+          <li><a href="index.html"     class="relative pb-1.5 text-black">HOME<span class="nav-active-line absolute bottom-0 left-0 w-full h-px bg-footer origin-left"></span></a></li>
+          <li><a href="about.html"     class="relative pb-1.5 text-muted hover:text-black transition-colors group">ABOUT<span class="absolute bottom-0 left-0 w-full h-px bg-footer origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+          <li><a href="portfolio.html" class="relative pb-1.5 text-muted hover:text-black transition-colors group">PORTFOLIO<span class="absolute bottom-0 left-0 w-full h-px bg-footer origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+          <li><a href="contact.html"   class="relative pb-1.5 text-muted hover:text-black transition-colors group">CONTACT<span class="absolute bottom-0 left-0 w-full h-px bg-footer origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
         </ul>
         <button id="menu-btn" class="md:hidden flex flex-col gap-[5px] p-1" aria-label="メニューを開く">
           <span class="block w-6 h-px bg-black transition-all duration-300" id="bar1"></span>
@@ -123,10 +123,10 @@
     </nav>
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
       <ul class="max-w-6xl mx-auto px-8 py-6 flex flex-col gap-5 text-xs font-medium tracking-[0.2rem]">
-        <li><a href="index.html"     class="text-black">HOME</a></li>
-        <li><a href="about.html"     class="text-muted">ABOUT</a></li>
-        <li><a href="portfolio.html" class="text-muted">PORTFOLIO</a></li>
-        <li><a href="contact.html"   class="text-muted">CONTACT</a></li>
+        <li><a href="index.html"     class="text-black border-l-[1.5px] border-footer pl-2">HOME</a></li>
+        <li><a href="about.html"     class="text-muted pl-2">ABOUT</a></li>
+        <li><a href="portfolio.html" class="text-muted pl-2">PORTFOLIO</a></li>
+        <li><a href="contact.html"   class="text-muted pl-2">CONTACT</a></li>
       </ul>
     </div>
   </header>
@@ -260,30 +260,22 @@
           </div>
         </div>
         <div class="grid md:grid-cols-4 gap-px bg-gray-200 reveal">
-          <a href="https://www.yamamurabook.shop/" target="_blank" rel="noopener"
-             class="group bg-white p-6 flex flex-col gap-3 hover:bg-gray-50 transition-colors">
-            <h3 class="text-base font-medium group-hover:text-footer transition-colors">株式会社山村書店</h3>
+          <div class="bg-white p-6 flex flex-col gap-3">
+            <h3 class="text-base font-medium">株式会社山村書店</h3>
             <p class="text-sm text-muted leading-loose">サイト設計／ディレクション／デザイン／CMS管理／CI制作／UX及びDX監修</p>
-            <span class="text-muted group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform mt-auto pt-2"><svg class="w-3 h-3" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L9 3M5 3h4v4"/></svg></span>
-          </a>
-          <a href="https://yanagase.tech/" target="_blank" rel="noopener"
-             class="group bg-white p-6 flex flex-col gap-3 hover:bg-gray-50 transition-colors">
-            <h3 class="text-base font-medium group-hover:text-footer transition-colors">柳ヶ瀬技研株式会社</h3>
+          </div>
+          <div class="bg-white p-6 flex flex-col gap-3">
+            <h3 class="text-base font-medium">柳ヶ瀬技研株式会社</h3>
             <p class="text-sm text-muted leading-loose">CIデザイン制作／ディレクション</p>
-            <span class="text-muted group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform mt-auto pt-2"><svg class="w-3 h-3" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L9 3M5 3h4v4"/></svg></span>
-          </a>
-          <a href="https://tecpresso.co.jp/" target="_blank" rel="noopener"
-             class="group bg-white p-6 flex flex-col gap-3 hover:bg-gray-50 transition-colors">
-            <h3 class="text-base font-medium group-hover:text-footer transition-colors">テックプレッソ株式会社</h3>
+          </div>
+          <div class="bg-white p-6 flex flex-col gap-3">
+            <h3 class="text-base font-medium">テックプレッソ株式会社</h3>
             <p class="text-sm text-muted leading-loose">VI（サービスロゴ）デザイン制作／ディレクション</p>
-            <span class="text-muted group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform mt-auto pt-2"><svg class="w-3 h-3" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L9 3M5 3h4v4"/></svg></span>
-          </a>
-          <a href="https://tanaka-kgs.co.jp/" target="_blank" rel="noopener"
-             class="group bg-white p-6 flex flex-col gap-3 hover:bg-gray-50 transition-colors">
-            <h3 class="text-base font-medium group-hover:text-footer transition-colors">株式会社田中工業所</h3>
+          </div>
+          <div class="bg-white p-6 flex flex-col gap-3">
+            <h3 class="text-base font-medium">株式会社田中工業所</h3>
             <p class="text-sm text-muted leading-loose">CI・看板・名刺デザイン制作／ディレクション／ブランディング相談</p>
-            <span class="text-muted group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform mt-auto pt-2"><svg class="w-3 h-3" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L9 3M5 3h4v4"/></svg></span>
-          </a>
+          </div>
         </div>
         <div class="mt-10 flex justify-end reveal">
           <a href="portfolio.html"

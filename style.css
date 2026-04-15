@@ -35,6 +35,15 @@ select option {
   padding: 10px 8px;
 }
 
+/* ── ナビゲーション アクティブライン ── */
+@keyframes navLineIn {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.nav-active-line {
+  animation: navLineIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 /* ── セクション スクロール入場 ── */
 .reveal {
   opacity: 0;
