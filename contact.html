@@ -89,7 +89,9 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Shippori+Mincho:wght@400&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Shippori+Mincho:wght@400&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Shippori+Mincho:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Shippori+Mincho:wght@400&display=swap" rel="stylesheet" /></noscript>
 </head>
 <body class="bg-white text-black font-sans antialiased">
 
@@ -97,7 +99,7 @@
   <header class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
     <nav class="max-w-6xl mx-auto px-8 h-16 flex items-center justify-between">
       <a href="index.html">
-        <img src="images/logo-03-2.svg"
+        <img src="images/logo-03-2.svg" width="105" height="20"
              alt="さかさま" class="h-5 w-auto" />
       </a>
       <div class="flex items-center">
@@ -130,7 +132,7 @@
     <section class="relative h-[50vh] min-h-[320px] flex items-center pt-16">
       <div class="absolute inset-0 overflow-hidden">
         <img src="images/IMG_9676-2-scaled.jpg"
-             alt="さかさま お問い合わせ" class="hero-parallax absolute top-1/2 left-0 w-full h-[150%] object-cover object-center will-change-transform" style="filter: saturate(0.08)" />
+             alt="さかさま お問い合わせ" fetchpriority="high" class="hero-parallax absolute top-1/2 left-0 w-full h-[150%] object-cover object-center will-change-transform" style="filter: saturate(0.08)" />
         <div class="absolute inset-0 bg-black/55"></div>
       </div>
       <div class="relative max-w-6xl mx-auto px-8 text-center">
@@ -254,7 +256,7 @@
   <!-- FOOTER -->
   <footer class="bg-footer text-white py-12">
     <div class="max-w-6xl mx-auto px-8 flex flex-col items-center gap-8">
-      <img src="images/VI_logo-04-2.svg"
+      <img src="images/VI_logo-04-2.svg" width="70" height="60"
            alt="さかさま" class="h-8 w-auto invert opacity-80" />
       <div class="w-full flex flex-col md:flex-row items-center md:items-baseline justify-between gap-6">
         <ul class="flex gap-4 md:gap-6 text-xs tracking-[0.15rem] md:tracking-[0.2rem] text-white/70">
