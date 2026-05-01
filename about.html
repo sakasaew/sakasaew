@@ -88,30 +88,7 @@
     ]
   }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style type="text/tailwindcss">
-    @theme {
-            --color-muted:  #4f5a7a;
-      --color-footer: hsl(233, 16%, 56%);
-      --font-sans:    "Poppins", "Zen Kaku Gothic New", sans-serif;
-      --font-mincho:  "Poppins", "Shippori Mincho", serif;
-    }
-    .hero-line { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
-    .hero-line.visible { opacity: 1; transform: translateY(0); }
-    @keyframes scrollLine {
-      0%   { transform: scaleY(0); transform-origin: top;    opacity: 1; }
-      50%  { transform: scaleY(1); transform-origin: top;    opacity: 1; }
-      51%  { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
-      100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
-    }
-    #scroll-line { animation: scrollLine 1.8s ease-in-out infinite; }
-    #profile-body { transition: max-height 0.5s ease, opacity 0.4s ease; }
-    select option { padding: 10px 8px; }
-    @keyframes navLineIn { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-    .nav-active-line { animation: navLineIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-  </style>
+  <link rel="stylesheet" href="tailwind.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Shippori+Mincho:wght@400&display=swap" />

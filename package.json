@@ -4,6 +4,7 @@
   "description": "さかさまの公式Webサイトです。",
   "main": "index.js",
   "scripts": {
+    "build:css": "tailwindcss --input tailwind.input.css --content './index.html,./about.html,./portfolio.html,./contact.html,./js/*.js' --output tailwind.css --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "tailwindcss": "^4.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.4"
   }
 }
