@@ -186,7 +186,7 @@ function renderGraphicItems(container) {
     container.insertAdjacentHTML('beforeend', `
       <div class="flex flex-col gap-3">
         <div class="group relative bg-gray-50 aspect-square overflow-hidden cursor-pointer" onclick="openLightbox(JSON.parse(this.dataset.images), 0)" data-images="${imagesJson}">
-          <img src="${thumb.src}" alt="${thumb.alt}"
+          <img src="${thumb.src}" alt="${thumb.alt}" loading="lazy"
                class="w-full h-full ${fit} group-hover:scale-105 transition-transform" />
           ${multi ? `<span class="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-1.5 py-0.5 tracking-widest">${images.length}</span>` : ''}
         </div>
