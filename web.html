@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Webサイト制作サービス | さかさま</title>
+  <meta name="description" content="小規模事業者・個人店向けのWebサイト制作サービス。制作から保守・更新までまるごとおまかせ。月額5,000円〜、初期費用ゼロのサブスクプランあり。岐阜・西濃エリア。" />
+  <link rel="canonical" href="https://sakasaew.com/web/" />
+  <meta property="og:title"       content="Webサイト制作サービス | さかさま" />
+  <meta property="og:description" content="小規模事業者・個人店向けのWebサイト制作サービス。制作から保守・更新までまるごとおまかせ。月額5,000円〜、初期費用ゼロのサブスクプランあり。" />
+  <meta property="og:image"       content="https://sakasaew.com/images/IMG_9676-3-scaled.jpg" />
+  <meta property="og:image:width"  content="2560" />
+  <meta property="og:image:height" content="1920" />
+  <meta property="og:url"         content="https://sakasaew.com/web/" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="さかさま" />
+  <meta property="og:locale"      content="ja_JP" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Webサイト制作サービス | さかさま" />
+  <meta name="twitter:description" content="小規模事業者・個人店向けのWebサイト制作サービス。制作から保守・更新までまるごとおまかせ。月額5,000円〜、初期費用ゼロのサブスクプランあり。" />
+  <meta name="twitter:image"       content="https://sakasaew.com/images/IMG_9676-3-scaled.jpg" />
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://sakasaew.com/web/",
+        "url": "https://sakasaew.com/web/",
+        "name": "Webサイト制作サービス - さかさま",
+        "isPartOf": { "@id": "https://sakasaew.com/#website" },
+        "about": { "@id": "https://sakasaew.com/#organization" },
+        "datePublished": "2026-05-18T00:00:00+09:00",
+        "description": "小規模事業者・個人店向けのWebサイト制作サービス。制作から保守・更新までまるごとおまかせ。",
+        "breadcrumb": { "@id": "https://sakasaew.com/web/#breadcrumb" },
+        "inLanguage": "ja"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://sakasaew.com/web/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://sakasaew.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Webサイト制作サービス" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://sakasaew.com/web/#service",
+        "name": "Webサイト制作サービス",
+        "provider": { "@id": "https://sakasaew.com/#organization" },
+        "description": "小規模事業者・個人店向けのWebサイト制作・保守サービス",
+        "areaServed": "JP",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "つくって、おまかせ",
+            "description": "制作・公開・保守まるごとサブスクプラン",
+            "priceSpecification": {
+              "@type": "RecurringCharge",
+              "price": "10000",
+              "priceCurrency": "JPY",
+              "billingPeriod": "P1M"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://sakasaew.com/#website",
+        "url": "https://sakasaew.com/",
+        "name": "さかさま",
+        "description": "あなたのための、わたしのための、さかさまな視点。",
+        "inLanguage": "ja"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://sakasaew.com/#organization",
+        "name": "さかさま",
+        "url": "https://sakasaew.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://sakasaew.com/#/schema/logo/image/",
+          "url": "https://sakasaew.com/images/logo-03-2.svg",
+          "contentUrl": "https://sakasaew.com/images/logo-03-2.svg",
+          "width": 240,
+          "height": 60,
+          "caption": "さかさま"
+        },
+        "sameAs": [
+          "https://www.facebook.com/sakasaew",
+          "https://www.instagram.com/sakasaew/"
+        ]
+      }
+    ]
+  }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-muted:  #4f5a7a;
+      --color-footer: hsl(233, 16%, 56%);
+      --font-sans:    "Poppins", "Zen Kaku Gothic New", sans-serif;
+      --font-mincho:  "Poppins", "Shippori Mincho", serif;
+    }
+    .hero-line { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .hero-line.visible { opacity: 1; transform: translateY(0); }
+    @keyframes scrollLine {
+      0%   { transform: scaleY(0); transform-origin: top;    opacity: 1; }
+      50%  { transform: scaleY(1); transform-origin: top;    opacity: 1; }
+      51%  { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
+      100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+    }
+    #scroll-line { animation: scrollLine 1.8s ease-in-out infinite; }
+    @keyframes navLineIn { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    .nav-active-line { animation: navLineIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .plan-card { transition: box-shadow 0.3s ease; }
+    .plan-card:hover { box-shadow: 0 8px 32px rgba(79,90,122,0.12); }
+  </style>
+  <link rel="preload" href="images/IMG_9676-3-scaled.webp" as="image" fetchpriority="high" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Shippori+Mincho:wght@400&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Shippori+Mincho:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Shippori+Mincho:wght@400&display=swap" rel="stylesheet" /></noscript>
+</head>
+<body class="bg-white text-black font-sans antialiased">
+
+  <!-- NAVIGATION -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
+    <nav class="max-w-6xl mx-auto px-8 h-16 flex items-center justify-between">
+      <a href="index.html">
+        <img src="images/logo-03-2.svg" width="105" height="20"
+             alt="さかさま" class="h-5 w-auto" />
+      </a>
+      <div class="flex items-center">
+        <ul class="hidden md:flex items-center gap-10 text-xs font-medium tracking-[0.2rem]">
+          <li><a href="index.html"     class="inline-flex flex-col items-center gap-1 text-muted hover:text-black transition-colors group">HOME<span class="block w-4 h-px bg-footer origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+          <li><a href="about.html"     class="inline-flex flex-col items-center gap-1 text-muted hover:text-black transition-colors group">ABOUT<span class="block w-4 h-px bg-footer origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+          <li><a href="portfolio.html" class="inline-flex flex-col items-center gap-1 text-muted hover:text-black transition-colors group">PORTFOLIO<span class="block w-4 h-px bg-footer origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+          <li><a href="web.html"       class="inline-flex flex-col items-center gap-1 text-black">WEB SERVICE<span class="nav-active-line block w-4 h-px bg-footer origin-center"></span></a></li>
+          <li><a href="contact.html"   class="inline-flex flex-col items-center gap-1 text-muted hover:text-black transition-colors group">CONTACT<span class="block w-4 h-px bg-footer origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+        </ul>
+        <button id="menu-btn" class="md:hidden flex flex-col gap-[5px] p-1" aria-label="メニューを開く">
+          <span class="block w-6 h-px bg-black transition-all duration-300" id="bar1"></span>
+          <span class="block w-6 h-px bg-black transition-all duration-300" id="bar2"></span>
+          <span class="block w-6 h-px bg-black transition-all duration-300" id="bar3"></span>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+      <ul class="max-w-6xl mx-auto px-8 py-6 flex flex-col gap-5 text-xs font-medium tracking-[0.2rem]">
+        <li><a href="index.html"     class="text-muted">HOME</a></li>
+        <li><a href="about.html"     class="text-muted">ABOUT</a></li>
+        <li><a href="portfolio.html" class="text-muted">PORTFOLIO</a></li>
+        <li><a href="web.html"       class="inline-flex items-center gap-2 text-black"><span class="nav-active-line block w-4 h-px bg-footer origin-left"></span>WEB SERVICE / つくる</a></li>
+        <li><a href="contact.html"   class="text-muted">CONTACT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="relative h-[50vh] min-h-[320px] flex items-center pt-16">
+      <div class="absolute inset-0 overflow-hidden">
+        <img src="images/IMG_9676-3-scaled.webp"
+             alt="Webサイト制作サービス" fetchpriority="high"
+             class="hero-parallax absolute top-1/2 left-0 w-full h-[150%] object-cover object-center will-change-transform"
+             style="filter: saturate(0.08)" />
+        <div class="absolute inset-0 bg-black/55"></div>
+      </div>
+      <div class="relative max-w-6xl mx-auto px-8 text-center">
+        <h1 class="hero-line text-3xl md:text-5xl font-mincho text-white tracking-wide mb-4">つくる</h1>
+        <p class="hero-line text-xs tracking-[0.4rem] text-white/60" style="transition-delay:0.15s">WEB DESIGN SERVICE</p>
+      </div>
+    </section>
+
+    <!-- 3つの特長 -->
+    <section class="py-28 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-8 grid md:grid-cols-12 gap-16">
+        <div class="md:col-span-3 flex flex-col gap-4">
+          <span class="text-xs tracking-[0.4rem] text-muted">FEATURES</span>
+          <span class="block w-8 h-px bg-footer"></span>
+        </div>
+        <div class="md:col-span-9">
+          <h2 class="text-xl font-mincho tracking-[0.1rem] mb-12 reveal">さかさまのWebサービス、3つの特長</h2>
+          <div class="grid md:grid-cols-3 gap-10">
+            <div class="flex flex-col gap-4 reveal">
+              <span class="text-xs tracking-[0.3rem] text-footer">01</span>
+              <span class="block w-6 h-px bg-footer"></span>
+              <h3 class="text-base font-mincho leading-relaxed">デザイナーが作る、<br />わかりやすいWebサイト</h3>
+              <p class="text-sm leading-loose text-muted">本屋さんもやっていますが、中の人、じつはデザイン歴19年以上のどっぷりクリエイティブ界隈の者です。そんなベテランデザイナーが、見た目も機能もしっかり設計・構築します。</p>
+            </div>
+            <div class="flex flex-col gap-4 reveal" style="transition-delay:0.1s">
+              <span class="text-xs tracking-[0.3rem] text-footer">02</span>
+              <span class="block w-6 h-px bg-footer"></span>
+              <h3 class="text-base font-mincho leading-relaxed">制作から保守まで<br />まるごとおまかせ</h3>
+              <p class="text-sm leading-loose text-muted">小規模な事業を展開する方限定で、Web制作・公開後の更新・ドメイン管理・SSL維持までまるごとおまかせでサポート。制作会社に依頼するのもなぁ…というくらいのちょっとした「困った」もお任せください。</p>
+            </div>
+            <div class="flex flex-col gap-4 reveal" style="transition-delay:0.2s">
+              <span class="text-xs tracking-[0.3rem] text-footer">03</span>
+              <span class="block w-6 h-px bg-footer"></span>
+              <h3 class="text-base font-mincho leading-relaxed">書店でのご縁を大切に、<br />身近な相談窓口として</h3>
+              <p class="text-sm leading-loose text-muted">Webやデジタルに関するお悩みはありませんか。Web制作のことだけでなく、パソコン・スマホの操作やデジタルツールの疑問なども、遠慮なくどうぞ。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- こんな方に -->
+    <section class="py-24 border-t border-gray-100">
+      <div class="max-w-6xl mx-auto px-8 grid md:grid-cols-12 gap-16">
+        <div class="md:col-span-3 flex flex-col gap-4">
+          <span class="text-xs tracking-[0.4rem] text-muted">FOR YOU</span>
+          <span class="block w-8 h-px bg-footer"></span>
+        </div>
+        <div class="md:col-span-9 reveal">
+          <h2 class="text-xl font-mincho tracking-[0.1rem] mb-10">こんな方におすすめです</h2>
+          <ul class="flex flex-col">
+            <li class="py-3 flex items-start gap-6 border-b border-gray-100">
+              <span class="block w-1.5 h-1.5 rounded-full bg-footer shrink-0 mt-2"></span>
+              <p class="text-base leading-relaxed text-muted">個人で活動されている方や、小規模な事業を展開するオーナーさま</p>
+            </li>
+            <li class="py-3 flex items-start gap-6 border-b border-gray-100">
+              <span class="block w-1.5 h-1.5 rounded-full bg-footer shrink-0 mt-2"></span>
+              <p class="text-base leading-relaxed text-muted">既存サイトが古くなっていて、リニューアルしたい方</p>
+            </li>
+            <li class="py-3 flex items-start gap-6 border-b border-gray-100">
+              <span class="block w-1.5 h-1.5 rounded-full bg-footer shrink-0 mt-2"></span>
+              <p class="text-base leading-relaxed text-muted">更新できずに放置しているサイトがある方</p>
+            </li>
+            <li class="py-3 flex items-start gap-6 border-b border-gray-100">
+              <span class="block w-1.5 h-1.5 rounded-full bg-footer shrink-0 mt-2"></span>
+              <p class="text-base leading-relaxed text-muted">専任のWeb担当者がいない、または費用を抑えたい方</p>
+            </li>
+            <li class="py-3 flex items-start gap-6">
+              <span class="block w-1.5 h-1.5 rounded-full bg-footer shrink-0 mt-2"></span>
+              <p class="text-base leading-relaxed text-muted">パソコンやスマホが苦手でも、気軽に相談できる窓口がほしい方</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- プラン一覧 -->
+    <section class="py-28 bg-gray-50 border-t border-gray-100">
+      <div class="max-w-6xl mx-auto px-8">
+        <div class="grid md:grid-cols-12 gap-16 mb-16">
+          <div class="md:col-span-3 flex flex-col gap-4">
+            <span class="text-xs tracking-[0.4rem] text-muted">PLANS</span>
+            <span class="block w-8 h-px bg-footer"></span>
+          </div>
+          <div class="md:col-span-9 reveal">
+            <h2 class="text-xl font-mincho tracking-[0.1rem]">プラン一覧</h2>
+          </div>
+        </div>
+
+        <!-- プランカード -->
+        <div class="grid md:grid-cols-2 gap-6">
+
+          <!-- つくって、おまかせ（おすすめ） -->
+          <div class="plan-card bg-white border-2 border-muted/40 p-8 flex flex-col gap-6 reveal md:col-span-2">
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="inline-block text-[10px] tracking-[0.15rem] bg-muted text-white px-3 py-1">おすすめ</span>
+              <span class="inline-block text-[10px] tracking-[0.15rem] border border-muted/40 text-muted px-3 py-1">月額サブスク</span>
+            </div>
+            <div class="flex flex-col gap-1">
+              <h3 class="text-2xl font-mincho tracking-wide">つくって、おまかせ</h3>
+              <p class="text-sm text-muted">月額 10,000円（税別）/ 1年契約・ドメイン込み</p>
+            </div>
+            <p class="text-base leading-loose text-muted border-l-2 border-muted/30 pl-4">
+              初期費用ゼロ。作って終わりじゃない、管理・保守からちょっとした修正まで対応可能。
+            </p>
+            <div class="grid sm:grid-cols-2 gap-x-8 gap-y-2">
+              <div class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">「まるごとつくる」買い切りプランに含まれる内容すべて</p>
+              </div>
+              <div class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">1ページ縦スクロールサイトの制作・公開</p>
+              </div>
+              <div class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">ドメイン取得・更新・SSL管理</p>
+              </div>
+              <div class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">文字・写真の差し替え、月2件まで</p>
+              </div>
+              <div class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">LINEなどで気軽に相談</p>
+              </div>
+              <div class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">公開前の修正は月2回まで可能</p>
+              </div>
+            </div>
+            <button disabled class="mt-2 w-full flex items-center justify-between border border-gray-200 text-xs tracking-[0.18rem] px-6 py-3.5 text-muted/50 cursor-not-allowed">
+              お申し込みはこちら
+              <span class="text-[10px] tracking-[0.1rem] bg-gray-100 text-muted/50 px-2 py-1">COMING SOON</span>
+            </button>
+            <!-- TODO: Stripe審査通過後、上のbuttonを削除して下のaタグのコメントを外す（URLをStripeのPayment Linkに差し替え）
+            <a href="https://buy.stripe.com/TODO_TSUKUTTE" target="_blank" rel="noopener"
+               class="mt-2 w-full flex items-center justify-between border border-muted text-xs tracking-[0.18rem] px-6 py-3.5 text-muted hover:bg-muted hover:text-white transition-colors">
+              お申し込みはこちら
+              <span class="text-[10px]">→</span>
+            </a>
+            -->
+          </div>
+
+          <!-- ちょこっと、おまかせ -->
+          <div class="plan-card bg-white border border-gray-200 p-8 flex flex-col gap-6 reveal">
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="inline-block text-[10px] tracking-[0.15rem] border border-muted/40 text-muted px-3 py-1">月額サブスク</span>
+            </div>
+            <div class="flex flex-col gap-1">
+              <h3 class="text-xl font-mincho tracking-wide">ちょこっと、おまかせ</h3>
+              <p class="text-sm text-muted">月額 5,000円（税別）</p>
+            </div>
+            <p class="text-sm leading-loose text-muted border-l-2 border-gray-200 pl-4">
+              自社サイトを、長く大切に管理。気軽に相談。
+            </p>
+            <ul class="flex flex-col gap-1">
+              <li class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">文字・写真の差し替え、月2件まで</p>
+              </li>
+              <li class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">ドメイン維持・SSL・表示確認</p>
+              </li>
+            </ul>
+            <p class="text-xs leading-loose text-muted/70 bg-gray-50 p-4">
+              ※ デザイン変更・ページ追加は別途「まるごとつくる」買い切りプランでお見積もりするか、「つくって、おまかせ」サブスクプランをご検討ください。
+            </p>
+            <button disabled class="w-full flex items-center justify-between border border-gray-200 text-xs tracking-[0.18rem] px-6 py-3.5 text-muted/50 cursor-not-allowed">
+              お申し込みはこちら
+              <span class="text-[10px] tracking-[0.1rem] bg-gray-100 text-muted/50 px-2 py-1">COMING SOON</span>
+            </button>
+            <!-- TODO: Stripe審査通過後、上のbuttonを削除して下のaタグのコメントを外す（URLをStripeのPayment Linkに差し替え）
+            <a href="https://buy.stripe.com/TODO_CHOKOTTO" target="_blank" rel="noopener"
+               class="w-full flex items-center justify-between border border-muted text-xs tracking-[0.18rem] px-6 py-3.5 text-muted hover:bg-muted hover:text-white transition-colors">
+              お申し込みはこちら
+              <span class="text-[10px]">→</span>
+            </a>
+            -->
+          </div>
+
+          <!-- しっかり、おまかせ -->
+          <div class="plan-card bg-white border border-gray-200 p-8 flex flex-col gap-6 reveal" style="transition-delay:0.1s">
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="inline-block text-[10px] tracking-[0.15rem] border border-muted/40 text-muted px-3 py-1">月額サブスク</span>
+            </div>
+            <div class="flex flex-col gap-1">
+              <h3 class="text-xl font-mincho tracking-wide">しっかり、おまかせ</h3>
+              <p class="text-sm text-muted">月額 15,000円（税別）/ 先着10件限定</p>
+            </div>
+            <p class="text-sm leading-loose text-muted border-l-2 border-gray-200 pl-4">
+              なんでも相談できる、まちのWebデザイン担当者。デザインはもちろん、マーケティングのご相談も。
+            </p>
+            <ul class="flex flex-col gap-1">
+              <li class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">現状の問題点をヒアリングして、まるごと整理します</p>
+              </li>
+              <li class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">デザインやレイアウトの変更</p>
+              </li>
+              <li class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">ページ追加や大規模な修正、月1件まで</p>
+              </li>
+              <li class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">文字・写真の差し替え、月5件まで</p>
+              </li>
+              <li class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">ドメイン取得・更新・SSL管理</p>
+              </li>
+              <li class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">ライティング代行・言語化サポート</p>
+              </li>
+              <li class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">公開前の修正は月2回まで可能</p>
+              </li>
+              <li class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">Googleビジネスプロフィール等の設定・更新代行</p>
+              </li>
+              <li class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">Google Workspace等デジタルツールの使い方レクチャー</p>
+              </li>
+              <li class="flex items-start gap-3 py-1.5">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">パソコン・スマホの操作などWeb制作以外の相談もLINEなどで対応いたします</p>
+              </li>
+            </ul>
+            <button disabled class="w-full flex items-center justify-between border border-gray-200 text-xs tracking-[0.18rem] px-6 py-3.5 text-muted/50 cursor-not-allowed">
+              お申し込みはこちら
+              <span class="text-[10px] tracking-[0.1rem] bg-gray-100 text-muted/50 px-2 py-1">COMING SOON</span>
+            </button>
+            <!-- TODO: Stripe審査通過後、上のbuttonを削除して下のaタグのコメントを外す（URLをStripeのPayment Linkに差し替え）
+            <a href="https://buy.stripe.com/TODO_SHIKKARI" target="_blank" rel="noopener"
+               class="w-full flex items-center justify-between border border-muted text-xs tracking-[0.18rem] px-6 py-3.5 text-muted hover:bg-muted hover:text-white transition-colors">
+              お申し込みはこちら
+              <span class="text-[10px]">→</span>
+            </a>
+            -->
+          </div>
+
+          <!-- まるごとつくる -->
+          <div class="plan-card bg-white border border-gray-200 p-8 flex flex-col gap-6 reveal md:col-span-2">
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="inline-block text-[10px] tracking-[0.15rem] border border-gray-300 text-muted/70 px-3 py-1">一括払い</span>
+            </div>
+            <div class="flex flex-col gap-1">
+              <h3 class="text-xl font-mincho tracking-wide">まるごとつくる</h3>
+              <p class="text-sm text-muted">100,000円〜（税別・別途お見積もり）/ ドメイン・修正費用別</p>
+            </div>
+            <p class="text-sm leading-loose text-muted border-l-2 border-gray-200 pl-4">
+              新しく作る。または、眠っているサイトをよみがえらせる。
+            </p>
+            <div class="grid sm:grid-cols-2 gap-x-8 gap-y-1">
+              <div class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">1ページ縦スクロールサイトの制作・公開</p>
+              </div>
+              <div class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">公開後1ヶ月の軽微な修正対応込み</p>
+              </div>
+              <div class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">新規サイト制作はもちろん、放置・古くなったサイトのリニューアル・修正も対応（別途お見積もり）</p>
+              </div>
+              <div class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">現状の問題点をヒアリングして、まるごと整理します</p>
+              </div>
+              <div class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">ドメインは実費別途（お客さま名義で取得をおすすめします）</p>
+              </div>
+              <div class="flex items-start gap-3 py-1.5 border-b border-gray-100">
+                <span class="block w-1 h-1 rounded-full bg-footer shrink-0 mt-2"></span>
+                <p class="text-sm leading-relaxed text-muted">規模・内容により要別途お見積もりいたします</p>
+              </div>
+            </div>
+            <div class="text-xs leading-loose text-muted/70 bg-gray-50 p-4 flex flex-col gap-2">
+              <p>制作後の更新・サポートが必要な方へ ─ 公開後は「ちょこっと、おまかせ」または「しっかり、おまかせ」との組み合わせがおすすめです。サポートがセットになった「つくって、おまかせ」プランもご検討ください。</p>
+              <hr class="border-gray-200" />
+              <p>💳 お支払いについて ─ オンラインでのお申し込みのほか、対面でのお支払い（PayPay・クレジットカード）にも対応しています。</p>
+            </div>
+            <button disabled class="w-full flex items-center justify-between border border-gray-200 text-xs tracking-[0.18rem] px-6 py-3.5 text-muted/50 cursor-not-allowed">
+              お申し込みはこちら
+              <span class="text-[10px] tracking-[0.1rem] bg-gray-100 text-muted/50 px-2 py-1">COMING SOON</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- サービスの流れ -->
+    <section class="py-28 border-t border-gray-100">
+      <div class="max-w-6xl mx-auto px-8 grid md:grid-cols-12 gap-16">
+        <div class="md:col-span-3 flex flex-col gap-4">
+          <span class="text-xs tracking-[0.4rem] text-muted">FLOW</span>
+          <span class="block w-8 h-px bg-footer"></span>
+        </div>
+        <div class="md:col-span-9">
+          <h2 class="text-xl font-mincho tracking-[0.1rem] mb-12 reveal">サービスの流れ</h2>
+          <div class="flex flex-col gap-0">
+
+            <div class="flex gap-8 reveal">
+              <div class="flex flex-col items-center shrink-0">
+                <span class="text-xs tracking-[0.3rem] text-footer font-medium">01</span>
+                <span class="block w-px h-full bg-gray-200 mt-3"></span>
+              </div>
+              <div class="pb-12 flex flex-col gap-2">
+                <h3 class="text-base font-mincho leading-relaxed">ご相談・お申し込み</h3>
+                <p class="text-sm leading-loose text-muted">直接お声がけいただくか、チラシ・名刺等のQRコード、Webサイトからご連絡ください。</p>
+              </div>
+            </div>
+
+            <div class="flex gap-8 reveal">
+              <div class="flex flex-col items-center shrink-0">
+                <span class="text-xs tracking-[0.3rem] text-footer font-medium">02</span>
+                <span class="block w-px h-full bg-gray-200 mt-3"></span>
+              </div>
+              <div class="pb-12 flex flex-col gap-2">
+                <h3 class="text-base font-mincho leading-relaxed">ヒアリング</h3>
+                <p class="text-sm leading-loose text-muted">LINEやメール、お打ち合わせ（Webミーティングも可能）などで、サイトの目的・ご要望・現状の課題などをヒアリングします。</p>
+              </div>
+            </div>
+
+            <div class="flex gap-8 reveal">
+              <div class="flex flex-col items-center shrink-0">
+                <span class="text-xs tracking-[0.3rem] text-footer font-medium">03</span>
+                <span class="block w-px h-full bg-gray-200 mt-3"></span>
+              </div>
+              <div class="pb-12 flex flex-col gap-2">
+                <h3 class="text-base font-mincho leading-relaxed">構成・提案</h3>
+                <p class="text-sm leading-loose text-muted">ヒアリングをもとにサイト構成とデザインイメージをご提案します。方向性をすり合わせてから制作へ進みます。</p>
+              </div>
+            </div>
+
+            <div class="flex gap-8 reveal">
+              <div class="flex flex-col items-center shrink-0">
+                <span class="text-xs tracking-[0.3rem] text-footer font-medium">04</span>
+                <span class="block w-px h-full bg-gray-200 mt-3"></span>
+              </div>
+              <div class="pb-12 flex flex-col gap-2">
+                <h3 class="text-base font-mincho leading-relaxed">制作・公開</h3>
+                <p class="text-sm leading-loose text-muted">デザイン・コーディング・テスト確認を経て公開。公開前の修正対応もプランに含まれています。</p>
+              </div>
+            </div>
+
+            <div class="flex gap-8 reveal">
+              <div class="flex flex-col items-center shrink-0">
+                <span class="text-xs tracking-[0.3rem] text-footer font-medium">05</span>
+              </div>
+              <div class="pb-4 flex flex-col gap-2">
+                <h3 class="text-base font-mincho leading-relaxed">保守・継続サポート</h3>
+                <p class="text-sm leading-loose text-muted">公開後も月次の更新・ドメイン管理・相談対応を継続します。プランに応じたサポートで、ずっと安心。</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 共通事項 -->
+    <section class="py-24 bg-gray-50 border-t border-gray-100">
+      <div class="max-w-6xl mx-auto px-8 grid md:grid-cols-12 gap-16">
+        <div class="md:col-span-3 flex flex-col gap-4">
+          <span class="text-xs tracking-[0.4rem] text-muted">NOTES</span>
+          <span class="block w-8 h-px bg-footer"></span>
+        </div>
+        <div class="md:col-span-9 reveal">
+          <h2 class="text-xl font-mincho tracking-[0.1rem] mb-10">共通事項・ご注意</h2>
+          <ul class="flex flex-col">
+            <li class="py-3 flex items-start gap-6 border-b border-gray-200">
+              <span class="block w-1.5 h-1.5 rounded-full bg-footer shrink-0 mt-2"></span>
+              <p class="text-sm leading-loose text-muted">表記価格はすべて税別です。別途消費税がかかります。</p>
+            </li>
+            <li class="py-3 flex items-start gap-6 border-b border-gray-200">
+              <span class="block w-1.5 h-1.5 rounded-full bg-footer shrink-0 mt-2"></span>
+              <p class="text-sm leading-loose text-muted">「つくって、おまかせ」サブスクプランは1年契約となります。途中解約は原則不可ですので、ご懸念点がある場合は他のプランをおすすめいたします。</p>
+            </li>
+            <li class="py-3 flex items-start gap-6 border-b border-gray-200">
+              <span class="block w-1.5 h-1.5 rounded-full bg-footer shrink-0 mt-2"></span>
+              <p class="text-sm leading-loose text-muted">制作範囲や対応内容はプランにより異なります。詳細はお問い合わせ・ヒアリング時にご確認ください。</p>
+            </li>
+            <li class="py-3 flex items-start gap-6 border-b border-gray-200">
+              <span class="block w-1.5 h-1.5 rounded-full bg-footer shrink-0 mt-2"></span>
+              <p class="text-sm leading-loose text-muted">規模や内容・ご要望によっては、別途お見積もりとなる場合があります。</p>
+            </li>
+            <li class="py-3 flex items-start gap-6 border-b border-gray-200">
+              <span class="block w-1.5 h-1.5 rounded-full bg-footer shrink-0 mt-2"></span>
+              <p class="text-sm leading-loose text-muted">ドメインはお客さま名義での取得をおすすめしています（実費別途）。</p>
+            </li>
+            <li class="py-3 flex items-start gap-6">
+              <span class="block w-1.5 h-1.5 rounded-full bg-footer shrink-0 mt-2"></span>
+              <p class="text-sm leading-loose text-muted">「しっかり、おまかせ」プランは同時受け入れ上限が10件となります。満員の場合はウェイティングリストにご登録いただけます。</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-28 border-t border-gray-100">
+      <div class="max-w-6xl mx-auto px-8 grid md:grid-cols-12 gap-16 items-start">
+        <div class="md:col-span-3 flex flex-col gap-4">
+          <span class="text-xs tracking-[0.4rem] text-muted">CONTACT</span>
+          <span class="block w-8 h-px bg-footer"></span>
+        </div>
+        <div class="md:col-span-9 flex flex-col gap-8 reveal">
+          <p class="text-2xl md:text-3xl font-mincho leading-relaxed tracking-wide">
+            お気軽にご相談ください
+          </p>
+          <p class="text-base leading-loose text-muted">
+            「どのプランがいいかわからない」「うちに合うか不安」など、漠然とした疑問もぜひお聞かせください。<br />
+            対面で直接お声がけいただくか、フォームよりご連絡いただけますと幸いです。
+          </p>
+          <a href="contact.html"
+             class="self-start inline-flex items-center gap-3 border border-black text-xs tracking-[0.2rem] px-8 py-3.5 hover:bg-black hover:text-white transition-colors">
+            CONTACT →
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-footer text-white py-12">
+    <div class="max-w-6xl mx-auto px-8 flex flex-col items-center gap-8">
+      <img src="images/VI_logo-04-2.svg" width="70" height="60"
+           alt="さかさま" class="h-8 w-auto invert opacity-80" />
+      <div class="w-full flex flex-col md:flex-row items-center md:items-baseline justify-between gap-6">
+        <ul class="flex gap-4 md:gap-6 text-xs tracking-[0.15rem] md:tracking-[0.2rem] text-white/70">
+          <li><a href="index.html"     class="hover:text-white transition-colors">HOME</a></li>
+          <li><a href="about.html"     class="hover:text-white transition-colors">ABOUT</a></li>
+          <li><a href="portfolio.html" class="hover:text-white transition-colors">PORTFOLIO</a></li>
+          <li><a href="web.html"       class="hover:text-white transition-colors">WEB SERVICE</a></li>
+          <li><a href="contact.html"   class="hover:text-white transition-colors">CONTACT</a></li>
+        </ul>
+        <div class="flex items-baseline gap-6 text-xs tracking-[0.2rem] text-white/70">
+          <a href="https://www.facebook.com/sakasaew" target="_blank" rel="noopener" class="inline-flex items-center gap-1 hover:text-white transition-colors">FACEBOOK<svg class="w-2.5 h-2.5" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L9 3M5 3h4v4"/></svg></a>
+          <a href="https://www.instagram.com/sakasaew/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 hover:text-white transition-colors">INSTAGRAM<svg class="w-2.5 h-2.5" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L9 3M5 3h4v4"/></svg></a>
+        </div>
+      </div>
+      <span class="text-xs text-white/50">© 2026 さかさま</span>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/parallax.js"></script>
+  <script>
+    // Hero lines アニメーション
+    document.querySelectorAll('.hero-line').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), 300 + i * 150);
+    });
+
+    // Reveal on scroll（inner pageはhome.jsを読まないためここで定義）
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>
