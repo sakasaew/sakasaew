@@ -10,28 +10,15 @@
   <link rel="icon" href="/favicon.png" type="image/png" />
   <link rel="shortcut icon" href="/favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="/favicon.png" />
-  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            muted:  '#6b7280',
-            footer: '#1f2937',
-          },
-          fontFamily: {
-            sans:   ['Zen Kaku Gothic New', 'sans-serif'],
-            mincho: ['Shippori Mincho', 'serif'],
-          },
-        }
-      }
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-muted:  #4f5a7a;
+      --color-footer: hsl(233, 16%, 56%);
+      --font-sans:    "Poppins", "Zen Kaku Gothic New", sans-serif;
+      --font-mincho:  "Poppins", "Shippori Mincho", serif;
     }
-  </script>
-  <style>
-    @keyframes navLineIn {
-      from { transform: scaleX(0); }
-      to   { transform: scaleX(1); }
-    }
+    @keyframes navLineIn { from { transform: scaleX(0); } to { transform: scaleX(1); } }
     .nav-active-line { animation: navLineIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -111,7 +98,7 @@
 
             <dl class="flex flex-col md:flex-row border-b border-gray-200 py-5 gap-2 md:gap-8">
               <dt class="text-xs tracking-[0.15rem] text-muted md:w-48 shrink-0">電話番号</dt>
-              <dd class="text-sm leading-loose">0584-27-2227<br /><span class="text-xs text-muted">（お電話でのお問い合わせは営業時間内にお願いいたします）</span></dd>
+              <dd class="text-sm leading-loose">0584-27-2227</dd>
             </dl>
 
             <dl class="flex flex-col md:flex-row border-b border-gray-200 py-5 gap-2 md:gap-8">
