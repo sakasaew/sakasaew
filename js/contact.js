@@ -1,4 +1,5 @@
 /* ── お問い合わせフォーム送信 ── */
+const GAS_URL     = 'https://script.google.com/macros/s/AKfycbx5datkvKHe9fawQ1VQ-DLkK3pnE4_Tth5vtV1Nh3sxgVeRgiRbB3PYIWJLy21Nt_2nUQ/exec';
 const form        = document.getElementById('contact-form');
 const successMsg  = document.getElementById('form-success');
 const errorMsg    = document.getElementById('form-error');
@@ -14,17 +15,13 @@ form.addEventListener('submit', async (e) => {
   errorMsg.classList.add('hidden');
 
   try {
-    const res = await fetch('https://formspree.io/f/mjgpdwnp', {
+    await fetch(GAS_URL, {
       method: 'POST',
-      body: new FormData(form),
-      headers: { Accept: 'application/json' },
+      mode: 'no-cors',
+      body: new URLSearchParams(new FormData(form)),
     });
-    if (res.ok) {
-      form.classList.add('hidden');
-      successMsg.classList.remove('hidden');
-    } else {
-      throw new Error();
-    }
+    form.classList.add('hidden');
+    successMsg.classList.remove('hidden');
   } catch {
     errorMsg.classList.remove('hidden');
     submitBtn.disabled = false;
