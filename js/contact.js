@@ -1,5 +1,5 @@
 /* ── お問い合わせフォーム送信 ── */
-const GAS_URL     = 'https://script.google.com/macros/s/AKfycbx5datkvKHe9fawQ1VQ-DLkK3pnE4_Tth5vtV1Nh3sxgVeRgiRbB3PYIWJLy21Nt_2nUQ/exec';
+const GAS_URL     = 'https://script.google.com/macros/s/AKfycbwdwsM9Y2471FYWEkc3mvsRPL4aMyoghy5HwRv397PH6RmQpaRg5hKVvZOQgttL5C0SeQ/exec';
 const form        = document.getElementById('contact-form');
 const successMsg  = document.getElementById('form-success');
 const errorMsg    = document.getElementById('form-error');
