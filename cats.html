@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ねこたち | さかさま</title>
+  <meta name="description" content="さかさまで暮らす保護ねこたち。" />
+  <link rel="canonical" href="https://sakasaew.com/cats/" />
+  <meta property="og:title"       content="ねこたち | さかさま" />
+  <meta property="og:description" content="さかさまで暮らす保護ねこたち。" />
+  <meta property="og:image"       content="https://sakasaew.com/images/cats/cat-hero.jpg" />
+  <meta property="og:url"         content="https://sakasaew.com/cats/" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="さかさま" />
+  <meta property="og:locale"      content="ja_JP" />
+  <meta name="twitter:card"       content="summary_large_image" />
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-muted:  #4f5a7a;
+      --color-footer: hsl(233, 16%, 56%);
+      --font-sans:    "Poppins", "Zen Kaku Gothic New", sans-serif;
+      --font-mincho:  "Poppins", "Shippori Mincho", serif;
+    }
+    @keyframes navLineIn { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    .nav-active-line { animation: navLineIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Zen+Kaku+Gothic New:wght@300;400;500&family=Shippori+Mincho:wght@400&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Shippori+Mincho:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Shippori+Mincho:wght@400&display=swap" rel="stylesheet" /></noscript>
+</head>
+<body class="bg-white text-black font-sans antialiased">
+
+  <!-- NAVIGATION -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
+    <nav class="max-w-6xl mx-auto px-8 h-16 flex items-center justify-between">
+      <a href="index.html">
+        <img src="images/logo-03-2.svg" width="105" height="20"
+             alt="さかさま" class="h-5 w-auto" />
+      </a>
+      <div class="flex items-center">
+        <ul class="hidden md:flex items-center gap-10 text-xs font-medium tracking-[0.2rem]">
+          <li><a href="index.html"     class="inline-flex flex-col items-center gap-1 text-muted hover:text-black transition-colors group">HOME<span class="block w-4 h-px bg-footer origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+          <li><a href="about.html"     class="inline-flex flex-col items-center gap-1 text-black">ABOUT<span class="nav-active-line block w-4 h-px bg-footer origin-center"></span></a></li>
+          <li><a href="portfolio.html" class="inline-flex flex-col items-center gap-1 text-muted hover:text-black transition-colors group">PORTFOLIO<span class="block w-4 h-px bg-footer origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+          <li><a href="web.html"       class="inline-flex flex-col items-center gap-1 text-muted hover:text-black transition-colors group">WEB SERVICE<span class="block w-4 h-px bg-footer origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+          <li><a href="contact.html"   class="inline-flex flex-col items-center gap-1 text-muted hover:text-black transition-colors group">CONTACT<span class="block w-4 h-px bg-footer origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+        </ul>
+        <button id="menu-btn" class="md:hidden flex flex-col gap-[5px] p-1" aria-label="メニューを開く">
+          <span class="block w-6 h-px bg-black transition-all duration-300" id="bar1"></span>
+          <span class="block w-6 h-px bg-black transition-all duration-300" id="bar2"></span>
+          <span class="block w-6 h-px bg-black transition-all duration-300" id="bar3"></span>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+      <ul class="max-w-6xl mx-auto px-8 py-6 flex flex-col gap-5 text-xs font-medium tracking-[0.2rem]">
+        <li><a href="index.html"     class="text-muted">HOME</a></li>
+        <li><a href="about.html"     class="inline-flex items-center gap-2 text-black"><span class="nav-active-line block w-4 h-px bg-footer origin-left"></span>ABOUT / わたしのこと</a></li>
+        <li><a href="portfolio.html" class="text-muted">PORTFOLIO</a></li>
+        <li><a href="web.html"       class="text-muted">WEB SERVICE</a></li>
+        <li><a href="contact.html"   class="text-muted">CONTACT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="relative h-[40vh] min-h-[280px] flex items-center pt-16">
+      <div class="absolute inset-0 bg-gray-50"></div>
+      <div class="relative max-w-6xl mx-auto px-8 text-center">
+        <h1 class="text-3xl md:text-5xl font-mincho tracking-wide mb-4">ねこたち</h1>
+        <p class="text-xs tracking-[0.4rem] text-muted">CATS</p>
+      </div>
+    </section>
+
+    <!-- CAT LIST -->
+    <section class="py-28 border-t border-gray-100">
+      <div class="max-w-6xl mx-auto px-8">
+        <div class="grid md:grid-cols-2 gap-12 md:gap-16 reveal">
+
+          <!-- りり -->
+          <a href="cats1.html" class="group flex flex-col gap-6">
+            <div class="overflow-hidden aspect-[4/3]">
+              <img src="images/cats/cat-hero.jpg"
+                   alt="りり"
+                   class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+            </div>
+            <div class="flex flex-col gap-3">
+              <div class="flex items-center gap-4">
+                <span class="text-xs tracking-[0.3rem] text-muted">NO.01</span>
+                <span class="block w-8 h-px bg-footer"></span>
+              </div>
+              <h2 class="text-2xl font-mincho tracking-wide group-hover:opacity-70 transition-opacity">りり</h2>
+              <p class="text-sm leading-loose text-muted">
+                ブルベサマーな五黄のとらねこ。
+              </p>
+              <span class="self-start text-xs tracking-[0.2rem] text-muted group-hover:text-black transition-colors mt-2">READ MORE →</span>
+            </div>
+          </a>
+
+          <!-- るる（準備中） -->
+          <div class="flex flex-col gap-6 opacity-50">
+            <div class="overflow-hidden aspect-[4/3] bg-gray-100 flex items-center justify-center">
+              <span class="text-xs tracking-[0.3rem] text-muted">COMING SOON</span>
+            </div>
+            <div class="flex flex-col gap-3">
+              <div class="flex items-center gap-4">
+                <span class="text-xs tracking-[0.3rem] text-muted">NO.02</span>
+                <span class="block w-8 h-px bg-footer"></span>
+              </div>
+              <h2 class="text-2xl font-mincho tracking-wide">るる</h2>
+              <p class="text-sm leading-loose text-muted">
+                道端で出会った女王みけねこ。
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-footer text-white py-12">
+    <div class="max-w-6xl mx-auto px-8 flex flex-col items-center gap-8">
+      <img src="images/VI_logo-04-2.svg" width="70" height="60"
+           alt="さかさま" class="h-8 w-auto invert opacity-80" />
+      <div class="w-full flex flex-col md:flex-row items-center md:items-baseline justify-between gap-6">
+        <ul class="flex flex-wrap justify-center gap-x-4 gap-y-2 md:flex-nowrap md:justify-start md:gap-6 text-xs tracking-[0.15rem] md:tracking-[0.2rem] text-white/70">
+          <li><a href="index.html"     class="hover:text-white transition-colors">HOME</a></li>
+          <li><a href="about.html"     class="hover:text-white transition-colors">ABOUT</a></li>
+          <li><a href="portfolio.html" class="hover:text-white transition-colors">PORTFOLIO</a></li>
+          <li class="basis-full md:hidden" aria-hidden="true"></li>
+          <li><a href="web.html"       class="hover:text-white transition-colors">WEB SERVICE</a></li>
+          <li><a href="contact.html"   class="hover:text-white transition-colors">CONTACT</a></li>
+        </ul>
+        <div class="flex items-baseline gap-6 text-xs tracking-[0.2rem] text-white/70">
+          <a href="https://www.facebook.com/sakasaew" target="_blank" rel="noopener" class="inline-flex items-center gap-1 hover:text-white transition-colors">FACEBOOK<svg class="w-2.5 h-2.5" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L9 3M5 3h4v4"/></svg></a>
+          <a href="https://www.instagram.com/sakasaew/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 hover:text-white transition-colors">INSTAGRAM<svg class="w-2.5 h-2.5" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L9 3M5 3h4v4"/></svg></a>
+        </div>
+      </div>
+      <div class="flex flex-col items-center md:flex-row md:justify-start gap-2 md:gap-6 text-xs text-white/50">
+        <div class="flex items-center gap-4 md:gap-6">
+          <a href="tokusho.html" class="hover:text-white/80 transition-colors">特定商取引法に基づく表記</a>
+          <a href="https://www.yamamurabook.shop/privacypolicy" target="_blank" rel="noopener" class="hover:text-white/80 transition-colors">プライバシーポリシー</a>
+        </div>
+        <span>© 2026 さかさま</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
