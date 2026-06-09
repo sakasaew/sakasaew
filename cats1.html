@@ -160,11 +160,11 @@
     <!-- GALLERY -->
     <section class="py-28 border-t border-gray-100">
       <div class="max-w-4xl mx-auto px-8 flex flex-col items-center gap-10">
-        <div class="grid grid-cols-2 gap-4 md:gap-6 w-full">
-          <img src="images/cats/IMG_7681.JPG" alt="りり" class="w-full aspect-square object-cover object-center" />
-          <img src="images/cats/IMG_9107.JPG" alt="りり" class="w-full aspect-square object-cover object-center" />
-          <img src="images/cats/cat-glass.jpg" alt="りり" class="w-full aspect-square object-cover object-top" />
-          <img src="images/cats/cat-floor.jpg" alt="りり" class="w-full aspect-square object-cover object-center" />
+        <div id="gallery-grid" class="grid grid-cols-2 gap-4 md:gap-6 w-full">
+          <img src="images/cats/IMG_7681.JPG" alt="りり" class="w-full aspect-square object-cover object-center cursor-pointer" onclick="openLightbox(galleryImages,0)" />
+          <img src="images/cats/IMG_9107.JPG" alt="りり" class="w-full aspect-square object-cover object-center cursor-pointer" onclick="openLightbox(galleryImages,1)" />
+          <img src="images/cats/cat-glass.jpg" alt="りり" class="w-full aspect-square object-cover object-top cursor-pointer" onclick="openLightbox(galleryImages,2)" />
+          <img src="images/cats/cat-floor.jpg" alt="りり" class="w-full aspect-square object-cover object-center cursor-pointer" onclick="openLightbox(galleryImages,3)" />
         </div>
         <a href="https://www.instagram.com/re_lilylyric/" target="_blank" rel="noopener"
            class="inline-flex items-center gap-3 border border-black text-xs tracking-[0.2rem] px-8 py-3.5 hover:bg-black hover:text-white transition-colors">
@@ -215,6 +215,15 @@
   </footer>
 
   <script src="js/nav.js"></script>
+  <script src="js/lightbox.js"></script>
+  <script>
+    const galleryImages = [
+      { src: 'images/cats/IMG_7681.JPG',  alt: 'りり' },
+      { src: 'images/cats/IMG_9107.JPG',  alt: 'りり' },
+      { src: 'images/cats/cat-glass.jpg', alt: 'りり' },
+      { src: 'images/cats/cat-floor.jpg', alt: 'りり' },
+    ];
+  </script>
   <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
