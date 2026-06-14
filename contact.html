@@ -158,8 +158,8 @@
           </div>
 
           <form id="contact-form" class="flex flex-col gap-8" novalidate>
-            <!-- Formspree honeypot (spam protection) -->
-            <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+            <!-- honeypot (spam protection) -->
+            <input type="text" name="honeypot" class="hidden" tabindex="-1" autocomplete="off" />
 
             <!-- 氏名 -->
             <div class="flex flex-col gap-2">
@@ -172,7 +172,7 @@
                 name="name"
                 required
                 autocomplete="name"
-                placeholder="山田 花子"
+                placeholder="真坂 逆様"
                 class="border-b border-gray-300 focus:border-black outline-none py-3 text-base placeholder:text-gray-300 transition-colors bg-transparent"
               />
             </div>
@@ -185,7 +185,7 @@
               <input
                 type="email"
                 id="email"
-                name="_replyto"
+                name="email"
                 required
                 autocomplete="email"
                 placeholder="example@email.com"
@@ -203,7 +203,7 @@
                   id="category"
                   name="category"
                   required
-                  class="w-full border-b border-gray-300 focus:border-black outline-none py-3 text-base appearance-none bg-transparent pr-8 transition-colors"
+                  class="w-full border-b border-gray-300 focus:border-black outline-none py-3 pl-3 text-base appearance-none bg-transparent pr-8 transition-colors"
                 >
                   <option value="" disabled selected>選択してください</option>
                   <option value="お仕事の依頼・相談">お仕事の依頼・相談</option>
@@ -225,7 +225,7 @@
                 name="message"
                 required
                 rows="6"
-                placeholder="詳細をご記入ください。"
+                placeholder="詳細をご入力ください。"
                 class="border-b border-gray-300 focus:border-black outline-none py-3 text-base placeholder:text-gray-300 transition-colors bg-transparent resize-none"
               ></textarea>
             </div>
@@ -267,7 +267,13 @@
           <a href="https://www.instagram.com/sakasaew/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 hover:text-white transition-colors">INSTAGRAM<svg class="w-2.5 h-2.5" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L9 3M5 3h4v4"/></svg></a>
         </div>
       </div>
-      <span class="text-xs text-white/50">© 2026 さかさま</span>
+      <div class="flex flex-col items-center md:flex-row md:justify-start gap-2 md:gap-6 text-xs text-white/50">
+        <div class="flex items-center gap-4 md:gap-6">
+          <a href="tokusho.html" class="hover:text-white/80 transition-colors">特定商取引法に基づく表記</a>
+          <a href="https://www.yamamurabook.shop/privacypolicy" target="_blank" rel="noopener" class="hover:text-white/80 transition-colors">プライバシーポリシー</a>
+        </div>
+        <span>© 2026 さかさま</span>
+      </div>
     </div>
   </footer>
 
