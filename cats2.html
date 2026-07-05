@@ -23,6 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="style.css" />
+  <link rel="preload" href="images/cats/IMG_7738.webp" as="image" fetchpriority="high" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Shippori+Mincho:wght@400&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Shippori+Mincho:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Shippori+Mincho:wght@400&display=swap" rel="stylesheet" /></noscript>
@@ -67,8 +68,8 @@
     <!-- HERO -->
     <section class="relative h-[30vh] md:h-[60vh] min-h-[200px] md:min-h-[380px] flex items-center pt-16">
       <div class="absolute inset-x-0 top-16 bottom-0 overflow-hidden">
-        <img src="images/cats/IMG_7738.JPG"
-             alt="彼奴は桜猫であり林檎猫" fetchpriority="high"
+        <img src="images/cats/IMG_7738.webp"
+             alt="彼奴は桜猫であり林檎猫" fetchpriority="high" width="1920" height="1440"
              class="absolute inset-0 w-full h-full object-cover object-top" />
         <div class="absolute inset-0 bg-black/50"></div>
       </div>
@@ -93,10 +94,10 @@
     <section class="pb-14 md:pb-28">
       <div class="max-w-6xl mx-auto px-8">
         <div class="grid grid-cols-2 gap-4 md:gap-6 reveal">
-          <img src="images/cats/ruru-outdoor-3.jpg" alt="るる" class="w-full aspect-square object-cover object-center" />
-          <img src="images/cats/ruru-outdoor-2.jpg" alt="るる" class="w-full aspect-square object-cover object-center" />
-          <img src="images/cats/ruru-outdoor-1.jpg" alt="るる" class="w-full aspect-square object-cover object-center" />
-          <img src="images/cats/ruru-net.jpg"       alt="るる" class="w-full aspect-square object-cover object-center" />
+          <img src="images/cats/ruru-outdoor-3.webp" alt="るる" width="1400" height="1400" loading="lazy" class="w-full aspect-square object-cover object-center" />
+          <img src="images/cats/ruru-outdoor-2.webp" alt="るる" width="1400" height="1400" loading="lazy" class="w-full aspect-square object-cover object-center" />
+          <img src="images/cats/ruru-outdoor-1.webp" alt="るる" width="1400" height="1400" loading="lazy" class="w-full aspect-square object-cover object-center" />
+          <img src="images/cats/ruru-net.webp"       alt="るる" width="1400" height="1400" loading="lazy" class="w-full aspect-square object-cover object-center" />
         </div>
       </div>
     </section>
@@ -221,12 +222,12 @@
     <section class="py-14 md:py-28 bg-gray-50 border-t border-gray-100">
       <div class="max-w-4xl mx-auto px-8 flex flex-col items-center gap-10">
         <div class="grid grid-cols-2 gap-4 md:gap-6 w-full">
-          <img src="images/cats/IMG_7967.JPG"    alt="るる" class="w-full aspect-square object-cover object-center cursor-pointer" onclick="openLightbox(galleryImages,0)" />
-          <img src="images/cats/IMG_7966.JPG"    alt="るる" class="w-full aspect-square object-cover object-center cursor-pointer" onclick="openLightbox(galleryImages,1)" />
-          <img src="images/cats/IMG_7560.JPG"    alt="るる" class="w-full aspect-square object-cover object-top cursor-pointer"    onclick="openLightbox(galleryImages,2)" />
-          <img src="images/cats/IMG_7798.JPG"    alt="るる" class="w-full aspect-square object-cover object-top cursor-pointer"    onclick="openLightbox(galleryImages,3)" />
-          <img src="images/cats/IMG_7739(1).JPG" alt="るる" class="w-full aspect-square object-cover object-center cursor-pointer" onclick="openLightbox(galleryImages,4)" />
-          <img src="images/cats/IMG_9108.JPG"    alt="るる" class="w-full aspect-square object-cover object-top cursor-pointer"    onclick="openLightbox(galleryImages,5)" />
+          <img src="images/cats/IMG_7967.webp"   alt="るる" width="1400" height="1050" loading="lazy" class="w-full aspect-square object-cover object-center cursor-pointer" onclick="openLightbox(galleryImages,0)" />
+          <img src="images/cats/IMG_7966.webp"   alt="るる" width="1400" height="1050" loading="lazy" class="w-full aspect-square object-cover object-center cursor-pointer" onclick="openLightbox(galleryImages,1)" />
+          <img src="images/cats/IMG_7560.webp"   alt="るる" width="1400" height="1050" loading="lazy" class="w-full aspect-square object-cover object-top cursor-pointer"    onclick="openLightbox(galleryImages,2)" />
+          <img src="images/cats/IMG_7798.webp"   alt="るる" width="1400" height="1050" loading="lazy" class="w-full aspect-square object-cover object-top cursor-pointer"    onclick="openLightbox(galleryImages,3)" />
+          <img src="images/cats/IMG_7739-2.webp" alt="るる" width="1400" height="1050" loading="lazy" class="w-full aspect-square object-cover object-center cursor-pointer" onclick="openLightbox(galleryImages,4)" />
+          <img src="images/cats/IMG_9108.webp"   alt="るる" width="1400" height="1050" loading="lazy" class="w-full aspect-square object-cover object-top cursor-pointer"    onclick="openLightbox(galleryImages,5)" />
         </div>
       </div>
     </section>
@@ -276,12 +277,12 @@
   <script src="js/lightbox.js"></script>
   <script>
     const galleryImages = [
-      { src: 'images/cats/IMG_7967.JPG',    alt: 'るる' },
-      { src: 'images/cats/IMG_7966.JPG',    alt: 'るる' },
-      { src: 'images/cats/IMG_7560.JPG',    alt: 'るる' },
-      { src: 'images/cats/IMG_7798.JPG',    alt: 'るる' },
-      { src: 'images/cats/IMG_7739(1).JPG', alt: 'るる' },
-      { src: 'images/cats/IMG_9108.JPG',    alt: 'るる' },
+      { src: 'images/cats/IMG_7967.webp',   alt: 'るる' },
+      { src: 'images/cats/IMG_7966.webp',   alt: 'るる' },
+      { src: 'images/cats/IMG_7560.webp',   alt: 'るる' },
+      { src: 'images/cats/IMG_7798.webp',   alt: 'るる' },
+      { src: 'images/cats/IMG_7739-2.webp', alt: 'るる' },
+      { src: 'images/cats/IMG_9108.webp',   alt: 'るる' },
     ];
   </script>
   <script>
