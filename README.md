@@ -88,3 +88,7 @@ NG:  田中工業所_CI_reg.png
 ## デプロイ
 
 `main` ブランチへpushすると GitHub Pages（`https://sakasaew.github.io/sakasaew/`）に自動反映されます。
+
+## ナビゲーション/フッターの同期について
+`<header>`〜`</header>`と`<footer>`〜`</footer>`は9つのHTMLファイル（index/about/portfolio/contact/web/tokusho/cats/cats1/cats2）に同一構造がコピーされています（意図的な非DRY構成。理由: file://での動作保証とSEO/OGPクローラ対応を優先し、ビルド工程やJSでのinclude読み込みを避けているため）。
+リンク構成やスタイルを変更する場合は、9ファイルすべてに同じ変更を手作業で反映し、`git diff`で9ファイル分の差分が揃っていることを確認してください。
