@@ -68,7 +68,7 @@ const graphicItems = [
     title:    'テックプレッソ株式会社',
     desc:     'VI（サービスロゴ）デザイン制作／ディレクション',
     url:      'https://tecpresso.co.jp/',
-    images:   [{ src: 'images/cypherlayer-vi.png', alt: 'テックプレッソ株式会社 VI' }],
+    images:   [{ src: 'images/cypherlayer-vi.webp', alt: 'テックプレッソ株式会社 VI' }],
     contain:  true,
   },
   {
@@ -76,7 +76,7 @@ const graphicItems = [
     title:    '柳ヶ瀬技研株式会社',
     desc:     'CIデザイン制作／ディレクション',
     url:      'https://yanagase.tech/',
-    images:   [{ src: 'images/yanagase-ci.jpg', alt: '柳ヶ瀬技研株式会社 CI' }],
+    images:   [{ src: 'images/yanagase-ci.webp', alt: '柳ヶ瀬技研株式会社 CI' }],
     contain:  true,
   },
   {
@@ -84,7 +84,7 @@ const graphicItems = [
     title:    '株式会社田中工業所',
     desc:     'CI・看板・名刺デザイン制作／ディレクション／ブランディング相談',
     url:      'https://tanaka-kgs.co.jp/',
-    images:   [{ src: 'images/tanaka-kgs-ci.png', alt: '株式会社田中工業所 CI' }],
+    images:   [{ src: 'images/tanaka-kgs-ci.webp', alt: '株式会社田中工業所 CI' }],
     contain:  true,
   },
   {
@@ -92,28 +92,28 @@ const graphicItems = [
     title:    '株式会社田中工業所',
     desc:     '養老鉄道からも見える、木戸工場に設置する看板を制作しました。',
     url:      'https://tanaka-kgs.co.jp/',
-    images:   [{ src: 'images/tanaka-kgs-signage.png', alt: '株式会社田中工業所 看板' }],
+    images:   [{ src: 'images/tanaka-kgs-signage.webp', alt: '株式会社田中工業所 看板' }],
   },
   {
     tag:      'Business Card',
     title:    '株式会社田中工業所',
     desc:     '名刺デザイン制作',
     url:      'https://tanaka-kgs.co.jp/',
-    images:   [{ src: 'images/tanaka-kgs-namecard.jpg', alt: '株式会社田中工業所 名刺' }],
+    images:   [{ src: 'images/tanaka-kgs-namecard.webp', alt: '株式会社田中工業所 名刺' }],
   },
   {
     tag:      'VI / Business Card',
     title:    'Little Flower Coffee',
     desc:     '変形名刺デザイン制作／ディレクション／VI・ブランディング相談',
     url:      'https://www.instagram.com/littleflowercoffee/',
-    images:   [{ src: 'images/littleflower-namecard.jpg', alt: 'リトルフラワーコーヒー 変形名刺' }],
+    images:   [{ src: 'images/littleflower-namecard.webp', alt: 'リトルフラワーコーヒー 変形名刺' }],
   },
   {
     tag:      'CI / Business Card',
     title:    '株式会社MEBAE',
     desc:     'CI・名刺デザイン制作／ディレクション／ブランディング相談',
     url:      'https://mebae-re.com/',
-    images:   [{ src: 'images/MEBAE_CI-01.png', alt: '株式会社MEBAE CI' }],
+    images:   [{ src: 'images/MEBAE_CI-01.webp', alt: '株式会社MEBAE CI' }],
     contain:  true,
   },
   {
@@ -121,7 +121,7 @@ const graphicItems = [
     title:    'KUMADE株式会社',
     desc:     'CI・名刺デザイン制作／ディレクション／ブランディング相談',
     url:      'https://kumade-kk.com/',
-    images:   [{ src: 'images/KUMADE_CI-01.png', alt: 'KUMADE株式会社 CI' }],
+    images:   [{ src: 'images/KUMADE_CI-01.webp', alt: 'KUMADE株式会社 CI' }],
     contain:  true,
   },
   {
@@ -129,7 +129,7 @@ const graphicItems = [
     title:    'まるまど',
     desc:     'VIデザイン制作／ディレクション／ブランディング相談',
     url:      'https://www.instagram.com/marumado_cafe/',
-    images:   [{ src: 'images/marumado-logo-01.png', alt: 'まるまど ロゴ' }],
+    images:   [{ src: 'images/marumado-logo-01.webp', alt: 'まるまど ロゴ' }],
     contain:  true,
   },
   {
@@ -138,7 +138,7 @@ const graphicItems = [
     desc:     '三つ折パンフレット・ポスターデザイン制作／ディレクション／VI・ブランディング相談',
     url:      'https://www.instagram.com/datsumou_nagoya/',
     images:   [
-      { src: 'images/rubandor-poster.jpg',       alt: 'リュバンドール ポスター' },
+      { src: 'images/rubandor-poster.webp',       alt: 'リュバンドール ポスター' },
       { src: 'images/rubandor-pamphlet-01.jpg',  alt: 'リュバンドール パンフレット 表' },
       { src: 'images/rubandor-pamphlet-02.jpg',  alt: 'リュバンドール パンフレット 中面' },
     ],
@@ -149,7 +149,7 @@ const graphicItems = [
     desc:     'クラウドファンディング用画像デザイン制作／ディレクション',
     url:      'https://maple-market.com/',
     images:   [
-      { src: 'images/Makuake_keyvisual.jpg',         alt: 'Maple Market クラウドファンディング' },
+      { src: 'images/Makuake_keyvisual.webp',         alt: 'Maple Market クラウドファンディング' },
       { src: 'images/Makuake_10-1024x500.jpg',       alt: 'Maple Market 商品ページ' },
       { src: 'images/Makuake_04-1024x500.jpg',       alt: 'Maple Market 商品ページ' },
       { src: 'images/Makuake_03-1024x416.jpg',       alt: 'Maple Market 商品ページ' },
