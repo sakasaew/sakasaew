@@ -17,21 +17,9 @@
   <link rel="icon" href="/favicon.png" type="image/png" />
   <link rel="shortcut icon" href="/favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="/favicon.png" />
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style type="text/tailwindcss">
-    @theme {
-      --color-muted:  #4f5a7a;
-      --color-footer: hsl(233, 16%, 56%);
-      --font-sans:    "Poppins", "Zen Kaku Gothic New", sans-serif;
-      --font-mincho:  "Poppins", "Shippori Mincho", serif;
-    }
-    @keyframes navLineIn { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-    .nav-active-line { animation: navLineIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-  </style>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Zen+Kaku+Gothic New:wght@300;400;500&family=Shippori+Mincho:wght@400&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Shippori+Mincho:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Shippori+Mincho:wght@400&display=swap" rel="stylesheet" /></noscript>
@@ -90,8 +78,8 @@
           <!-- りり -->
           <a href="cats1.html" class="group flex flex-col gap-6">
             <div class="overflow-hidden aspect-[4/3]">
-              <img src="images/cats/IMG_7914(1).JPG"
-                   alt="りり"
+              <img src="images/cats/IMG_7914-2.webp"
+                   alt="りり" width="1050" height="1400" loading="lazy"
                    class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
             </div>
             <div class="flex flex-col gap-3">
@@ -110,8 +98,8 @@
           <!-- るる -->
           <a href="cats2.html" class="group flex flex-col gap-6">
             <div class="overflow-hidden aspect-[4/3]">
-              <img src="images/cats/IMG_7738.JPG"
-                   alt="るる"
+              <img src="images/cats/IMG_7738.webp"
+                   alt="るる" width="1920" height="1440" loading="lazy"
                    class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
             </div>
             <div class="flex flex-col gap-3">
