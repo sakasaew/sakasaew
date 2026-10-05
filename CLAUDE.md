@@ -42,7 +42,7 @@
 ## 関連サービス
 - **まなびやさかさま** — https://school.sakasaew.com
   - 別リポジトリ `school-sakasaew/school-sakasaew`（同じく Cloudflare Pages）
-  - ファイル: `f:/01_work/_sakasa_ma/school/index.html`
+  - ファイル: `C:/Users/yamam/Documents/01_work/_sakasa_ma/school/index.html`
 
 ## 開発上の注意
 - Tailwind は v4 CDN を使用。v3 系（`cdn.tailwindcss.com`）と混在させない
