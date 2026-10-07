@@ -6,9 +6,10 @@
 - 本番URL: https://sakasaew.com
 
 ## 技術スタック
-- **純粋な静的 HTML**（ビルドプロセスなし）
-- **Tailwind CSS v4** — CDN 読み込み (`https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4`)
-  - カスタムカラーは `<style type="text/tailwindcss">` 内の `@theme` で定義
+- **静的 HTML**（Cloudflare Pages 側のビルドは不要。ビルド済み `tailwind.css` をコミットして配信）
+- **Tailwind CSS v4** — `@tailwindcss/cli` でビルドした `tailwind.css` を各ページが `<link>` で読み込む
+  - ソースは `tailwind.input.css`（`@theme` とカスタムクラス）。CDN（`@tailwindcss/browser`）は使わない
+  - HTML / JS のクラスを変更したら `npm install && npm run build:css` で `tailwind.css` を再生成してコミットする
   - `--color-muted: #4f5a7a` / `--color-footer: hsl(233, 16%, 56%)`
 - **Formspree** — お問い合わせフォーム（contact.html）
 - **Stripe** — Web サービスの決済（審査通過後に有効化予定）
@@ -45,7 +46,8 @@
   - ファイル: `C:/Users/yamam/Documents/01_work/_sakasa_ma/school/index.html`
 
 ## 開発上の注意
-- Tailwind は v4 CDN を使用。v3 系（`cdn.tailwindcss.com`）と混在させない
-- `bg-footer` / `text-muted` などのカスタムクラスは各ページの `@theme` で定義
-- 新規ページを作るときは既存ページの head（CDN・フォント・@theme）をそのまま流用する
+- Tailwind は v4 のビルド済み CSS を使用。v3 系（`cdn.tailwindcss.com`）やブラウザ版 CDN と混在させない
+- `bg-footer` / `text-muted` などのカスタムクラスは `tailwind.input.css` の `@theme` で定義
+- 新規ページを作るときは既存ページの head（`tailwind.css`・フォント）を流用し、`package.json` の `build:css` の `--content` にそのページを追加して再ビルドする
+- 画像は WebP（横幅 最大1600px、hero は1920px）を使う。ファーストビュー外の `<img>` には `loading="lazy" decoding="async"` を付ける
 - Stripe の申し込みボタンは現在 `COMING SOON`（disabled button）。審査通過後に TODO コメントに従って有効化する
