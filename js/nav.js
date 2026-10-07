@@ -15,7 +15,7 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 // 暗幕（ヘッダーの下にだけ敷く。タップでメニューを閉じる）
 const overlay = document.createElement('div');
-overlay.style.cssText = 'position:fixed;left:0;right:0;top:64px;bottom:0;z-index:40;background:rgba(0,0,0,.3);display:none';
+overlay.style.cssText = 'position:fixed;left:0;right:0;top:64px;bottom:0;z-index:40;background:rgba(0,0,0,.15);display:none';
 document.body.appendChild(overlay);
 
 let menuOpen = false;
