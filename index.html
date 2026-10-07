@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
   <title>さかさま | グラフィックデザイン・ディレクション</title>
   <meta name="description" content="紙媒体／Webサイト／プロダクトなど、媒体や規模を問わないさまざまなクリエイティブのデザインやディレクションを承っております。ロゴ・CI・VI制作、ブランディング相談もお気軽に。" />
   <link rel="canonical" href="https://sakasaew.com/" />
@@ -86,18 +87,6 @@
   }
   </script>
   <link rel="stylesheet" href="tailwind.css" />
-  <!-- NOTE: このcatWalkX/catBobのキーフレームは about.html にも同内容が重複定義されています（about.htmlではfooter直後のbody内）。変更する場合は両方を同期させてください。 -->
-  <style>
-    @keyframes catWalkX {
-      from { transform: translateX(-100px); }
-      to   { transform: translateX(calc(100vw + 100px)); }
-    }
-    @keyframes catBob {
-      0%, 100% { transform: translateY(0); }
-      50%       { transform: translateY(-6px); }
-    }
-    #cat-bob { animation: catBob 0.38s ease-in-out infinite; }
-  </style>
   <link rel="preload" href="images/IMG_9676-2-scaled.webp" as="image" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -357,28 +346,9 @@
     </div>
   </div>
 
-  <script src="js/nav.js"></script>
-  <script src="js/home.js"></script>
-  <script>
-    (function () {
-      var walk = document.getElementById('cat-walk');
-      var catImg = document.getElementById('cat-img');
-      var cats = [
-        'images/cats/reli_silhouette.svg',
-        'images/cats/lulu_silhouette.svg'
-      ];
-      function go() {
-        catImg.src = cats[Math.floor(Math.random() * cats.length)];
-        walk.style.display = 'block';
-        walk.style.animation = 'catWalkX 13s linear forwards';
-        setTimeout(function () {
-          walk.style.display = 'none';
-          walk.style.animation = '';
-          setTimeout(go, 25000 + Math.random() * 35000);
-        }, 13000);
-      }
-      setTimeout(go, 8000);
-    })();
-  </script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/home.js" defer></script>
+  <script src="js/reveal.js" defer></script>
+  <script src="js/cat-walk.js" defer></script>
 </body>
 </html>

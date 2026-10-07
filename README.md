@@ -17,10 +17,13 @@ sakasaew/
 ├── about.html          # アバウト
 ├── portfolio.html      # ポートフォリオ
 ├── contact.html        # お問い合わせ
-├── style.css           # カスタムCSS（アニメーション等）
+├── tailwind.input.css  # Tailwind のソース（@theme・カスタムクラス・アニメーション）
+├── tailwind.css        # ビルド済みCSS（`npm run build:css` で生成してコミット）
 ├── js/
 │   ├── nav.js              # ハンバーガーメニュー（全ページ共通）
-│   ├── home.js             # ヒーロー・パララックス・スクロールアニメーション（index.html専用）
+│   ├── home.js             # ヒーロー・パララックス・スクロールボタン（index.html専用）
+│   ├── reveal.js           # スクロール連動フェードイン（.reveal。index/web/cats系で共通）
+│   ├── cat-walk.js         # 猫のイースターエッグ（index/about で共通）
 │   ├── contact.js          # フォーム送信処理（contact.html専用）
 │   └── portfolio-data.js   # ポートフォリオデータ＆レンダリング（portfolio.html専用）
 └── images/             # 画像ファイル（ファイル名はすべてASCII）

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
   <title>Webサイト制作サービス | さかさま</title>
   <meta name="description" content="小規模事業者・個人店向けのWebサイト制作サービス。制作から保守・更新までまるごとおまかせ。月額5,000円〜、初期費用ゼロのサブスクプランあり。岐阜・西濃エリア。" />
   <link rel="canonical" href="https://sakasaew.com/web/" />
@@ -640,24 +641,14 @@
     </div>
   </footer>
 
-  <script src="js/nav.js"></script>
-  <script src="js/parallax.js"></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/parallax.js" defer></script>
+  <script src="js/reveal.js" defer></script>
   <script>
     // Hero lines アニメーション
     document.querySelectorAll('.hero-line').forEach((el, i) => {
       setTimeout(() => el.classList.add('visible'), 300 + i * 150);
     });
-
-    // Reveal on scroll（inner pageはhome.jsを読まないためここで定義）
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
   </script>
 </body>
 </html>

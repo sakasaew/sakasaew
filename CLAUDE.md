@@ -29,9 +29,11 @@
 - `js/nav.js` — ナビゲーション（ハンバーガーメニュー・スクロール挙動）
 - `js/parallax.js` — ヒーロー画像のパララックス
 - `js/home.js` — トップページ固有のアニメーション
+- `js/reveal.js` — スクロール連動フェードイン（`.reveal`）。index / web / cats 系で共通
+- `js/cat-walk.js` — 猫のイースターエッグ（index / about）。キーフレームは `tailwind.input.css`
 - `js/about.js` — ABOUTページ固有の処理
 - `js/contact.js` — Formspree 送信処理
-- `js/portfolio.js` / `js/lightbox.js` — ポートフォリオ一覧・ライトボックス
+- `js/portfolio-data.js` / `js/lightbox.js` — ポートフォリオ一覧・ライトボックス
 
 ## 事業者情報
 - **運営**: 株式会社山村書店（さかさまは一事業部）
@@ -50,4 +52,5 @@
 - `bg-footer` / `text-muted` などのカスタムクラスは `tailwind.input.css` の `@theme` で定義
 - 新規ページを作るときは既存ページの head（`tailwind.css`・フォント）を流用し、`package.json` の `build:css` の `--content` にそのページを追加して再ビルドする
 - 画像は WebP（横幅 最大1600px、hero は1920px）を使う。ファーストビュー外の `<img>` には `loading="lazy" decoding="async"` を付ける
+- `<script src>` は `defer` を付けて読み込む。`.reveal` の `transition` は `tailwind.input.css`（レイヤー外）で定義しているため、`delay-*` ユーティリティでは上書きされない。遅延は `style="transition-delay:…"` で指定する
 - Stripe の申し込みボタンは現在 `COMING SOON`（disabled button）。審査通過後に TODO コメントに従って有効化する
