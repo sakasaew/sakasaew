@@ -21,6 +21,7 @@
   <link rel="shortcut icon" href="/favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="/favicon.png" />
   <link rel="stylesheet" href="tailwind.css" />
+  <link rel="preload" as="image" href="images/cats/cat-hero.webp" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Shippori+Mincho:wght@400&display=swap" />
@@ -67,7 +68,7 @@
     <!-- HERO -->
     <section class="relative h-[30vh] md:h-[60vh] min-h-[200px] md:min-h-[380px] flex items-center pt-16">
       <div class="absolute inset-x-0 top-16 bottom-0 overflow-hidden">
-        <img src="images/cats/cat-hero.jpg"
+        <img src="images/cats/cat-hero.webp"
              alt="彼奴は桜猫" fetchpriority="high"
              class="absolute inset-0 w-full h-full object-cover object-top" />
         <div class="absolute inset-0 bg-black/50"></div>
@@ -99,7 +100,7 @@
     <section class="pb-14 md:pb-28">
       <div class="max-w-6xl mx-auto px-8">
         <div class="md:max-w-[60%] mx-auto reveal">
-          <img src="images/cats/cat-carrier.jpg"
+          <img loading="lazy" decoding="async" src="images/cats/cat-carrier.webp"
                alt="おうちへ向かう彼奴"
                class="w-full object-cover" />
         </div>
@@ -149,10 +150,10 @@
     <section class="py-14 md:py-28 bg-gray-50 border-t border-gray-100">
       <div class="max-w-4xl mx-auto px-8 flex flex-col items-center gap-10">
         <div id="gallery-grid" class="grid grid-cols-2 gap-4 md:gap-6 w-full">
-          <img src="images/cats/IMG_7681.JPG" alt="りり" class="w-full aspect-square object-cover object-center cursor-pointer" onclick="openLightbox(galleryImages,0)" />
-          <img src="images/cats/IMG_9107.JPG" alt="りり" class="w-full aspect-square object-cover object-center cursor-pointer" onclick="openLightbox(galleryImages,1)" />
-          <img src="images/cats/cat-glass.jpg" alt="りり" class="w-full aspect-square object-cover object-top cursor-pointer" onclick="openLightbox(galleryImages,2)" />
-          <img src="images/cats/cat-floor.jpg" alt="りり" class="w-full aspect-square object-cover object-center cursor-pointer" onclick="openLightbox(galleryImages,3)" />
+          <img loading="lazy" decoding="async" src="images/cats/IMG_7681.webp" alt="りり" class="w-full aspect-square object-cover object-center cursor-pointer" onclick="openLightbox(galleryImages,0)" />
+          <img loading="lazy" decoding="async" src="images/cats/IMG_9107.webp" alt="りり" class="w-full aspect-square object-cover object-center cursor-pointer" onclick="openLightbox(galleryImages,1)" />
+          <img loading="lazy" decoding="async" src="images/cats/cat-glass.webp" alt="りり" class="w-full aspect-square object-cover object-top cursor-pointer" onclick="openLightbox(galleryImages,2)" />
+          <img loading="lazy" decoding="async" src="images/cats/cat-floor.webp" alt="りり" class="w-full aspect-square object-cover object-center cursor-pointer" onclick="openLightbox(galleryImages,3)" />
         </div>
         <a href="https://www.instagram.com/re_lilylyric/" target="_blank" rel="noopener"
            class="inline-flex items-center gap-3 border border-black text-xs tracking-[0.2rem] px-8 py-3.5 hover:bg-black hover:text-white transition-colors">
@@ -207,10 +208,10 @@
   <script src="js/lightbox.js"></script>
   <script>
     const galleryImages = [
-      { src: 'images/cats/IMG_7681.JPG',  alt: 'りり' },
-      { src: 'images/cats/IMG_9107.JPG',  alt: 'りり' },
-      { src: 'images/cats/cat-glass.jpg', alt: 'りり' },
-      { src: 'images/cats/cat-floor.jpg', alt: 'りり' },
+      { src: 'images/cats/IMG_7681.webp',  alt: 'りり' },
+      { src: 'images/cats/IMG_9107.webp',  alt: 'りり' },
+      { src: 'images/cats/cat-glass.webp', alt: 'りり' },
+      { src: 'images/cats/cat-floor.webp', alt: 'りり' },
     ];
   </script>
   <script src="js/reveal-cats.js"></script>
