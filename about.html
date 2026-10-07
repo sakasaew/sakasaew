@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
   <title>わたしのこと | さかさま</title>
   <meta name="description" content="フリーランスデザイナー歴19年。グラフィックデザイン・クリエイティブディレクション・ブランディングを手がける「さかさま」の中の人について。経験業種・職種・制作物など。" />
   <link rel="canonical" href="https://sakasaew.com/about/" />
@@ -342,18 +343,6 @@
   </footer>
 
   <!-- CAT EASTER EGG -->
-  <!-- NOTE: このcatWalkX/catBobのキーフレームは index.html にも同内容が重複定義されています（index.htmlではhead内）。変更する場合は両方を同期させてください。 -->
-  <style>
-    @keyframes catWalkX {
-      from { transform: translateX(-100px); }
-      to   { transform: translateX(calc(100vw + 100px)); }
-    }
-    @keyframes catBob {
-      0%, 100% { transform: translateY(0); }
-      50%       { transform: translateY(-6px); }
-    }
-    #cat-bob { animation: catBob 0.38s ease-in-out infinite; }
-  </style>
   <div id="cat-walk" aria-hidden="true"
        style="display:none; position:fixed; bottom:20px; left:0; z-index:40; pointer-events:none;">
     <div id="cat-bob">
@@ -363,29 +352,9 @@
     </div>
   </div>
 
-  <script src="js/nav.js"></script>
-  <script src="js/about.js"></script>
-  <script src="js/parallax.js"></script>
-  <script>
-    (function () {
-      var walk = document.getElementById('cat-walk');
-      var catImg = document.getElementById('cat-img');
-      var cats = [
-        'images/cats/reli_silhouette.svg',
-        'images/cats/lulu_silhouette.svg'
-      ];
-      function go() {
-        catImg.src = cats[Math.floor(Math.random() * cats.length)];
-        walk.style.display = 'block';
-        walk.style.animation = 'catWalkX 13s linear forwards';
-        setTimeout(function () {
-          walk.style.display = 'none';
-          walk.style.animation = '';
-          setTimeout(go, 25000 + Math.random() * 35000);
-        }, 13000);
-      }
-      setTimeout(go, 8000);
-    })();
-  </script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/about.js" defer></script>
+  <script src="js/parallax.js" defer></script>
+  <script src="js/cat-walk.js" defer></script>
 </body>
 </html>
