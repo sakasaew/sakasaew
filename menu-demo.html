@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>メニューアニメーション比較（デモ）</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-muted:  #4f5a7a;
+      --color-footer: hsl(233, 16%, 56%);
+      --font-sans:    "Poppins", "Zen Kaku Gothic New", sans-serif;
+      --font-mincho:  "Poppins", "Shippori Mincho", serif;
+    }
+    #mobile-menu:not([data-lines]) .mm-line { display: none; }
+    #menu-btn span { transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease; }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Shippori+Mincho:wght@400&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-white text-black font-sans antialiased">
+
+  <!-- 暗幕（オーバーレイ版で使用） -->
+  <div id="overlay" class="hidden fixed inset-x-0 top-16 bottom-0 z-40 bg-black/30 md:hidden"></div>
+
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
+    <nav class="max-w-6xl mx-auto px-8 h-16 flex items-center justify-between">
+      <a href="index.html"><img src="images/logo-03-2.svg" width="105" height="20" alt="さかさま" class="h-5 w-auto" /></a>
+      <button id="menu-btn" class="md:hidden flex flex-col gap-[5px] p-1" aria-label="メニューを開く" aria-expanded="false">
+        <span class="block w-6 h-px bg-black" id="bar1"></span>
+        <span class="block w-6 h-px bg-black" id="bar2"></span>
+        <span class="block w-6 h-px bg-black" id="bar3"></span>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100" style="overflow:hidden">
+      <ul class="max-w-6xl mx-auto px-8 py-6 flex flex-col gap-5 text-xs font-medium tracking-[0.2rem]">
+        <li><a href="#" class="inline-flex items-center gap-2 text-black"><span class="mm-line block w-4 h-px bg-footer origin-left"></span>HOME / トップページ</a></li>
+        <li><a href="#" class="inline-flex items-center gap-2 text-muted"><span class="mm-line block w-4 h-px bg-footer origin-left"></span>ABOUT</a></li>
+        <li><a href="#" class="inline-flex items-center gap-2 text-muted"><span class="mm-line block w-4 h-px bg-footer origin-left"></span>PORTFOLIO</a></li>
+        <li><a href="#" class="inline-flex items-center gap-2 text-muted"><span class="mm-line block w-4 h-px bg-footer origin-left"></span>WEB SERVICE</a></li>
+        <li><a href="#" class="inline-flex items-center gap-2 text-muted"><span class="mm-line block w-4 h-px bg-footer origin-left"></span>CONTACT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="pt-16">
+    <section class="max-w-xl mx-auto px-8 py-10">
+      <p class="text-[10px] tracking-[0.3rem] text-footer">DEMO / 本番には反映されません</p>
+      <h1 class="font-mincho text-xl mt-2">メニューアニメーション比較</h1>
+      <p class="text-sm text-muted leading-relaxed mt-4">
+        下のボタンで方式を切り替えて、右上のメニューボタンを押して動きを見比べてください。スマホ、または幅の狭いブラウザでご確認ください。
+      </p>
+
+      <div id="variants" class="grid grid-cols-1 gap-2 mt-8"></div>
+
+      <div class="mt-8 border border-gray-200 p-4">
+        <p class="text-[10px] tracking-[0.3rem] text-footer">NOW</p>
+        <p id="current-name" class="font-mincho text-base mt-1"></p>
+        <p id="current-desc" class="text-xs text-muted leading-relaxed mt-2"></p>
+      </div>
+
+      <div class="mt-12 space-y-4 text-sm text-muted leading-relaxed">
+        <p>※ 暗幕の見え方を確認するための、ダミーの本文です。</p>
+        <p>あなたのための、わたしのための、さかさまな視点。紙媒体／Webサイト／プロダクトなど、媒体や規模を問わないさまざまなクリエイティブのデザインやディレクションを承っております。</p>
+        <p>ロゴ・CI・VI制作、ブランディング相談もお気軽にご相談ください。</p>
+        <p>あなたのための、わたしのための、さかさまな視点。紙媒体／Webサイト／プロダクトなど、媒体や規模を問わないさまざまなクリエイティブのデザインやディレクションを承っております。</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    /* ── 方式の定義 ── */
+    const VARIANTS = {
+      A: { name: 'A. 高さ＋フェード（PR #7 の現状）', desc: '高さと透明度を同時に動かします。いま PR に入っているものです。',
+           mode: 'height', stagger: false, overlay: false, lines: false, bars: false },
+      B: { name: 'B. A ＋ リンクが順番に浮かぶ', desc: 'A のあと、各リンクが 70ms ずつずれて下から浮かびます。',
+           mode: 'height', stagger: true, overlay: false, lines: false, bars: false },
+      C: { name: 'C. カーテン（clip-path）', desc: '中身は潰れず、上から幕が降りるように開きます。',
+           mode: 'clip', stagger: false, overlay: false, lines: false, bars: false },
+      D: { name: 'D. カーテン ＋ 順番に浮かぶ（おすすめ）', desc: 'C に B のリンク演出を重ねたものです。',
+           mode: 'clip', stagger: true, overlay: false, lines: false, bars: false },
+      E: { name: 'E. D ＋ 背景を暗くする', desc: 'D に暗幕を足します。メニュー以外をタップすると閉じます。',
+           mode: 'clip', stagger: true, overlay: true, lines: false, bars: false },
+      F: { name: 'F. D ＋ 下線が伸びる ＋ ✕ のずらし変形', desc: 'D に加えて、各リンクの左に細線が伸び、ハンバーガーが段階的に ✕ へ変わります。',
+           mode: 'clip', stagger: true, overlay: false, lines: true, bars: true },
+    };
+
+    const EASE = 'cubic-bezier(0.22, 1, 0.36, 1)';
+    const menu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('overlay');
+    const btn = document.getElementById('menu-btn');
+    const bars = [1, 2, 3].map(n => document.getElementById('bar' + n));
+    const items = [...menu.querySelectorAll('li')];
+    const lines = [...menu.querySelectorAll('.mm-line')];
+    const reduce = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let current = VARIANTS.D;
+    let isOpen = false;
+    let anims = [];
+
+    function run(el, keyframes, opts) {
+      const a = el.animate(keyframes, { easing: EASE, fill: 'both', ...opts, duration: reduce() ? 0 : opts.duration });
+      anims.push(a);
+      return a;
+    }
+    function cancelAll() { anims.forEach(a => a.cancel()); anims = []; }
+
+    function setBars(open) {
+      const t = open ? ['translateY(6px) rotate(45deg)', '', 'translateY(-6px) rotate(-45deg)'] : ['', '', ''];
+      bars.forEach((b, i) => {
+        b.style.transform = t[i];
+        b.style.transitionDelay = current.bars ? (open ? (i === 1 ? '0ms' : '120ms') : (i === 1 ? '150ms' : '0ms')) : '0ms';
+      });
+      bars[1].style.opacity = open ? '0' : '1';
+      btn.setAttribute('aria-expanded', String(open));
+    }
+
+    function toggle(open) {
+      isOpen = open;
+      const hidden = menu.classList.contains('hidden');
+      const cs = getComputedStyle(menu);
+      // 中断時に今の状態から繋げるため、キャンセル前に現在値を読む
+      const fromOpacity = hidden ? 0 : parseFloat(cs.opacity);
+      const fromHeight  = hidden ? 0 : menu.getBoundingClientRect().height;
+      const fromClip    = hidden ? 'inset(0 0 100% 0)' : (cs.clipPath === 'none' ? 'inset(0 0 0 0)' : cs.clipPath);
+      const ovHidden    = overlay.classList.contains('hidden');
+      const fromOv      = ovHidden ? 0 : parseFloat(getComputedStyle(overlay).opacity);
+      cancelAll();
+      setBars(open);
+
+      if (open) menu.classList.remove('hidden');
+      if (open && current.overlay) overlay.classList.remove('hidden');
+      menu.toggleAttribute('data-lines', current.lines);
+
+      const dur = open ? 450 : 320;
+      let main;
+      if (current.mode === 'height') {
+        main = run(menu, [
+          { height: fromHeight + 'px', opacity: fromOpacity },
+          { height: (open ? menu.scrollHeight : 0) + 'px', opacity: open ? 1 : 0 },
+        ], { duration: dur });
+      } else {
+        main = run(menu, [
+          { clipPath: fromClip, opacity: fromOpacity },
+          { clipPath: open ? 'inset(0 0 0 0)' : 'inset(0 0 100% 0)', opacity: open ? 1 : 0 },
+        ], { duration: dur });
+      }
+
+      // overlay
+      if (current.overlay || !ovHidden) {
+        const o = run(overlay, [{ opacity: fromOv }, { opacity: open && current.overlay ? 1 : 0 }], { duration: dur, easing: 'ease' });
+        o.onfinish = () => { if (!isOpen) overlay.classList.add('hidden'); };
+      }
+
+      // リンクの順番アニメ（開くときのみ）
+      if (open && current.stagger) {
+        items.forEach((li, i) => {
+          run(li, [{ opacity: 0, transform: 'translateY(10px)' }, { opacity: 1, transform: 'translateY(0)' }],
+              { duration: 550, delay: 120 + i * 70, fill: 'backwards' });
+        });
+      }
+      if (open && current.lines) {
+        lines.forEach((l, i) => {
+          run(l, [{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }],
+              { duration: 600, delay: 260 + i * 70, fill: 'backwards' });
+        });
+      }
+
+      main.onfinish = () => {
+        if (!isOpen) menu.classList.add('hidden');
+        main.cancel(); // 固定値を外して自然な高さ・表示に戻す
+        anims = anims.filter(a => a !== main);
+      };
+    }
+
+    btn.addEventListener('click', () => toggle(!isOpen));
+    overlay.addEventListener('click', () => { if (isOpen) toggle(false); });
+    menu.addEventListener('click', e => { if (e.target.closest('a')) e.preventDefault(); });
+
+    /* ── 方式切り替え UI ── */
+    const wrap = document.getElementById('variants');
+    const nameEl = document.getElementById('current-name');
+    const descEl = document.getElementById('current-desc');
+
+    function select(key) {
+      if (isOpen) toggle(false);
+      current = VARIANTS[key];
+      nameEl.textContent = current.name;
+      descEl.textContent = current.desc;
+      wrap.querySelectorAll('button').forEach(b => {
+        const on = b.dataset.key === key;
+        b.classList.toggle('bg-black', on);
+        b.classList.toggle('text-white', on);
+        b.classList.toggle('border-black', on);
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    Object.entries(VARIANTS).forEach(([key, v]) => {
+      const b = document.createElement('button');
+      b.dataset.key = key;
+      b.className = 'text-left text-xs tracking-[0.1rem] border border-gray-300 px-4 py-3 transition-colors';
+      b.textContent = v.name;
+      b.addEventListener('click', () => select(key));
+      wrap.appendChild(b);
+    });
+    select('D');
+  </script>
+</body>
+</html>
