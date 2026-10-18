@@ -11,7 +11,7 @@
   - ソースは `tailwind.input.css`（`@theme` とカスタムクラス）。CDN（`@tailwindcss/browser`）は使わない
   - HTML / JS のクラスを変更したら `npm install && npm run build:css` で `tailwind.css` を再生成してコミットする
   - `--color-muted: #4f5a7a` / `--color-footer: hsl(233, 16%, 56%)`
-- **Formspree** — お問い合わせフォーム（contact.html）
+- **Google Apps Script（GAS）** — お問い合わせフォーム（contact.html）。`js/contact.js` が GAS の Web アプリへ POST し、通知メール・自動返信・スプレッドシート記録を行う。GAS のコードは本リポジトリ外（Google 側）にある
 - **Stripe** — Web サービスの決済（審査通過後に有効化予定）
 - フォント: Poppins / Zen Kaku Gothic New / Shippori Mincho（Google Fonts）
 
@@ -32,7 +32,7 @@
 - `js/reveal.js` — スクロール連動フェードイン（`.reveal`）。index / web / cats 系で共通
 - `js/cat-walk.js` — 猫のイースターエッグ（index / about）。キーフレームは `tailwind.input.css`
 - `js/about.js` — ABOUTページ固有の処理
-- `js/contact.js` — Formspree 送信処理
+- `js/contact.js` — GAS 送信処理（`mode: 'no-cors'` のため送信結果は読めず、常に完了表示になる）
 - `js/portfolio-data.js` / `js/lightbox.js` — ポートフォリオ一覧・ライトボックス
 
 ## 事業者情報
@@ -54,3 +54,4 @@
 - 画像は WebP（横幅 最大1600px、hero は1920px）を使う。ファーストビュー外の `<img>` には `loading="lazy" decoding="async"` を付ける
 - `<script src>` は `defer` を付けて読み込む。`.reveal` の `transition` は `tailwind.input.css`（レイヤー外）で定義しているため、`delay-*` ユーティリティでは上書きされない。遅延は `style="transition-delay:…"` で指定する
 - Stripe の申し込みボタンは現在 `COMING SOON`（disabled button）。審査通過後に TODO コメントに従って有効化する
+- Stripe を有効化する前後や、決済・フォーム周りの JS を大きく変えたときは、`claude-security` プラグイン（`/claude-security`、`/plugin install claude-security@claude-plugins-official`）でスキャンする。静的サイトで攻撃面が小さいため、通常の更新では実施しない。GAS のコードはリポジトリ外のためスキャン対象にならない。GAS を変更したときは別途レビューする
