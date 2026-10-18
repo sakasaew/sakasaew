@@ -54,3 +54,4 @@
 - 画像は WebP（横幅 最大1600px、hero は1920px）を使う。ファーストビュー外の `<img>` には `loading="lazy" decoding="async"` を付ける
 - `<script src>` は `defer` を付けて読み込む。`.reveal` の `transition` は `tailwind.input.css`（レイヤー外）で定義しているため、`delay-*` ユーティリティでは上書きされない。遅延は `style="transition-delay:…"` で指定する
 - Stripe の申し込みボタンは現在 `COMING SOON`（disabled button）。審査通過後に TODO コメントに従って有効化する
+- Stripe を有効化する前後や、決済・フォーム周りの JS を大きく変えたときは、`claude-security` プラグイン（`/claude-security`、`/plugin install claude-security@claude-plugins-official`）でスキャンする。静的サイトで攻撃面が小さいため、通常の更新では実施しない
