@@ -2,3 +2,6 @@
 Thumbs.db
 desktop.ini
 node_modules/
+
+# Claude Security プラグインのスキャン結果（脆弱性情報を含むため公開しない）
+CLAUDE-SECURITY-*/
