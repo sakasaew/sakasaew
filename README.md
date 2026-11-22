@@ -122,11 +122,11 @@ NG:  田中工業所_CI_reg.png
   - フォーム上部の注意書き（人間向け）
   - 送信前の必須チェックボックス（`#no-solicitation`）。チェック時のみ `no_solicitation=yes` を GAS に送ります。
   - Cloudflare Turnstile。トークンは `cf-turnstile-response` として GAS に送られます。
-- **Turnstile の本番設定（未完了）**: `contact.html` の `data-sitekey` は Cloudflare 公式のテスト用キー（常に成功）です。Cloudflare ダッシュボードで Turnstile のウィジェットを作成（ドメイン `sakasaew.com`）し、発行された**サイトキー**に差し替えてください。テスト用キーのままだと、ボット対策としては何も効きません。
+- **Turnstile**: `contact.html` の `data-sitekey` に本番のサイトキーを設定済みです（ウィジェットのホスト名は `sakasaew.com`）。サイトキーは公開してよい値です。シークレットキーは GAS のスクリプトプロパティにのみ保存し、リポジトリには置きません。ホスト名に無いドメイン（`*.pages.dev` のプレビュー等）ではウィジェットがエラーになり、送信できません。
 - **GAS 側の検証（未完了）**: フォーム側の検証はブラウザを通らない直接 POST では素通りされます。GAS の `doPost` で次の2点を確認し、満たさないものは破棄してください（GAS のコードは本リポジトリ外）。
   1. `e.parameter.no_solicitation === 'yes'`
   2. `cf-turnstile-response` を `https://challenges.cloudflare.com/turnstile/v0/siteverify` に `secret`（シークレットキー。スクリプトプロパティに保存）と一緒に POST し、`success === true` であること（外部リクエストのスコープ `script.external_request` が必要）
-  - 反映の順番: サイトキーを本番用に差し替えて**サイトをデプロイしてから**、GAS で検証を有効にしてください。順序が逆、またはテスト用キーのままで GAS の検証を有効にすると、すべての送信が破棄されます。
+  - 反映の順番: サイトを本番デプロイして、実際にウィジェットが表示・送信できることを確認してから、GAS で検証を有効にしてください。
 - GAS のコードは **このリポジトリには含まれません**（Google Apps Script 側で管理）。受信先メールアドレスや記録先スプレッドシートの設定もそちらにあります。
 - `mode: 'no-cors'` で送信しているため、GAS 側が失敗してもサイトには常に「送信完了」と表示されます。GAS を変更したときは、実際にテスト送信して届くことを確認してください。
 
