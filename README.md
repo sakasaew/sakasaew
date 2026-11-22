@@ -117,7 +117,16 @@ NG:  田中工業所_CI_reg.png
 - `js/contact.js` の `GAS_URL` に、GAS の Web アプリ（`/exec`）の URL を設定しています。
 - フォームの項目は `name` / `email` / `category` / `message` と、スパム対策用の `honeypot` です。
 - 悪用対策として GAS 側で、自動返信は定型文のみ・1時間30件まで（同じアドレスへは10分に1回）、受付は1日100件までに制限しています。上限を超えた送信は破棄され、`RECIPIENT` 宛てにエラーメールが届きます。
-- お問い合わせ種別（`<select name="category">`）を変えたときは、GAS の `CATEGORIES` も同じ内容に直してください。ずれた種別は破棄されます。
+- お問い合わせ種別（`<select name="category">`）を変えたときは、GAS の `CATEGORIES` も同じ内容に直してください。ずれた種別は破棄されます。種別を**減らす**分には GAS 側の変更は不要です（「その他のお問い合わせ」は営業対策のためフォームから削除済み。GAS の `CATEGORIES` には残っていて構いません）。
+- 営業・売り込み対策として、次の3つを入れています。
+  - フォーム上部の注意書き（人間向け）
+  - 送信前の必須チェックボックス（`#no-solicitation`）。チェック時のみ `no_solicitation=yes` を GAS に送ります。
+  - Cloudflare Turnstile。トークンは `cf-turnstile-response` として GAS に送られます。
+- **Turnstile の本番設定（未完了）**: `contact.html` の `data-sitekey` は Cloudflare 公式のテスト用キー（常に成功）です。Cloudflare ダッシュボードで Turnstile のウィジェットを作成（ドメイン `sakasaew.com`）し、発行された**サイトキー**に差し替えてください。テスト用キーのままだと、ボット対策としては何も効きません。
+- **GAS 側の検証（未完了）**: フォーム側の検証はブラウザを通らない直接 POST では素通りされます。GAS の `doPost` で次の2点を確認し、満たさないものは破棄してください（GAS のコードは本リポジトリ外）。
+  1. `e.parameter.no_solicitation === 'yes'`
+  2. `cf-turnstile-response` を `https://challenges.cloudflare.com/turnstile/v0/siteverify` に `secret`（シークレットキー。スクリプトプロパティに保存）と一緒に POST し、`success === true` であること（外部リクエストのスコープ `script.external_request` が必要）
+  - 反映の順番: サイトキーを本番用に差し替えて**サイトをデプロイしてから**、GAS で検証を有効にしてください。順序が逆、またはテスト用キーのままで GAS の検証を有効にすると、すべての送信が破棄されます。
 - GAS のコードは **このリポジトリには含まれません**（Google Apps Script 側で管理）。受信先メールアドレスや記録先スプレッドシートの設定もそちらにあります。
 - `mode: 'no-cors'` で送信しているため、GAS 側が失敗してもサイトには常に「送信完了」と表示されます。GAS を変更したときは、実際にテスト送信して届くことを確認してください。
 
