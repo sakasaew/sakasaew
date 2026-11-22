@@ -237,18 +237,24 @@
               ></textarea>
             </div>
 
-            <!-- 営業目的ではないことの確認（name なし＝GAS には送信しない。ブラウザ側のみで必須チェック） -->
+            <!-- 営業目的ではないことの確認（チェック時のみ no_solicitation=yes を GAS に送信。GAS 側でも検証する） -->
             <div>
               <label for="no-solicitation" class="flex items-start gap-3 cursor-pointer text-sm leading-relaxed">
                 <input
                   type="checkbox"
                   id="no-solicitation"
+                  name="no_solicitation"
+                  value="yes"
                   required
                   class="mt-1 md:mt-[1.5px] h-5 w-5 shrink-0 cursor-pointer accent-black"
                 />
                 <span>このお問い合わせは、営業・売り込みを目的としたものではありません <span class="text-muted text-xs font-normal ml-1">必須</span></span>
               </label>
             </div>
+
+            <!-- Cloudflare Turnstile（ボット対策）。トークンは hidden input「cf-turnstile-response」として自動で送信される
+                 TODO: data-sitekey は Cloudflare 公式のテスト用キー（常に成功）。本番では Turnstile ウィジェットを作成して発行されたサイトキーに差し替える -->
+            <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-language="ja" data-theme="light"></div>
 
             <!-- SUBMIT -->
             <div class="pt-4">
@@ -297,6 +303,7 @@
     </div>
   </footer>
 
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <script src="js/nav.js" defer></script>
   <script src="js/contact.js" defer></script>
   <script src="js/parallax.js" defer></script>
