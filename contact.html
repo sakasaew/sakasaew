@@ -253,8 +253,8 @@
             </div>
 
             <!-- Cloudflare Turnstile（ボット対策）。トークンは hidden input「cf-turnstile-response」として自動で送信される
-                 TODO: data-sitekey は Cloudflare 公式のテスト用キー（常に成功）。本番では Turnstile ウィジェットを作成して発行されたサイトキーに差し替える -->
-            <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-language="ja" data-theme="light"></div>
+                 data-sitekey は公開してよいサイトキー。シークレットキーは GAS のスクリプトプロパティにのみ保存する（ここには書かない） -->
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAGM0nCkbvmB-shup" data-language="ja" data-theme="light"></div>
 
             <!-- SUBMIT -->
             <div class="pt-4">
