@@ -158,6 +158,13 @@
             送信に失敗しました。しばらく経ってから再度お試しください。
           </div>
 
+          <!-- NOTICE -->
+          <div id="form-notice" class="mb-12 border-l border-footer bg-gray-50 px-6 py-5">
+            <p class="text-sm leading-loose text-muted">
+              このフォームは、お仕事の依頼・ご相談のためのものです。営業・売り込みを目的としたご連絡はお控えください。内容によりましては、返信いたしかねる場合がございます。
+            </p>
+          </div>
+
           <form id="contact-form" class="flex flex-col gap-8" novalidate>
             <!-- honeypot (spam protection) -->
             <input type="text" name="honeypot" class="hidden" tabindex="-1" autocomplete="off" />
@@ -210,7 +217,6 @@
                   <option value="お仕事の依頼・相談">お仕事の依頼・相談</option>
                   <option value="支援活動について">支援活動について</option>
                   <option value="まなびやさかさま（スクール・コミュニティ事業）について">まなびやさかさま（スクール・コミュニティ事業）について</option>
-                  <option value="その他のお問い合わせ">その他のお問い合わせ</option>
                 </select>
                 <span class="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-muted text-xs">▼</span>
               </div>
@@ -229,6 +235,19 @@
                 placeholder="詳細をご入力ください。"
                 class="border-b border-gray-300 focus:border-black outline-none py-3 text-base placeholder:text-gray-300 transition-colors bg-transparent resize-none"
               ></textarea>
+            </div>
+
+            <!-- 営業目的ではないことの確認（name なし＝GAS には送信しない。ブラウザ側のみで必須チェック） -->
+            <div>
+              <label for="no-solicitation" class="flex items-start gap-3 cursor-pointer text-sm leading-relaxed">
+                <input
+                  type="checkbox"
+                  id="no-solicitation"
+                  required
+                  class="mt-1 h-5 w-5 shrink-0 cursor-pointer accent-black"
+                />
+                <span>このお問い合わせは、営業・売り込みを目的としたものではありません <span class="text-muted text-xs font-normal ml-1">必須</span></span>
+              </label>
             </div>
 
             <!-- SUBMIT -->
