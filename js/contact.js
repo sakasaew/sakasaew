@@ -2,6 +2,7 @@
 const GAS_URL     = 'https://script.google.com/macros/s/AKfycbwdwsM9Y2471FYWEkc3mvsRPL4aMyoghy5HwRv397PH6RmQpaRg5hKVvZOQgttL5C0SeQ/exec';
 const form        = document.getElementById('contact-form');
 const successMsg  = document.getElementById('form-success');
+const notice      = document.getElementById('form-notice');
 const errorMsg    = document.getElementById('form-error');
 const submitBtn   = document.getElementById('submit-btn');
 const submitLabel = document.getElementById('submit-label');
@@ -43,6 +44,7 @@ form.addEventListener('submit', async (e) => {
       body: new URLSearchParams(new FormData(form)),
     });
     form.classList.add('hidden');
+    notice.classList.add('hidden');
     successMsg.classList.remove('hidden');
   } catch {
     showError(ERROR_DEFAULT);
