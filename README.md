@@ -117,16 +117,18 @@ NG:  田中工業所_CI_reg.png
 - `js/contact.js` の `GAS_URL` に、GAS の Web アプリ（`/exec`）の URL を設定しています。
 - フォームの項目は `name` / `email` / `category` / `message` と、スパム対策用の `honeypot` です。
 - 悪用対策として GAS 側で、自動返信は定型文のみ・1時間30件まで（同じアドレスへは10分に1回）、受付は1日100件までに制限しています。上限を超えた送信は破棄され、`RECIPIENT` 宛てにエラーメールが届きます。
-- お問い合わせ種別（`<select name="category">`）を変えたときは、GAS の `CATEGORIES` も同じ内容に直してください。ずれた種別は破棄されます。種別を**減らす**分には GAS 側の変更は不要です（「その他のお問い合わせ」は営業対策のためフォームから削除済み。GAS の `CATEGORIES` には残っていて構いません）。
+- お問い合わせ種別（`<select name="category">`）を変えたときは、GAS の `CATEGORIES` も同じ内容に直してください。ずれた種別は破棄されます。「その他のお問い合わせ」は営業対策のため、フォームと GAS の `CATEGORIES` の両方から削除済みです。
 - 営業・売り込み対策として、次の3つを入れています。
   - フォーム上部の注意書き（人間向け）
   - 送信前の必須チェックボックス（`#no-solicitation`）。チェック時のみ `no_solicitation=yes` を GAS に送ります。
   - Cloudflare Turnstile。トークンは `cf-turnstile-response` として GAS に送られます。
 - **Turnstile**: `contact.html` の `data-sitekey` に本番のサイトキーを設定済みです（ウィジェットのホスト名は `sakasaew.com`）。サイトキーは公開してよい値です。シークレットキーは GAS のスクリプトプロパティにのみ保存し、リポジトリには置きません。ホスト名に無いドメイン（`*.pages.dev` のプレビュー等）ではウィジェットがエラーになり、送信できません。
-- **GAS 側の検証（未完了）**: フォーム側の検証はブラウザを通らない直接 POST では素通りされます。GAS の `doPost` で次の2点を確認し、満たさないものは破棄してください（GAS のコードは本リポジトリ外）。
-  1. `e.parameter.no_solicitation === 'yes'`
-  2. `cf-turnstile-response` を `https://challenges.cloudflare.com/turnstile/v0/siteverify` に `secret`（シークレットキー。スクリプトプロパティに保存）と一緒に POST し、`success === true` であること（外部リクエストのスコープ `script.external_request` が必要）
-  - 反映の順番: サイトを本番デプロイして、実際にウィジェットが表示・送信できることを確認してから、GAS で検証を有効にしてください。
+- **GAS 側の検証（設定済み）**: ブラウザを通らない直接 POST にも効くよう、GAS の `doPost` で次の2点を確認し、満たさないものは破棄しています（GAS のコードは本リポジトリ外）。
+  1. `no_solicitation === 'yes'`
+  2. `cf-turnstile-response` を Cloudflare の siteverify で検証（シークレットキーは GAS のスクリプトプロパティ `TURNSTILE_SECRET`）
+  - GAS の定数 `ENFORCE_BOT_CHECK` が `true` のとき破棄し、`false` のときはログに残すだけです。
+  - 破棄した送信は、GAS の「実行数」のログに `reject: …` と出ます。通信エラーやシークレット未設定のときは、正規の問い合わせを失わないよう通して `skip: …` と出ます。
+  - サイトキーやウィジェットのホスト名を変えるときは、先にサイトをデプロイして、ウィジェットが表示・送信できることを確認してから GAS を更新してください。順序を誤ると、すべての送信が破棄されます。
 - GAS のコードは **このリポジトリには含まれません**（Google Apps Script 側で管理）。受信先メールアドレスや記録先スプレッドシートの設定もそちらにあります。
 - `mode: 'no-cors'` で送信しているため、GAS 側が失敗してもサイトには常に「送信完了」と表示されます。GAS を変更したときは、実際にテスト送信して届くことを確認してください。
 
