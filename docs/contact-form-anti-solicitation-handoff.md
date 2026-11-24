@@ -33,6 +33,7 @@
 6. 送信完了後は、注意書きも非表示にする。
 7. 送信先（GAS）側の検証コードを、貼り付け用に用意する（資料にテンプレートあり）。GAS はリポジトリ外のため、あなたが書き換えることはできません。
    私が GAS のエディタに貼るので、手順を「どこで何をするか」を明記して案内してください。
+   特に、資料の「4-6」（appsscript.json の権限と、testSiteverify による確認）は必ず案内してください。権限が無いと、検証が黙ってスキップされます。
 
 【最初にやること（先に調べる）】
 ・このリポジトリの構成（静的 HTML か、CMS・ビルドツールを使っているか）、お問い合わせフォームの実装、送信先（GAS か別の仕組みか）を調べてください。
@@ -233,6 +234,8 @@ function doPost(e) {
     // 営業・ボット対策（honeypot の後、上限を数える前）
     const check = checkSubmission_(p);
     if (check.reason) console.warn((check.ok ? 'skip: ' : 'reject: ') + check.reason);
+    // 検証をスキップして通した場合は、気づけるように自分宛てにメールを出す（alertOwner は既存の関数。無ければ GmailApp.sendEmail で代用）
+    if (check.ok && check.reason) alertOwner('Turnstile の検証をスキップしました（通過扱い）: ' + check.reason);
     if (!check.ok && ENFORCE_BOT_CHECK) return respond('error');
 
     const data = validate(p);
@@ -248,6 +251,39 @@ GAS に `CATEGORIES` のような許可リストがあれば、「その他」�
 ### 4-5. `testDoPost` について
 GAS に、手動確認用の `testDoPost` のような関数があれば、`ENFORCE_BOT_CHECK = true` の間は、`no_solicitation` とトークンが無いため破棄される。確認は、サイトからの実送信で行う。宛先がダミーのままなら、有効化が効いていないとメールが飛ぶので注意。
 
+### 4-6. 権限（`appsscript.json`）と、検証が動いているかの確認 ★必須
+**GAS の外部通信（`UrlFetchApp`）の権限が無いと、検証が黙ってスキップされる。** `checkSubmission_` は、通信エラーを「通す」設計にしているため、権限不足でも通常の問い合わせは届き、気づけない。さかさまでは、これが実際に起きた。
+
+1. `appsscript.json`（左のファイル一覧にある）に、`oauthScopes` が明示されている場合は、次の権限を足す。**カンマの付け忘れに注意**（前の行の末尾に `,` が要る）。
+   ```json
+   "oauthScopes": [
+     "https://www.googleapis.com/auth/spreadsheets",
+     "https://mail.google.com/",
+     "https://www.googleapis.com/auth/script.external_request"
+   ],
+   ```
+   既存の権限は残す（消すと、記録やメール送信が動かなくなる）。`oauthScopes` が無い場合は、自動で付くので不要。
+2. コード.gs の一番下に、確認用の関数を貼る（手動実行のみ。ウェブには公開されない。残しておいてよい）。
+   ```js
+   // 手動確認用：Turnstile の検証の通信とシークレットキーを確認する（ダミーのトークンを使う）
+   function testSiteverify() {
+     const secret = PropertiesService.getScriptProperties().getProperty('TURNSTILE_SECRET');
+     console.log('secret set: ' + !!secret);
+     const res = UrlFetchApp.fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+       method: 'post',
+       payload: { secret: secret || '', response: 'dummy-token' },
+       muteHttpExceptions: true,
+     });
+     console.log(res.getResponseCode() + ' ' + res.getContentText());
+   }
+   ```
+3. エディタで関数を `testSiteverify` にして「実行」。初回は権限の承認が出るので許可する。画面の下の「実行ログ」で、次を確認する。
+   - 正常: `secret set: true` と、`200 {"error-codes":["invalid-input-response"],"success":false…}`（ダミーなので失敗が正しい）
+   - `Exception: … script.external_request` → 手順1の権限が無い（または保存・承認されていない）
+   - `secret set: false` → スクリプト プロパティの `TURNSTILE_SECRET` が未設定
+   - `invalid-input-secret` → シークレットキーが、そのウィジェットのものではない
+4. **デプロイを新バージョンで更新**してから、サイトで通常の送信をする。**「検証をスキップしました」のメールが届かず、通常の通知メールだけが届けば、検証は成功**している。
+
 ---
 
 ## 5. ハマりどころ（さかさまで実際に気づいた点）
@@ -257,8 +293,8 @@ GAS に、手動確認用の `testDoPost` のような関数があれば、`ENFO
 3. **Turnstile のホスト名に無いドメインでは、ウィジェットがエラーになり、送信できない。** `*.pages.dev` のプレビューでは、確認できない。ホスト名にプレビューのドメインを追加するか、本番で確認する。
 4. **トークンが取れないときに、JS で送信を止める。** 止めないと、広告ブロッカー等で Turnstile が読み込めない人の送信が、GAS の検証で**無言で破棄**される。`mode: 'no-cors'` で送っていると、画面には「送信完了」と出てしまう。止めて、メールでの連絡先を案内する。
 5. **反映の順番を守る。** ①フォーム（本番キー）をデプロイ → ②本番でウィジェットの表示と送信を確認 → ③ GAS の `ENFORCE_BOT_CHECK` を `true`。順序が逆、またはテスト用キーのまま有効にすると、全送信が破棄される。
-6. **GAS は、保存しただけでは本番に反映されない。** **デプロイ → デプロイを管理 → 編集（鉛筆）→ バージョン: 新バージョン → デプロイ**で更新する。URL は変わらない。初回は、外部通信（`UrlFetchApp`）の権限の承認が要る。`appsscript.json` が権限を明示している場合は、`https://www.googleapis.com/auth/script.external_request` を追加する。
-7. **成功した送信は、ログに何も出ない。** `reject:` も `skip:` も出ていないのは、「検証に通った」場合と「新コードが動いていない」場合の、どちらでも起こる。新コードが動いている証拠は、バージョンの更新日時、または有効化後の `reject:` ログで確認する。
+6. **GAS は、保存しただけでは本番に反映されない。** **デプロイ → デプロイを管理 → 編集（鉛筆）→ バージョン: 新バージョン → デプロイ**で更新する。URL は変わらない。初回は、外部通信（`UrlFetchApp`）の権限の承認が要る。`appsscript.json` が権限を明示している場合は、`https://www.googleapis.com/auth/script.external_request` を追加する（**必須。無いと検証が黙ってスキップされる**。詳細は 4-6）。
+7. **成功した送信は、ログに何も出ない。** `reject:` も `skip:` も出ていないのは、「検証に通った」場合と「新コードが動いていない」場合の、どちらでも起こる。さらに、ウェブアプリの実行ログは、GAS の画面の構成によっては見られないことがある。そこで、スキップしたときに自分宛てにメールが届く仕組み（4-3）を入れておく。新コードが動いている証拠は、バージョンの更新日時、または有効化後の `reject:` ログで確認する。
 8. **GAS の実行数の「バージョン」列は、実行した時点のバージョンではなく、今の公開バージョンを全行に表示している。** 過去の行まで、同じ番号になる。
 9. **弾かれることの確認（任意）。** GAS のエディタで `testDoPost` を実行し、`reject: no_solicitation` がログに出ること、通知メールもシート記録も増えないことを見る。さかさまでは、この確認は省略した（正規の送信が通ることだけ確認）。
 10. **サンドボックスから Cloudflare に接続できない場合がある。** Claude Code の実行環境では、Turnstile の本物のウィジェットが読み込めなかった。ヘッドレスブラウザ（Playwright）で、Turnstile と GAS への通信を差し替えて、次を確認した。
@@ -267,6 +303,10 @@ GAS に、手動確認用の `testDoPost` のような関数があれば、`ENFO
     - トークンがあれば送信され、`no_solicitation` と `cf-turnstile-response` が含まれる
     - スマホ幅（390px）で、横スクロールが出ない
     - ウィジェットの実際の見た目は、ユーザーがプレビューか本番で確認する。
+
+11. **権限不足は、通常の問い合わせが届くので気づけない。** 上の 4-6 の `testSiteverify` と、スキップ時のメールで、必ず確認する。さかさまでは、これに気づくまで、Turnstile の検証が実際には行われていなかった。
+12. **Cloudflare の Turnstile 画面の警告「siteverify が呼び出されていません」は、検証の通信が成功しても、集計の遅れですぐには消えない。** 消えないときは、1時間ほどおいて再度見る。この警告は、検証が動いていない兆候として使える（さかさまでは、権限不足の発見のきっかけになった）。
+13. **ウィジェットの画面にある「Spin で修正」や「Spin で siteverify をセットアップ」は、使わなくてよい。** 検証は GAS で行っているため。
 
 ---
 
