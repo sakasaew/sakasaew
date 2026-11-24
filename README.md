@@ -122,13 +122,19 @@ NG:  田中工業所_CI_reg.png
   - フォーム上部の注意書き（人間向け）
   - 送信前の必須チェックボックス（`#no-solicitation`）。チェック時のみ `no_solicitation=yes` を GAS に送ります。
   - Cloudflare Turnstile。トークンは `cf-turnstile-response` として GAS に送られます。
-- **Turnstile**: `contact.html` の `data-sitekey` に本番のサイトキーを設定済みです（ウィジェットのホスト名は `sakasaew.com`）。サイトキーは公開してよい値です。シークレットキーは GAS のスクリプトプロパティにのみ保存し、リポジトリには置きません。ホスト名に無いドメイン（`*.pages.dev` のプレビュー等）ではウィジェットがエラーになり、送信できません。
+- **Turnstile**: `contact.html` の `data-sitekey` に本番のサイトキーを設定済みです。サイトキーは公開してよい値です。シークレットキーは GAS のスクリプトプロパティ（`TURNSTILE_SECRET`）にのみ保存し、リポジトリには置きません。
+  - **ウィジェットは、山村書店のサイトと共有しています**（Cloudflare の Turnstile で1つのウィジェット。ホスト名に両方のドメインを登録）。
+  - **シークレットキーを再発行するときは、さかさまと山村書店の両方の GAS の `TURNSTILE_SECRET` を、続けて更新してください。** 片方だけ古いままだと、その GAS の送信がすべて破棄されます。
+  - ホスト名に無いドメイン（`*.pages.dev` のプレビュー等）ではウィジェットがエラーになり、送信できません。
 - **GAS 側の検証（設定済み）**: ブラウザを通らない直接 POST にも効くよう、GAS の `doPost` で次の2点を確認し、満たさないものは破棄しています（GAS のコードは本リポジトリ外）。
   1. `no_solicitation === 'yes'`
   2. `cf-turnstile-response` を Cloudflare の siteverify で検証（シークレットキーは GAS のスクリプトプロパティ `TURNSTILE_SECRET`）
   - GAS の定数 `ENFORCE_BOT_CHECK` が `true` のとき破棄し、`false` のときはログに残すだけです。
-  - 破棄した送信は、GAS の「実行数」のログに `reject: …` と出ます。通信エラーやシークレット未設定のときは、正規の問い合わせを失わないよう通して `skip: …` と出ます。
+  - 通信エラーやシークレット未設定のときは、正規の問い合わせを失わないよう通します。このとき、`RECIPIENT` 宛てに「Turnstile の検証をスキップしました（通過扱い）」というメールが届きます。届いたら検証が動いていないので、本文の理由を確認してください。
+  - GAS の「実行数」の画面では、ウェブアプリのログ（`reject:` など）を見られない場合があります。
+  - GAS の `appsscript.json` が `oauthScopes` を明示している場合は、`https://www.googleapis.com/auth/script.external_request`（外部通信）の権限が必須です。無いと、検証が黙ってスキップされます。GAS には、確認用の `testSiteverify` を入れてあります（エディタで手動実行し、`secret set: true` と `invalid-input-response` が出れば正常）。
   - サイトキーやウィジェットのホスト名を変えるときは、先にサイトをデプロイして、ウィジェットが表示・送信できることを確認してから GAS を更新してください。順序を誤ると、すべての送信が破棄されます。
+- 同じ対策を、ほかのサイト（山村書店など）に入れるときの手順は、[`docs/contact-form-anti-solicitation-handoff.md`](docs/contact-form-anti-solicitation-handoff.md) にまとめてあります。
 - GAS のコードは **このリポジトリには含まれません**（Google Apps Script 側で管理）。受信先メールアドレスや記録先スプレッドシートの設定もそちらにあります。
 - `mode: 'no-cors'` で送信しているため、GAS 側が失敗してもサイトには常に「送信完了」と表示されます。GAS を変更したときは、実際にテスト送信して届くことを確認してください。
 
